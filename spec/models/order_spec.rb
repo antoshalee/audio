@@ -27,15 +27,16 @@ describe Order do
     end
 
     describe '#assign_speaker' do
+
+      let(:speaker) { FactoryGirl.build(:speaker)}
+
+      before(:each) { subject.assign_speaker(speaker) }
+
       it "changes state to 'speaker_assigned'" do
-        speaker = FactoryGirl.build(:speaker)
-        subject.assign_speaker(speaker)
         subject.state.should == "speaker_assigned"
       end
 
       it 'sets speaker association' do
-        speaker = FactoryGirl.build(:speaker)
-        subject.assign_speaker(speaker)
         subject.speaker.should == speaker
       end
     end
