@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
-      t.string :state
+      t.string :state, default: 'created', null: false
       t.text :description
       t.references :speaker, index: true
       t.references :client, index: true

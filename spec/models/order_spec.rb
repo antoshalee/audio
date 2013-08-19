@@ -22,7 +22,6 @@ describe Order do
 
   describe "transfers" do
     it "has 'created' state by default" do
-      subject.save
       subject.state.should == "created"
     end
 

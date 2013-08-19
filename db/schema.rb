@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20130819111725) do
 
   create_table "orders", force: true do |t|
-    t.string   "state"
+    t.string   "state",       default: "created", null: false
     t.text     "description"
     t.integer  "speaker_id"
     t.integer  "client_id"
