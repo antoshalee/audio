@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
   include AASM
-  # belongs_to :speaker
+  belongs_to :speaker
   # belongs_to :client
   validates :price, numericality: {greater_than: 0}
 
@@ -11,6 +11,13 @@ class Order < ActiveRecord::Base
     event :assign_speaker do
       transitions :from => :created, :to => :speaker_assigned
     end
-
   end
+
+  alias aasm_assign_speaker assign_speaker
+
+  def assign_speaker speaker
+    self.speaker = speaker
+    aasm_assign_speaker
+  end
+
 end

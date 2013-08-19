@@ -28,8 +28,15 @@ describe Order do
 
     describe '#assign_speaker' do
       it "changes state to 'speaker_assigned'" do
-        subject.assign_speaker
+        speaker = FactoryGirl.build(:speaker)
+        subject.assign_speaker(speaker)
         subject.state.should == "speaker_assigned"
+      end
+
+      it 'sets speaker association' do
+        speaker = FactoryGirl.build(:speaker)
+        subject.assign_speaker(speaker)
+        subject.speaker.should == speaker
       end
     end
 
