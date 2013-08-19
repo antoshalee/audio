@@ -34,6 +34,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'spork-rails', github: 'sporkrb/spork-rails'
 end
 
 # Use ActiveModel has_secure_password
