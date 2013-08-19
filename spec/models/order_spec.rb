@@ -19,4 +19,19 @@ describe Order do
       subject.should_not be_valid
     end
   end
+
+  describe "transfers" do
+    it "has 'created' state by default" do
+      subject.save
+      subject.state.should == "created"
+    end
+
+    describe '#assign_speaker' do
+      it "changes state to 'speaker_assigned'" do
+        subject.assign_speaker
+        subject.state.should == "speaker_assigned"
+      end
+    end
+
+  end
 end
