@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20130820032310) do
   add_index "billing_accounts", ["user_id"], name: "index_billing_accounts_on_user_id"
 
   create_table "billing_operations", force: true do |t|
-    t.integer  "account_id"
-    t.integer  "document_id"
-    t.string   "document_type"
+    t.integer  "account_id",    null: false
+    t.integer  "document_id",   null: false
+    t.string   "document_type", null: false
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20130820032310) do
   add_index "billing_operations", ["document_id", "document_type"], name: "index_billing_operations_on_document_id_and_document_type"
 
   create_table "billing_transfers", force: true do |t|
-    t.integer  "value"
-    t.integer  "recipient_account_id"
-    t.integer  "sender_account_id"
+    t.integer  "value",                null: false
+    t.integer  "recipient_account_id", null: false
+    t.integer  "sender_account_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

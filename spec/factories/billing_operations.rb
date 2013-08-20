@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :billing_operation, :class => 'Billing::Operation' do
-    account nil
-    document nil
+    association :account, factory: :billing_account
+    association :document, factory: :billing_transfer
     value 1
   end
 end
