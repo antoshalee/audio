@@ -46,7 +46,7 @@ group :test, :development do
   gem 'spork-rails', github: 'sporkrb/spork-rails'
 end
 
-group :test
+group :test do
   gem 'rake' # travis requires it
 end
 
