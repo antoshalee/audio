@@ -26,7 +26,7 @@ describe Billing::TransferManager do
       it { should_not be_transfer_possible }
     end
 
-    context "where sender balance is equal to value of transfer" do
+    context "when sender balance is equal to value of transfer" do
       let(:sender_acc)    { FactoryGirl.build(:billing_account, balance: 100) }
       it { should be_transfer_possible }
     end
