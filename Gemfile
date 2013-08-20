@@ -44,6 +44,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
+  gem 'capybara'
 end
 
 group :test do
