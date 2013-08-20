@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Billing::Operation do
-
   let(:operation) { FactoryGirl.build(:billing_operation) }
 
   describe "validations" do
