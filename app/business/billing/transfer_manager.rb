@@ -33,6 +33,10 @@ class Billing::TransferManager
     if @sender_acc && @sender_acc.balance < @value
       errors.add(:base, "Недостаточно средств у отправителя для осуществления перевода")
     end
+
+    if @sender_acc == @recipient_acc
+      errors.add(:base, "Нельзя переводить деньги самому себе")
+    end
   end
 
 end

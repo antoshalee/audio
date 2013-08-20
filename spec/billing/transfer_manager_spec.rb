@@ -31,6 +31,10 @@ describe Billing::TransferManager do
       it { should be_transfer_possible }
     end
 
+    context "when sender and recipient are same people" do
+      let(:manager) { Billing::TransferManager.new(sender_acc, sender_acc, 100) }
+      it { should_not be_transfer_possible }
+    end
   end
 
   describe "#transfer" do
