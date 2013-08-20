@@ -9,7 +9,6 @@ describe Billing::Account do
     end
 
     it "is not valid without user" do
-      pending
       account.user = nil
       account.should_not be_valid
     end

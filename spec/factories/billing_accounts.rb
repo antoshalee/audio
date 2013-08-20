@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :billing_account, :class => 'Billing::Account' do
     balance 1
-    user nil
+    user
   end
 end
