@@ -45,6 +45,9 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
   gem 'capybara'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
 end
 
 group :test do
