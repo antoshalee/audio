@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :billing_transfer, :class => 'Billing::Transfer' do
     value 1
-    recipient_account nil
-    sender_account nil
+    association :sender_account, factory: :billing_account
+    association :recipient_account, factory: :billing_account
   end
 end
