@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130820023931) do
+ActiveRecord::Schema.define(version: 20130820032310) do
 
   create_table "billing_accounts", force: true do |t|
     t.integer  "balance"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20130820023931) do
 
   add_index "billing_operations", ["account_id"], name: "index_billing_operations_on_account_id"
   add_index "billing_operations", ["document_id", "document_type"], name: "index_billing_operations_on_document_id_and_document_type"
+
+  create_table "billing_transfers", force: true do |t|
+    t.integer  "value"
+    t.integer  "recipient_account_id"
+    t.integer  "sender_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "billing_transfers", ["recipient_account_id"], name: "index_billing_transfers_on_recipient_account_id"
+  add_index "billing_transfers", ["sender_account_id"], name: "index_billing_transfers_on_sender_account_id"
 
   create_table "orders", force: true do |t|
     t.string   "state",       default: "created", null: false
