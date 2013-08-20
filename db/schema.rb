@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819111725) do
+ActiveRecord::Schema.define(version: 20130820021324) do
+
+  create_table "billing_accounts", force: true do |t|
+    t.integer  "balance"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "billing_accounts", ["user_id"], name: "index_billing_accounts_on_user_id"
 
   create_table "orders", force: true do |t|
     t.string   "state",       default: "created", null: false
