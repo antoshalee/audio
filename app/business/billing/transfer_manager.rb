@@ -5,6 +5,7 @@ class Billing::TransferManager
   include ActiveModel::Validations
   validates_presence_of :sender_account, :recipient_account, :value
   validate :validate_sender_balance
+  validate :validate_sender_is_not_recipient
 
   def initialize sender_account, recipient_account, value
     @sender_account = sender_account
@@ -33,7 +34,9 @@ class Billing::TransferManager
     if @sender_account && @sender_account.balance < @value
       errors.add(:base, "Недостаточно средств у отправителя для осуществления перевода")
     end
+  end
 
+  def validate_sender_is_not_recipient
     if @sender_account == @recipient_account
       errors.add(:base, "Нельзя переводить деньги самому себе")
     end
