@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 1.2'
 # due to the latter is not ready for Rails4
 gem 'aasm'
 
+gem "devise", "~> 3.0.3"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
