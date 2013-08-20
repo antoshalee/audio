@@ -46,6 +46,10 @@ group :test, :development do
   gem 'spork-rails', github: 'sporkrb/spork-rails'
 end
 
+group :test
+  gem 'rake' # travis requires it
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
