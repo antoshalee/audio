@@ -18,7 +18,13 @@ class Billing::TransferManager
 
   def transfer
     raise Billing::Errors::TransferIsNotPossible.new unless transfer_possible?
-    Billing::Transfer.create!(sender_account: @sender_acc, recipient_account: @recipient_acc, value: value)
+    ActiveRecord::Base.transaction do
+      transfer_obj = Billing::Transfer.create!(sender_account: @sender_acc,
+        recipient_account: @recipient_acc, value: @value)
+      # create operations for sender and recipient
+      Billing::Operation.create!(account: @sender_acc, value: -@value, document: transfer_obj)
+      Billing::Operation.create!(account: @recipient_acc, value: @value, document: transfer_obj)
+    end
   end
 
   private
@@ -28,7 +34,5 @@ class Billing::TransferManager
       errors.add(:base, "Недостаточно средств у отправителя для осуществления перевода")
     end
   end
-
-
 
 end

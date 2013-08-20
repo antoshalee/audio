@@ -34,9 +34,33 @@ describe Billing::TransferManager do
   end
 
   describe "#transfer" do
-    it "creates transfer" do
-      manager.transfer
-      Billing::Transfer.count.should == 1
+
+    context "when transfer is possible" do
+      before(:each) { manager.transfer }
+      let(:transfer_obj) { Billing::Transfer.first }
+
+      describe "result transfer object" do
+        it { Billing::Transfer.count.should == 1 }
+        it { transfer_obj.value.should == 100 }
+        it { transfer_obj.sender_account.should == sender_acc }
+        it { transfer_obj.recipient_account.should == recipient_acc }
+      end
+
+      it "creates account operations for sender and recipient" do
+        Billing::Operation.count.should == 2
+      end
+
+      describe "result sender's account operation" do
+        subject(:op) { sender_acc.operations.first }
+        it { op.value.should == -100 }
+        it { op.document.should == transfer_obj }
+      end
+
+      describe "result recipient's account operation" do
+        subject(:op) { recipient_acc.operations.first }
+        it { op.value.should == 100 }
+        it { op.document.should == transfer_obj }
+      end
     end
 
     context "when transfer is not possible" do
