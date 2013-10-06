@@ -8,6 +8,7 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'pg'
+gem 'haml'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -35,6 +36,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'aasm'
 
 gem "devise", "~> 3.0.3"
+
+gem 'kaminari'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
