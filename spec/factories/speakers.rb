@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :speaker do
     user nil
     account_number "001345678"
-    sex true
+    voice_type 'male'
     timbre_level 0
   end
 end
