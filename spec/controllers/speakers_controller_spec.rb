@@ -6,6 +6,7 @@ describe SpeakersController do
       speaker = FactoryGirl.create(:speaker)
       get :index
 
+
       assigns(:speakers).should eq([speaker])
     end
   end
