@@ -8,7 +8,8 @@ gem 'sqlite3'
 gem 'pg'
 gem 'haml'
 gem 'ransack'
-gem 'thinking-sphinx'
+gem 'mysql2',          '0.3.13'
+gem 'thinking-sphinx', '3.0.5'
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
