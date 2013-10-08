@@ -80,11 +80,10 @@ ActiveRecord::Schema.define(version: 20131007184256) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "timbre_level",   null: false
-    t.string   "voice_kind",     null: false
+    t.integer  "voice_kind",     null: false
   end
 
   add_index "speakers", ["user_id"], name: "index_speakers_on_user_id", using: :btree
-  add_index "speakers", ["voice_kind"], name: "index_speakers_on_voice_kind", using: :btree
 
   create_table "speakers_voice_types", force: true do |t|
     t.integer "speaker_id"
