@@ -1,2 +1,489 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%section.block-br-index
+  %h2
+    Аудиозаказ — сайт, где профессиональные
+    дикторы, вокалисты и пародисты создают
+    вашу рекламу.
+  .link-holder
+    %a{href: ""}
+      Как это работает
+      %i.fa.fa-chevron-right
+  .blocks3-in-row
+    %article
+      %h3 Заказ начитки для аудиоролика
+      %p
+        На нашем сайте работают
+        = succeed "," do
+          %a{href: ""} 492 диктора
+        %br/
+        у которых можно
+        %a{href: ""} заказать озвучку
+        %br/
+        для вашего рекламного ролика.
+    %article
+      %h3 Размещение своих работ
+      %p
+        Вы можете
+        %a{href: ""} создать аккаунт
+        диктора и выполнять
+        %br/
+        заказы по созданию начиток, вокалу для
+        %br/
+        аудиороликов.
+    %article
+      %h3 Финансовая надежность
+      %p
+        Нам важно, чтобы между заказчиками
+        %br/
+        и исполнителями не возникало конфликтов.
+        %br/
+        У нас соблюдают
+        %a{href: ""} правила
+        и уважают друг друга.
+  / /.blocks3-in-row
+.cols2-layout
+  %aside
+    .br-holder
+      %a{href: ""}
+        %img{alt: "", src: "img/tmp/br1.png"}/
+    / /.br-holder
+    .bl-filters
+      %form{action: ""}
+        %h2 Подбор диктора
+        .ftr-gr
+          .item.checkbox
+            %h3 Голос
+            %label{for: "checkbox-1"}
+              %input#checkbox-1{checked: "checked", type: "checkbox"}/
+              %span Не важно
+          .item.radio
+            %label{for: "r1"}
+              %input#r1{name: "radio-1", type: "radio"}/
+              %span Мужской
+            %label{for: "r2"}
+              %input#r2{checked: "checked", name: "radio-1", type: "radio"}/
+              %span Женский
+          .item.ui-slider
+            #ui-slider-voice
+            .points.voice
+              .p1 Низкий
+              .p2 Средний
+              .p3 Высокий
+        .ftr-gr
+          .item.checkbox
+            %h3 Категория
+            %label{for: "checkbox-2"}
+              %input#checkbox-2{checked: "checked", type: "checkbox"}/
+              %span Не важно
+          .item.radio
+            %label{for: "r21"}
+              %input#r21{name: "radio-2", type: "radio"}/
+              %span Начитка
+            %label{for: "r22"}
+              %input#r22{checked: "checked", name: "radio-2", type: "radio"}/
+              %span Пародия
+            %label{for: "r23"}
+              %input#r23{name: "radio-2", type: "radio"}/
+              %span Вокал
+            %label{for: "r24"}
+              %input#r24{name: "radio-2", type: "radio"}/
+              %span Рэп
+        .ftr-gr.ckbx-list.items-toggle
+          .item.checkbox
+            %h3 Тип
+            %label{for: "checkbox-3"}
+              %input#checkbox-3{checked: "checked", type: "checkbox"}/
+              %span Не важно
+          .item.group
+            .ckbx-col
+              %div
+                %label{for: "chbx1"}
+                  %input#chbx1{type: "checkbox"}/
+                  %span Веселый
+              %div
+                %label{for: "chbx2"}
+                  %input#chbx2{type: "checkbox"}/
+                  %span Игровой
+              %div
+                %label{for: "chbx3"}
+                  %input#chbx3{type: "checkbox"}/
+                  %span Информационный
+            / /.ckbx-col
+            .ckbx-col
+              %div
+                %label{for: "chbx4"}
+                  %input#chbx4{type: "checkbox"}/
+                  %span Конферансье
+              %div
+                %label{for: "chbx5"}
+                  %input#chbx5{type: "checkbox"}/
+                  %span Клубный
+              %div
+                %label{for: "chbx6"}
+                  %input#chbx6{type: "checkbox"}/
+                  %span Народный
+            / /.ckbx-col
+          / /.item
+          .item.group.block-toggle
+            .ckbx-col
+              %div
+                %label{for: "chbx11"}
+                  %input#chbx11{type: "checkbox"}/
+                  %span Веселый
+              %div
+                %label{for: "chbx12"}
+                  %input#chbx12{type: "checkbox"}/
+                  %span Игровой
+              %div
+                %label{for: "chbx13"}
+                  %input#chbx13{type: "checkbox"}/
+                  %span Информационный
+            / /.ckbx-col
+            .ckbx-col
+              %div
+                %label{for: "chbx14"}
+                  %input#chbx14{type: "checkbox"}/
+                  %span Конферансье
+              %div
+                %label{for: "chbx15"}
+                  %input#chbx15{type: "checkbox"}/
+                  %span Клубный
+              %div
+                %label{for: "chbx16"}
+                  %input#chbx16{type: "checkbox"}/
+                  %span Народный
+            / /.ckbx-col
+          / /.item
+          .link-holder
+            %a.link-toggle Показать все варианты
+        / /.ckbx-list
+        .ftr-gr.ckbx-list
+          .item.checkbox
+            %h3 Возраст
+            %label{for: "checkbox-4"}
+              %input#checkbox-4{checked: "checked", type: "checkbox"}/
+              %span Не важно
+          .item.group
+            .ckbx-col
+              %div
+                %label{for: "chbx31"}
+                  %input#chbx31{type: "checkbox"}/
+                  %span Детский
+              %div
+                %label{for: "chbx32"}
+                  %input#chbx32{type: "checkbox"}/
+                  %span Молодой
+              %div
+                %label{for: "chbx33"}
+                  %input#chbx33{type: "checkbox"}/
+                  %span Пожилой
+            / /.ckbx-col
+            .ckbx-col
+              %div
+                %label{for: "chbx34"}
+                  %input#chbx34{type: "checkbox"}/
+                  %span Подростковый
+              %div
+                %label{for: "chbx35"}
+                  %input#chbx35{type: "checkbox"}/
+                  %span Взрослый
+              %div
+                %label{for: "chbx36"}
+                  %input#chbx36{type: "checkbox"}/
+                  %span Старческий
+            / /.ckbx-col
+          / /.item
+        / /.ckbx-list
+        .item.checkbox.full-width
+          %label{for: "checkbox-5"}
+            %input#checkbox-5{checked: "checked", type: "checkbox"}/
+            %span Показывать в результатах только дикторов со статусом «Онлайн»
+        .submit-holder
+          .holder
+            %a{href: ""}
+              Показать 23 предложения
+              %i.fa.fa-chevron-right
+            %input{type: "submit", value: ""}/
+    / /.bl-filters
+  .main
+    %h2 10 популярных дикторов
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013lermon2013
+            %a.like.selected{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time.selected
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/audio.mp3"}
+          %source{src: "files/audio.ogg"}
+          %source{src: "files/audio.wav"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013
+            %a.like{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/Into the Black Wide Open.mp3"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013lermon2013
+            %a.like.selected{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time.selected
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/audio.mp3"}
+          %source{src: "files/audio.ogg"}
+          %source{src: "files/audio.wav"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013
+            %a.like{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/Into the Black Wide Open.mp3"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013lermon2013
+            %a.like.selected{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time.selected
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/audio.mp3"}
+          %source{src: "files/audio.ogg"}
+          %source{src: "files/audio.wav"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013
+            %a.like{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/Into the Black Wide Open.mp3"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013lermon2013
+            %a.like.selected{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time.selected
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/audio.mp3"}
+          %source{src: "files/audio.ogg"}
+          %source{src: "files/audio.wav"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013
+            %a.like{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/Into the Black Wide Open.mp3"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013lermon2013
+            %a.like.selected{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time.selected
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/audio.mp3"}
+          %source{src: "files/audio.ogg"}
+          %source{src: "files/audio.wav"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    %article.audio-item
+      .row
+        .user-info
+          .avatar
+            %img{alt: "", src: "img/tmp/avatar.png"}/
+          %h3
+            %a.name{href: "#"} lermon2013
+            %a.like{href: ""}
+            %span.tag диктор, вокалист
+        .order-holder
+          .work-time
+            ПН–ПТ, 12:00–19:00
+          .price
+            от 300 руб.
+          %a.btn-order{href: ""}
+            Заказать
+            %i.fa.fa-chevron-right
+      / /.row
+      .row
+        %audio{controls: "", preload: "auto"}
+          %source{src: "files/Into the Black Wide Open.mp3"}
+        .song-name
+          %span Герой нашего времени
+        .link-more
+          %a{href: ""} еще
+    / /.audio-item
+    .block-results-holder
+      .link-holder
+        %a{href: ""}
+          Все дикторы
+          %i.fa.fa-chevron-right
+      .val
+        всего
+        %span 492
+        диктора
+  / /.main
+/ /.cols2-layout
