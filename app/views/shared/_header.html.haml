@@ -23,13 +23,12 @@
           %li
             %a.fa.fa-power-icon-cog{href: ""}
           %li
-            %a.fa.fa-power-off{href: ""}
-            = link_to 'Выйти', destroy_user_session_path, method: :delete
+            = link_to '', destroy_user_session_path, method: :delete, class: %w(fa fa-power-off)
     - else
 
       %nav.item-2
         %ul
           %li
-            %a{href: ""} Вход
+            = link_to 'Вход', new_user_session_path
           %li
             %a{href: ""} Регистрация
