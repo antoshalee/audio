@@ -1,7 +1,6 @@
 Audio::Application.routes.draw do
-  devise_for :users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # ActiveAdmin.routes(self)
+  devise_for :users
   resources :speakers
-
   root to: "home#index"
 end

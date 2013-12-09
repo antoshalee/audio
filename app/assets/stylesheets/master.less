@@ -108,11 +108,11 @@
 }
 @font-face {
   font-family: 'elektra_light_probold';
-  src: url('../fonts/elektra_light_pro_bold-webfont.eot');
-  src: url('../fonts/elektra_light_pro_bold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/elektra_light_pro_bold-webfont.woff') format('woff'),
-  url('../fonts/elektra_light_pro_bold-webfont.ttf') format('truetype'),
-  url('../fonts/elektra_light_pro_bold-webfont.svg#elektra_light_probold') format('svg');
+  src: url('/assets/elektra_light_pro_bold-webfont.eot');
+  src: url('/assets/elektra_light_pro_bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/elektra_light_pro_bold-webfont.woff') format('woff'),
+  url('/assets/elektra_light_pro_bold-webfont.ttf') format('truetype'),
+  url('/assets/elektra_light_pro_bold-webfont.svg#elektra_light_probold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -122,8 +122,8 @@
 }
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.0.1');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.1') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.1') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');
+  src: url('/assets/fontawesome-webfont.eot?v=4.0.1');
+  src: url('/assets/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'), url('/assets/fontawesome-webfont.woff?v=4.0.1') format('woff'), url('/assets/fontawesome-webfont.ttf?v=4.0.1') format('truetype'), url('/assets/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -230,7 +230,7 @@ body {
 }
 .content
 {
-  background: url(../img/bg-pattern.png) repeat-x 0 0;
+  background: url(/assets/bg-pattern.png) repeat-x 0 0;
 }
 h1 {
   margin: 0;
@@ -261,7 +261,7 @@ a {
 
 .bg-sprite
 {
-  background-image: url(../img/sprite.png);
+  background-image: url(/assets/sprite.png);
   background-repeat: no-repeat;
 }
 .btn-1(@width: 184px, @height: 32px)
@@ -587,7 +587,7 @@ a
 {
   color: #46565c;
   text-decoration: none;
-  background: url(../img/underline-1.png) repeat-x left bottom;
+  background: url(/assets/underline-1.png) repeat-x left bottom;
   position: relative;
   font-size: 13px;
   font-weight: bold;
@@ -775,7 +775,7 @@ header
     position: relative;
     z-index: 100;
     display: block;
-    background: url(../img/logo-header.png) no-repeat 0 0;
+    background: url(/assets/logo-header.png) no-repeat 0 0;
     width: 186px;
     height: 30px;
     text-indent: -99999px;
@@ -955,7 +955,7 @@ header
   .blocks3-in-row
   {
     .group;
-    background: url(../img/index-teaser-bg.png) no-repeat 0 0;
+    background: url(/assets/index-teaser-bg.png) no-repeat 0 0;
     width: 1032px;
     height: 173px;
     margin: 0 auto;
@@ -1980,7 +1980,7 @@ footer
 {
   .wrap-960;
   padding-top: 42px;
-  
+
   h1
   {
     font-size: 30px;
@@ -2102,7 +2102,7 @@ footer
       font-weight: bold;
       width: 140px;
       padding: 9px 0 0 0;
-      
+
       span
       {
         font-size: 12px;
@@ -2164,7 +2164,7 @@ footer
         {
           text-decoration: none;
           color: #3091b8;
-          background: url(../img/underline-2.png) repeat-x 0 bottom;
+          background: url(/assets/underline-2.png) repeat-x 0 bottom;
           &:hover
           {
             background: none;
@@ -2338,7 +2338,7 @@ footer
 
     .click
     {
-      background: #f7f1dd url(../img/accent.png) repeat-x 0 bottom;
+      background: #f7f1dd url(/assets/accent.png) repeat-x 0 bottom;
       cursor: pointer;
     }
 
@@ -2379,7 +2379,7 @@ footer
     .username
     {
       float: left;
-      background: url(../img/wizard-username-bg.png) no-repeat 0 0;
+      background: url(/assets/wizard-username-bg.png) no-repeat 0 0;
       width: 293px;
       height: 149px;
       margin: 6px 0 0 -20px;
@@ -2453,7 +2453,7 @@ footer
       li
       {
         position: relative;
-        background: url(../img/wizard-order-underline.png) repeat-x 0 17px;
+        background: url(/assets/wizard-order-underline.png) repeat-x 0 17px;
       }
       span
       {
@@ -2587,7 +2587,7 @@ footer
     {
       .text-default
       {
-        background: #fff url(../img/placeholder-pass1.png) no-repeat 8px 12px;
+        background: #fff url(/assets/placeholder-pass1.png) no-repeat 8px 12px;
       }
     }
 
@@ -2596,7 +2596,7 @@ footer
       margin-top: 6px;
       .text-default
       {
-        background: #fff url(../img/placeholder-pass2.png) no-repeat 8px 12px;
+        background: #fff url(/assets/placeholder-pass2.png) no-repeat 8px 12px;
       }
     }
 
@@ -2677,7 +2677,7 @@ footer
 .form-upload-files
 {
   .ff-helvetica;
-  background: url(../img/upload-bg.png) no-repeat 0 0;
+  background: url(/assets/upload-bg.png) no-repeat 0 0;
   width: 460px;
   height: 100px;
 }
@@ -3149,7 +3149,7 @@ footer
       }
       &.selected
       {
-        background: url(../img/radio-selected-bg.png) no-repeat 0 0;
+        background: url(/assets/radio-selected-bg.png) no-repeat 0 0;
         color: #ffffff;
       }
     }
@@ -3285,7 +3285,7 @@ footer
 
     .form-upload-files
     {
-      background: url(../img/upload-bg-2.png) no-repeat 0 0;
+      background: url(/assets/upload-bg-2.png) no-repeat 0 0;
       width: 470px;
       height: 150px;
     }
@@ -3500,7 +3500,7 @@ footer
         &:after
         {
           content: "";
-          background: url(../img/username-tail-open.png) no-repeat 0 0;
+          background: url(/assets/username-tail-open.png) no-repeat 0 0;
           width: 21px;
           height: 30px;
           position: absolute;
@@ -3557,7 +3557,7 @@ footer
       &:after
       {
         content: "";
-        background: url(../img/username-tail-close.png) no-repeat 0 0;
+        background: url(/assets/username-tail-close.png) no-repeat 0 0;
         width: 14px;
         height: 27px;
         position: absolute;
@@ -4007,7 +4007,7 @@ footer
         &:before
         {
           content: "";
-          background: url(../img/text-holder-tail.png) no-repeat 0 0;
+          background: url(/assets/text-holder-tail.png) no-repeat 0 0;
           width: 9px;
           height: 8px;
           position: absolute;
@@ -4042,7 +4042,7 @@ footer
   .form-upload-files
   {
     width: 580px;
-    background: url(../img/upload-bg-3.png);
+    background: url(/assets/upload-bg-3.png);
   }
 
   .form-drop
@@ -4230,7 +4230,7 @@ footer
       li
       {
         position: relative;
-        background: url(../img/order-underline.png) repeat-x 0 12px;
+        background: url(/assets/order-underline.png) repeat-x 0 12px;
       }
       span
       {

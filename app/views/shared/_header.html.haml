@@ -1,0 +1,35 @@
+%header
+  .wrap
+    %h1.logo
+      Аудиозаказ
+    %nav.item-1
+      %ul
+        %li
+          %a{href: ""} Личный кабинет
+        %li
+          %a{href: ""} Дикторы
+    - if user_signed_in?
+      %nav.item-2.user
+        %ul
+          %li
+            %a.fa.fa-user{href: ""}
+              %span somenick12
+          %li
+            .balance
+              %span.val 2 340 руб.
+              %a.give{href: ""} пополнить
+              или
+              %a.get{href: ""} снять
+          %li
+            %a.fa.fa-power-icon-cog{href: ""}
+          %li
+            %a.fa.fa-power-off{href: ""}
+            = link_to 'Выйти', destroy_user_session_path, method: :delete
+    - else
+
+      %nav.item-2
+        %ul
+          %li
+            %a{href: ""} Вход
+          %li
+            %a{href: ""} Регистрация
