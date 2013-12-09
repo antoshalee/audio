@@ -1,3 +1,5 @@
+- resource.speaker = Speaker.new
+
 #registration-layout.registration-layout
   %h1 Регистрация нового пользователя
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
@@ -48,251 +50,246 @@
         %label{for: "chbx133"}
           %input#chbx133{checked: "checked", type: "checkbox"}/
           %span Я хочу исполнять заказы (потребуется заполнение дополнительных полей)
-      .item-checkbox-list
-        %label Пол
-        .item.radio
-          %label{for: "r21"}
-            %input#r21{checked: "checked", name: "radio-2", type: "radio"}/
-            %span Мужской
-          %label{for: "r22"}
-            %input#r22{name: "radio-2", type: "radio"}/
-            %span Женский
-      .items-block-checkbox
-        %label Заказы
-        .col
-          .item-input-checkbox
-            %label{for: "chbx1"}
-              %input#chbx1{checked: "checked", type: "checkbox"}/
-              %span Начитка
-          .item-input-checkbox
-            %label{for: "chbx2"}
-              %input#chbx2{type: "checkbox"}/
-              %span Вокал
-        .col
-          .item-input-checkbox
-            %label{for: "chbx3"}
-              %input#chbx3{type: "checkbox"}/
-              %span Пародия
-          .item-input-checkbox
-            %label{for: "chbx4"}
-              %input#chbx4{type: "checkbox"}/
-              %span Вокал
-      / /.items-block-checkbox
-      .tip
-        %p
-          Информацию можно будет уточнить
-          %br/
-          или изменить после регистрации в личном
-          кабинете
-      .items-block-checkbox
-        %label Тип голоса
-        .col
-          .item-input-checkbox
-            %label{for: "chbx5"}
-              %input#chbx5{checked: "checked", type: "checkbox"}/
-              %span Веселый
-          .item-input-checkbox
-            %label{for: "chbx6"}
-              %input#chbx6{type: "checkbox"}/
-              %span Иностранный
-          .item-input-checkbox
-            %label{for: "chbx7"}
-              %input#chbx7{type: "checkbox"}/
-              %span Французский
-          .item-input-checkbox
-            %label{for: "chbx8"}
-              %input#chbx8{type: "checkbox"}/
-              %span Португальский
-          .item-input-checkbox
-            %label{for: "chbx9"}
-              %input#chbx9{type: "checkbox"}/
-              %span Информационный
-          .item-input-checkbox
-            %label{for: "chbx10"}
-              %input#chbx10{type: "checkbox"}/
-              %span Народный
-          .item-input-checkbox
-            %label{for: "chbx11"}
-              %input#chbx11{type: "checkbox"}/
-              %span Романтичный
-        / /.col
-        .col
-          .item-input-checkbox
-            %label{for: "chbx12"}
-              %input#chbx12{type: "checkbox"}/
-              %span Вокалист
-          .item-input-checkbox
-            %label{for: "chbx13"}
-              %input#chbx13{type: "checkbox"}/
-              %span Английский
-          .item-input-checkbox
-            %label{for: "chbx14"}
-              %input#chbx14{type: "checkbox"}/
-              %span Испанский
-          .item-input-checkbox
-            %label{for: "chbx15"}
-              %input#chbx15{type: "checkbox"}/
-              %span Украинский
-          .item-input-checkbox
-            %label{for: "chbx16"}
-              %input#chbx16{type: "checkbox"}/
-              %span Конферансье
-          .item-input-checkbox
-            %label{for: "chbx17"}
-              %input#chbx17{type: "checkbox"}/
-              %span Пародист
-          .item-input-checkbox
-            %label{for: "chbx18"}
-              %input#chbx18{type: "checkbox"}/
-              %span Рэп
-        / /.col
-        .col
-          .item-input-checkbox
-            %label{for: "chbx19"}
-              %input#chbx19{type: "checkbox"}/
-              %span Игровой
-          .item-input-checkbox
-            %label{for: "chbx20"}
-              %input#chbx20{type: "checkbox"}/
-              %span Немецкий
-          .item-input-checkbox
-            %label{for: "chbx21"}
-              %input#chbx21{type: "checkbox"}/
-              %span Итальянский
-          .item-input-checkbox
-            %label{for: "chbx22"}
-              %input#chbx22{type: "checkbox"}/
-              %span Белорусский
-          .item-input-checkbox
-            %label{for: "chbx23"}
-              %input#chbx23{type: "checkbox"}/
-              %span Клубный
-          .item-input-checkbox
-            %label{for: "chbx24"}
-              %input#chbx24{type: "checkbox"}/
-              %span Пафосный
-          .item-input-checkbox
-            %label{for: "chbx25"}
-              %input#chbx25{type: "checkbox"}/
-              %span Сексуальный
-        / /.col
-      / /.items-block-checkbox
-      .items-block-checkbox
-        %label Возраст
-        .col
-          .item-input-checkbox
-            %label{for: "chbx26"}
-              %input#chbx26{checked: "checked", type: "checkbox"}/
-              %span Десткий
-          .item-input-checkbox
-            %label{for: "chbx27"}
-              %input#chbx27{type: "checkbox"}/
-              %span Взрослый
-        .col
-          .item-input-checkbox
-            %label{for: "chbx28"}
-              %input#chbx28{type: "checkbox"}/
-              %span Подростковый
-          .item-input-checkbox
-            %label{for: "chbx29"}
-              %input#chbx29{type: "checkbox"}/
-              %span Пожилой
-        .col
-          .item-input-checkbox
-            %label{for: "chbx30"}
-              %input#chbx30{type: "checkbox"}/
-              %span Молодой
-          .item-input-checkbox
-            %label{for: "chbx31"}
-              %input#chbx31{type: "checkbox"}/
-              %span Старческий
-      / /.items-block-checkbox
-      .item-ui-slider
-        %label Тембр
-        .item.ui-slider
-          #ui-slider-voice
-          .points.voice
-            .p1 Низкий
-            .p2 Средний
-            .p3 Высокий
-      / /.item-ui-slider
-      .tip
-        %p
-          Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.
-      .item-file-upload-cap
-        %label
-          Демо
-      / /.item-files-upload
-      .files-uploaded
-        %ul#fu-123.form-files-uploaded
-          / The file uploads will be shown here
-      %h2 Присутствие на сайте
-      #online-radio-list.item-radio-list
-        %label Онлайн
-        %ul
-          %li
-            %label
-              %input{checked: "checked", name: "online", type: "radio"}/
-              %span Каждый день
-          %li
-            %label
-              %input{name: "online", type: "radio"}/
-              %span По будням
-          %li
-            %label
-              %input{name: "online", type: "radio"}/
-              %span По выходным
-          %li
-            %label
-              %input.show{name: "online", type: "radio"}/
-              %span Выбрать дни
-        .date-list
-          .date
-            %span.day ПН
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-          .date
-            %span.day ВТ
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-          .date
-            %span.day СР
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-          .date
-            %span.day ЧТ
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-          .date
-            %span.day ПТ
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-          .date
-            %span.day.off СБ
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-          .date
-            %span.day.off ВС
-            %input{type: "text"}/
-            %span.def —
-            %input{type: "text"}/
-      .tip
-        %p
-          Укажите промежутки времени, когда для
-          заказчиков вы будете отображаться
-          %br/
-          со статусом «Онлайн». В это время от вас
-          будут ожидать быстрого ответа.
-      .item-work-time
-        %label{for: "work-time"} Срок выполнения заказа:
-        %input#work-time{type: "text"}/
-        часа
+
+      = f.fields_for :speaker do |speaker_f|
+        = render 'users/registrations/form/sex'
+
+        .items-block-checkbox
+          %label Заказы
+          .col
+            .item-input-checkbox
+              %label{for: "chbx1"}
+                %input#chbx1{checked: "checked", type: "checkbox"}/
+                %span Начитка
+            .item-input-checkbox
+              %label{for: "chbx2"}
+                %input#chbx2{type: "checkbox"}/
+                %span Вокал
+          .col
+            .item-input-checkbox
+              %label{for: "chbx3"}
+                %input#chbx3{type: "checkbox"}/
+                %span Пародия
+            .item-input-checkbox
+              %label{for: "chbx4"}
+                %input#chbx4{type: "checkbox"}/
+                %span Вокал
+        / /.items-block-checkbox
+        .tip
+          %p
+            Информацию можно будет уточнить
+            %br/
+            или изменить после регистрации в личном
+            кабинете
+        .items-block-checkbox
+          %label Тип голоса
+          .col
+            .item-input-checkbox
+              %label{for: "chbx5"}
+                %input#chbx5{checked: "checked", type: "checkbox"}/
+                %span Веселый
+            .item-input-checkbox
+              %label{for: "chbx6"}
+                %input#chbx6{type: "checkbox"}/
+                %span Иностранный
+            .item-input-checkbox
+              %label{for: "chbx7"}
+                %input#chbx7{type: "checkbox"}/
+                %span Французский
+            .item-input-checkbox
+              %label{for: "chbx8"}
+                %input#chbx8{type: "checkbox"}/
+                %span Португальский
+            .item-input-checkbox
+              %label{for: "chbx9"}
+                %input#chbx9{type: "checkbox"}/
+                %span Информационный
+            .item-input-checkbox
+              %label{for: "chbx10"}
+                %input#chbx10{type: "checkbox"}/
+                %span Народный
+            .item-input-checkbox
+              %label{for: "chbx11"}
+                %input#chbx11{type: "checkbox"}/
+                %span Романтичный
+          / /.col
+          .col
+            .item-input-checkbox
+              %label{for: "chbx12"}
+                %input#chbx12{type: "checkbox"}/
+                %span Вокалист
+            .item-input-checkbox
+              %label{for: "chbx13"}
+                %input#chbx13{type: "checkbox"}/
+                %span Английский
+            .item-input-checkbox
+              %label{for: "chbx14"}
+                %input#chbx14{type: "checkbox"}/
+                %span Испанский
+            .item-input-checkbox
+              %label{for: "chbx15"}
+                %input#chbx15{type: "checkbox"}/
+                %span Украинский
+            .item-input-checkbox
+              %label{for: "chbx16"}
+                %input#chbx16{type: "checkbox"}/
+                %span Конферансье
+            .item-input-checkbox
+              %label{for: "chbx17"}
+                %input#chbx17{type: "checkbox"}/
+                %span Пародист
+            .item-input-checkbox
+              %label{for: "chbx18"}
+                %input#chbx18{type: "checkbox"}/
+                %span Рэп
+          / /.col
+          .col
+            .item-input-checkbox
+              %label{for: "chbx19"}
+                %input#chbx19{type: "checkbox"}/
+                %span Игровой
+            .item-input-checkbox
+              %label{for: "chbx20"}
+                %input#chbx20{type: "checkbox"}/
+                %span Немецкий
+            .item-input-checkbox
+              %label{for: "chbx21"}
+                %input#chbx21{type: "checkbox"}/
+                %span Итальянский
+            .item-input-checkbox
+              %label{for: "chbx22"}
+                %input#chbx22{type: "checkbox"}/
+                %span Белорусский
+            .item-input-checkbox
+              %label{for: "chbx23"}
+                %input#chbx23{type: "checkbox"}/
+                %span Клубный
+            .item-input-checkbox
+              %label{for: "chbx24"}
+                %input#chbx24{type: "checkbox"}/
+                %span Пафосный
+            .item-input-checkbox
+              %label{for: "chbx25"}
+                %input#chbx25{type: "checkbox"}/
+                %span Сексуальный
+          / /.col
+        / /.items-block-checkbox
+        .items-block-checkbox
+          %label Возраст
+          .col
+            .item-input-checkbox
+              %label{for: "chbx26"}
+                %input#chbx26{checked: "checked", type: "checkbox"}/
+                %span Десткий
+            .item-input-checkbox
+              %label{for: "chbx27"}
+                %input#chbx27{type: "checkbox"}/
+                %span Взрослый
+          .col
+            .item-input-checkbox
+              %label{for: "chbx28"}
+                %input#chbx28{type: "checkbox"}/
+                %span Подростковый
+            .item-input-checkbox
+              %label{for: "chbx29"}
+                %input#chbx29{type: "checkbox"}/
+                %span Пожилой
+          .col
+            .item-input-checkbox
+              %label{for: "chbx30"}
+                %input#chbx30{type: "checkbox"}/
+                %span Молодой
+            .item-input-checkbox
+              %label{for: "chbx31"}
+                %input#chbx31{type: "checkbox"}/
+                %span Старческий
+        / /.items-block-checkbox
+        .item-ui-slider
+          %label Тембр
+          .item.ui-slider
+            #ui-slider-voice
+            .points.voice
+              .p1 Низкий
+              .p2 Средний
+              .p3 Высокий
+        / /.item-ui-slider
+        .tip
+          %p
+            Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.
+        .item-file-upload-cap
+          %label
+            Демо
+        / /.item-files-upload
+        .files-uploaded
+          %ul#fu-123.form-files-uploaded
+            / The file uploads will be shown here
+        %h2 Присутствие на сайте
+        #online-radio-list.item-radio-list
+          %label Онлайн
+          %ul
+            %li
+              %label
+                %input{checked: "checked", name: "online", type: "radio"}/
+                %span Каждый день
+            %li
+              %label
+                %input{name: "online", type: "radio"}/
+                %span По будням
+            %li
+              %label
+                %input{name: "online", type: "radio"}/
+                %span По выходным
+            %li
+              %label
+                %input.show{name: "online", type: "radio"}/
+                %span Выбрать дни
+          .date-list
+            .date
+              %span.day ПН
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+            .date
+              %span.day ВТ
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+            .date
+              %span.day СР
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+            .date
+              %span.day ЧТ
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+            .date
+              %span.day ПТ
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+            .date
+              %span.day.off СБ
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+            .date
+              %span.day.off ВС
+              %input{type: "text"}/
+              %span.def —
+              %input{type: "text"}/
+        .tip
+          %p
+            Укажите промежутки времени, когда для
+            заказчиков вы будете отображаться
+            %br/
+            со статусом «Онлайн». В это время от вас
+            будут ожидать быстрого ответа.
+        .item-work-time
+          %label{for: "work-time"} Срок выполнения заказа:
+          %input#work-time{type: "text"}/
+          часа
       %h2 Лицензионное соглашение
       .item-input-checkbox
         %label{for: "chbx32"}
