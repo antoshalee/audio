@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209192707) do
+ActiveRecord::Schema.define(version: 20131209193805) do
+
+  create_table "acceptable_order_categories_users", force: true do |t|
+    t.integer "order_category_id", null: false
+    t.integer "speaker_id",        null: false
+  end
+
+  add_index "acceptable_order_categories_users", ["order_category_id"], name: "index_acceptable_order_categories_users_on_order_category_id", using: :btree
+  add_index "acceptable_order_categories_users", ["speaker_id"], name: "index_acceptable_order_categories_users_on_speaker_id", using: :btree
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
