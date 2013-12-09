@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209190032) do
+ActiveRecord::Schema.define(version: 20131209192707) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 20131209190032) do
 
   add_index "billing_transfers", ["recipient_account_id"], name: "index_billing_transfers_on_recipient_account_id", using: :btree
   add_index "billing_transfers", ["sender_account_id"], name: "index_billing_transfers_on_sender_account_id", using: :btree
+
+  create_table "order_categories", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: true do |t|
     t.string   "state",       default: "created", null: false
