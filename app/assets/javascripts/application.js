@@ -15,3 +15,5 @@
 //= require jquery-ui-slider
 //= require audioplayer
 //= require scripts
+//= require_tree ./core
+//= require speakers
