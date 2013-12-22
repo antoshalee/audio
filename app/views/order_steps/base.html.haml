@@ -36,7 +36,7 @@
             Текст начитки
             %span
               Только текст, который необходимо прочитать диктору.
-          %textarea{:cols => "30", :rows => "10"}
+          = f.text_area :text, cols: 30, rows: 10
           .options
             .item-1
               Примерно
