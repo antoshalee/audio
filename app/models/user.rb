@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   has_one :speaker
   accepts_nested_attributes_for :speaker
+  validates :login, presence: true
 
 end
