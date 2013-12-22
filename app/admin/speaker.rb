@@ -2,7 +2,7 @@ ActiveAdmin.register Speaker do
   controller do
     def permitted_params
 
-      params.permit(:speaker => [:user_id, :account_number, :timbre_level, :voice_kind, voice_type_ids: []])
+      params.permit(:speaker => [:user_id, :account_number, :timbre_level, :sex, voice_type_ids: []])
     end
   end
 

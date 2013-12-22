@@ -19,6 +19,8 @@ class Speaker < ActiveRecord::Base
   enumerize :sex, in: {male: 0, female: 1}
   enumerize :timbre_level, in: {low: 0, middle: 1, high: 2}
 
+  include Speaker::Validations
+
   private
 
   def set_defaults
