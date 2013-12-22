@@ -9,8 +9,20 @@ ru:
         middle: Средний
         high: Высокий
   activerecord:
+    models:
+      voice_type:
+        one: 'Тип голоса'
+        few: 'Типа голос'
+        many: 'Типов голосов'
+        other: 'Типы голоса'
+
+
     attributes:
       speaker:
         sex: Пол
         user: Пользователь
         timbre_level: Тембр
+      voice_type:
+        name: 'Название'
+      speaker:
+        voice_types: 'Типы голоса'
