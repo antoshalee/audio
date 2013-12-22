@@ -9,7 +9,7 @@ gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 gem 'ransack'
-gem 'thinking-sphinx', '3.0.5'
+gem 'thinking-sphinx', '2.1.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'simple_form'
 
