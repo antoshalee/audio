@@ -209,16 +209,7 @@
               %label{for: "chbx31"}
                 %input#chbx31{type: "checkbox"}/
                 %span Старческий
-        / /.items-block-checkbox
-        .item-ui-slider
-          %label Тембр
-          .item.ui-slider
-            #ui-slider-voice
-            .points.voice
-              .p1 Низкий
-              .p2 Средний
-              .p3 Высокий
-        / /.item-ui-slider
+        = render 'users/registrations/form/timbre_level', f: speaker_f
         .tip
           %p
             Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.

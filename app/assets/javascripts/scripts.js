@@ -13,10 +13,15 @@ function uiSliderVoice()
     $item.slider({
         orientation: "horizontal",
         range: "min",
-        value:1,
         min: 0,
         max: 2,
-        step: 1
+        step: 1,
+
+        value: $('#user_speaker_attributes_timbre_level').val(),
+
+        change: function(event, ui) {
+            $('#user_speaker_attributes_timbre_level').val(ui.value);
+        }
     });
 }
 

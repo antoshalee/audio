@@ -8,6 +8,8 @@ class Speaker < ActiveRecord::Base
     join_table: 'acceptable_order_categories_users',
     association_foreign_key: :order_category_id
 
+  after_initialize :set_defaults
+
   VOICE_KINDS = {
   	0 => "male",
   	1 => "female",
@@ -15,5 +17,11 @@ class Speaker < ActiveRecord::Base
   }
 
   enumerize :sex, in: {male: 0, female: 1}
+
+  private
+
+  def set_defaults
+    self.timbre_level = 1 if self.new_record?
+  end
 
 end
