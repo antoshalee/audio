@@ -17,3 +17,4 @@
 //= require scripts
 //= require_tree ./core
 //= require speakers
+//= require order_steps

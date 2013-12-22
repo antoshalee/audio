@@ -2,7 +2,8 @@ class Order < ActiveRecord::Base
   include AASM
   belongs_to :speaker
   # belongs_to :client
-  validates :price, numericality: {greater_than: 0}
+
+  # validates :price, numericality: {greater_than: 0}
 
   aasm column: 'state' do
     state :created, :initial => true

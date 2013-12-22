@@ -1,0 +1,24 @@
+.wizard-layout#wizard-layout
+
+  %h1 — Оформление заказа —
+  .step-holder
+    %form{:action => ""}
+      .wrapper
+        %h2 Ударения
+        .item-text
+          %p
+            Расставьте ударения, которые помогут диктору правильно прочитать текст.
+          %p
+            Обратите внимание на специализированные термины, фамилии и названия.
+        .item-accent-text
+          Компания «Румус» предлагает холодно кованые витые трубы, для декоративного оформления ваших самых оригинальных фантазий!
+          %br>/
+          Компания «Румус» — рождая совершенство!
+      / /.wrapper
+    .controls
+      = link_to previous_wizard_path, class: 'prev' do
+        %i.fa.fa-arrow-left
+        Назад
+      = link_to next_wizard_path, class: 'next' do
+        %i.fa.fa-arrow-right
+        Продолжить

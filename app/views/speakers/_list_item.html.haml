@@ -12,7 +12,7 @@
         ПН–ПТ, 12:00–19:00
       .price
         от 300 руб.
-      %a.btn-order{href: ""}
+      = link_to order_steps_path, class: 'btn-order', method: :post do
         Заказать
         %i.fa.fa-chevron-right
   / /.row
