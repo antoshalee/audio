@@ -10,12 +10,6 @@ class Speaker < ActiveRecord::Base
 
   after_initialize :set_defaults
 
-  VOICE_KINDS = {
-  	0 => "male",
-  	1 => "female",
-  	2 => "child"
-  }
-
   enumerize :sex, in: {male: 0, female: 1}
   enumerize :timbre_level, in: {low: 0, middle: 1, high: 2}
 
