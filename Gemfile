@@ -41,6 +41,7 @@ gem 'aasm'
 gem "devise", "~> 3.0.3"
 
 gem 'kaminari'
+gem 'enumerize'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -84,6 +84,8 @@ GEM
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.3)
     diff-lcs (1.2.1)
+    enumerize (0.7.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -270,6 +272,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   devise (~> 3.0.3)
+  enumerize
   factory_girl_rails
   guard
   guard-rspec
