@@ -3,6 +3,12 @@
 #registration-layout.registration-layout
   %h1 Регистрация нового пользователя
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+
+    - if resource.errors.any?
+      %ul
+        - resource.errors.full_messages.each do |error|
+          %li= error
+
     .wrapper
       %h2 Основная информация
       .item-input-text
