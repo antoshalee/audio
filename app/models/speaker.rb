@@ -1,4 +1,6 @@
 class Speaker < ActiveRecord::Base
+  extend Enumerize
+
   belongs_to :user
   has_and_belongs_to_many :voice_types
   has_and_belongs_to_many :acceptable_order_categories,
@@ -11,5 +13,7 @@ class Speaker < ActiveRecord::Base
   	1 => "female",
   	2 => "child"
   }
+
+  enumerize :sex, in: {male: 0, female: 1}
 
 end

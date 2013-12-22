@@ -58,7 +58,7 @@
           %span Я хочу исполнять заказы (потребуется заполнение дополнительных полей)
 
       = f.fields_for :speaker do |speaker_f|
-        = render 'users/registrations/form/sex'
+        = render 'users/registrations/form/sex', f: speaker_f
 
         .items-block-checkbox
           %label Заказы

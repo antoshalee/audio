@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209193805) do
+ActiveRecord::Schema.define(version: 20131222104014) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "acceptable_order_categories_users", force: true do |t|
     t.integer "order_category_id", null: false
@@ -96,8 +99,10 @@ ActiveRecord::Schema.define(version: 20131209193805) do
     t.datetime "updated_at"
     t.integer  "timbre_level",   null: false
     t.integer  "voice_kind",     null: false
+    t.integer  "sex",            null: false
   end
 
+  add_index "speakers", ["sex"], name: "index_speakers_on_sex", using: :btree
   add_index "speakers", ["user_id"], name: "index_speakers_on_user_id", using: :btree
 
   create_table "speakers_voice_types", force: true do |t|
