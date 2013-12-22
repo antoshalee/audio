@@ -18,7 +18,7 @@ class Speaker < ActiveRecord::Base
   private
 
   def set_defaults
-    self.timbre_level = 1 if self.new_record?
+    self.timbre_level = :middle if self.new_record?
   end
 
 end
