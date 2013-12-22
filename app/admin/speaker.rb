@@ -11,7 +11,7 @@ ActiveAdmin.register Speaker do
       f.input :sex, as: :select
       f.input :user
       f.input :account_number
-      f.input :timbre_level
+      f.input :timbre_level, as: :select
       f.input :voice_types
     end
     f.buttons

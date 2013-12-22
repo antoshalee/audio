@@ -1,0 +1,16 @@
+ru:
+  enumerize:
+    speaker:
+      sex:
+        male: Мужской
+        female: Женский
+      timbre_level:
+        low: Низкий
+        middle: Средний
+        high: Высокий
+  activerecord:
+    attributes:
+      speaker:
+        sex: Пол
+        user: Пользователь
+        timbre_level: Тембр
