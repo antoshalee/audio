@@ -27,8 +27,8 @@ test:
 production:
   adapter: postgresql
   database: audio_production
-  username: postgres
-  password: postgres
+  username: audiozakaz
+  password: zakazaudio
   host: localhost
   pool: 5
   timeout: 5000
