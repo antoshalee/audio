@@ -26,9 +26,9 @@ test:
 
 production:
   adapter: postgresql
-  database: audio_production
+  database: audiozakazdb
   username: audiozakaz
   password: zakazaudio
-  host: localhost
+  host: audiozakazdb.ccqobzs9laqu.us-west-2.rds.amazonaws.com
   pool: 5
   timeout: 5000
