@@ -24,7 +24,7 @@
               %span Информационный
             %li
               %span Тембр
-              %span Средний
+              %span= @speaker.timbre_level.text
             %li
               %span Возраст
               %span Взрослый
@@ -34,11 +34,7 @@
         .item-text-corrected
           %h3 Текст начитки
           %p
-            Компания «Р
-            %span.selected> у
-            мус» предлагает холодно кованые витые трубы, для декоративного оформления ваших самых оригинальных фантазий!
-            %br/
-            Компания «Румус» — рождая совершенство!
+            = @order.text
         .item-files-uploaded
           %h3 Приложенные файлы
           %audio{:controls => "", :preload => "auto"}
