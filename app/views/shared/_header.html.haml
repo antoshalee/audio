@@ -5,7 +5,7 @@
     %nav.item-1
       %ul
         %li
-          %a{href: ""} Личный кабинет
+          = link_to "Личный кабинет", profile_path
         %li
           %a{href: "/"} Дикторы
     - if user_signed_in?

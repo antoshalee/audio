@@ -4,4 +4,6 @@ Audio::Application.routes.draw do
   resources :speakers
   resources :order_steps
   root to: "home#index"
+
+  get 'profile', to: 'orders#index', as: 'profile'
 end

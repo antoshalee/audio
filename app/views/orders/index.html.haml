@@ -1,0 +1,301 @@
+.user-page-layout
+  .main
+    %h1 Мои заказы
+    .nav
+      %ul
+        %li
+          %a{:href => ""} Я заказываю
+        %li.current
+          %a{:href => ""} Мне заказывают
+      .filter
+        %label.checkbox{:for => "checkbox-1"}
+          %input#checkbox-1{:checked => "checked", :type => "checkbox"}/
+          %span Показывать закрытые
+    .order-item-layout
+      .header.open
+        %a.open-status
+        .username
+          .avatar
+          %a.name{:href => ""} Lermon2013
+        .date
+          18:32, 20 июля
+        .order-name
+          ТрансКредитБанк
+        .date
+          18:32, 20 июля
+        .time
+          .accept
+            %i.fa.fa-check
+            Закрыт
+        .cost
+          200 руб.
+      / /.header
+      .body
+        .task
+          %a.task-modal{:href => ""}
+            %i.fa.fa-arrow-down
+            %span Техническое задание
+        / /.task
+        .log
+          .msg
+            .time 18:45
+            .text-holder
+              %strong Начало работы
+          .msg
+            .time 18:57
+            .text-holder
+              %strong Опубликована аудиозапись:
+              .audio-holder
+                %audio{:controls => "", :preload => "auto"}
+                  %source{:src => "files/audio.mp3"}/
+                  %source{:src => "files/audio.ogg"}/
+                  %source{:src => "files/audio.wav"}/
+                %a.btn-download{:href => ""}
+                  %i.fa.fa-arrow-circle-o-down>
+                  Скачать
+          .msg
+            .time 19:06
+            .text-holder
+              %strong Необходима перечитка:
+              %p
+                Хотелось бы больше эмоций и акцента на названии нашей прекрасной компании.
+                Представьте, что вы Иосиф Кобзон. Скажите с чувством!
+          .msg
+            .time 18:57
+            .text-holder
+              %strong Опубликована аудиозапись:
+              .audio-holder
+                %audio{:controls => "", :preload => "auto"}
+                  %source{:src => "files/audio.mp3"}/
+                  %source{:src => "files/audio.ogg"}/
+                  %source{:src => "files/audio.wav"}/
+                %a.btn-download{:href => ""}
+                  %i.fa.fa-arrow-circle-o-down>
+                  Скачать
+          .msg.accept
+            .time 19:45
+            .text-holder
+              %strong
+                %i.fa.fa-check
+                Работа принята.
+        / /.log
+      / /.body
+    / /.order-item-layout
+    .order-item-layout
+      .header
+        %a.open-status
+        .username
+          .avatar
+          %a.name{:href => ""} Lermon2013
+        .order-name
+          Начитка для компании Сумкин
+        .date
+          18:32, 20 июля
+        .status.rush
+          Срочный
+        .time.rush
+          %i.fa.fa-clock-o
+          20 минут
+        .cost
+          400 руб.
+      / /.header
+      .body
+        .task
+          %a.task-modal{:href => ""}
+            %i.fa.fa-arrow-down
+            %span Техническое задание
+        / /.task
+        .log
+          .msg
+            .time 18:45
+            .text-holder
+              %strong Начало работы
+          .msg
+            .time 18:57
+            .text-holder
+              %strong Опубликована аудиозапись:
+              .audio-holder
+                %audio{:controls => "", :preload => "auto"}
+                  %source{:src => "files/audio.mp3"}/
+                  %source{:src => "files/audio.ogg"}/
+                  %source{:src => "files/audio.wav"}/
+                %a.btn-download{:href => ""}
+                  %i.fa.fa-arrow-circle-o-down>
+                  Скачать
+          .msg
+            .time 19:06
+            .text-holder
+              %strong Необходима перечитка:
+              %p
+                Хотелось бы больше эмоций и акцента на названии нашей прекрасной компании.
+                Представьте, что вы Иосиф Кобзон. Скажите с чувством!
+          .msg
+            .time 18:57
+            .text-holder
+              %strong Опубликована аудиозапись:
+              .audio-holder
+                %audio{:controls => "", :preload => "auto"}
+                  %source{:src => "files/audio.mp3"}/
+                  %source{:src => "files/audio.ogg"}/
+                  %source{:src => "files/audio.wav"}/
+                %a.btn-download{:href => ""}
+                  %i.fa.fa-arrow-circle-o-down>
+                  Скачать
+          .msg.accept
+            .time 19:45
+            .text-holder
+              %strong
+                %i.fa.fa-check
+                Работа принята.
+        / /.log
+      / /.body
+    / /.order-item-layout
+    .order-item-layout
+      .header
+        %a.open-status
+        .username
+          .avatar
+          %a.name{:href => ""} Lermon2013
+        .order-name
+          Реклама шуб
+        .date
+          16:32, 20 июля
+        .status
+          Скрытый
+        .time
+          %i.fa.fa-clock-o
+          2 часа
+        .cost
+          400 руб.
+      / /.header
+      .body
+        .task
+          %a.task-modal{:href => ""}
+            %i.fa.fa-arrow-down
+            %span Техническое задание
+        / /.task
+        .log
+          .msg
+            .time 18:45
+            .text-holder
+              %strong Начало работы
+          .msg
+            .time 18:57
+            .text-holder
+              %strong Опубликована аудиозапись:
+              .audio-holder
+                %audio{:controls => "", :preload => "auto"}
+                  %source{:src => "files/audio.mp3"}/
+                  %source{:src => "files/audio.ogg"}/
+                  %source{:src => "files/audio.wav"}/
+                %a.btn-download{:href => ""}
+                  %i.fa.fa-arrow-circle-o-down>
+                  Скачать
+          .msg
+            .time 19:06
+            .text-holder
+              %strong Необходима перечитка:
+              %p
+                Хотелось бы больше эмоций и акцента на названии нашей прекрасной компании.
+                Представьте, что вы Иосиф Кобзон. Скажите с чувством!
+          .msg
+            .time 18:57
+            .text-holder
+              %strong Опубликована аудиозапись:
+              .audio-holder
+                %audio{:controls => "", :preload => "auto"}
+                  %source{:src => "files/audio.mp3"}/
+                  %source{:src => "files/audio.ogg"}/
+                  %source{:src => "files/audio.wav"}/
+                %a.btn-download{:href => ""}
+                  %i.fa.fa-arrow-circle-o-down>
+                  Скачать
+          .msg.accept
+            .time 19:45
+            .text-holder
+              %strong
+                %i.fa.fa-check
+                Работа принята.
+        / /.log
+      / /.body
+    / /.order-item-layout
+    .order-item-layout
+      .header.open
+        %a.open-status
+        .username
+          .avatar
+          %a.name{:href => ""} Lermon2013
+        .order-name
+          Вариативность бытия
+        .date
+          16:32, 20 июля
+        .time
+          %i.fa.fa-clock-o
+          2 часа
+        .cost
+          200 руб.
+      / /.header
+      .body
+        .task
+          %a.task-modal{:href => ""}
+            %i.fa.fa-arrow-down
+            %span Техническое задание
+        / /.task
+        .btns-holder
+          %a.btn-green.pos-left{:href => ""}
+            %i.fa.fa-check-circle-o>
+            Принять заказ и начать работу
+          %a.btn-orange.pos-left{:href => ""}
+            %i.fa.fa-times-circle-o>
+            Отклонить заказ
+          %a.btn-gray.pos-right{:href => ""}
+            %i.fa.fa-info-circle>
+            Уточнить
+        / /.btns-holder
+      / /.body
+    / /.order-item-layout
+    .paginator
+      %ul
+        %li.current
+          %a{:href => ""} 1
+        %li
+          %a{:href => ""} 2
+        %li
+          %a{:href => ""} 3
+        %li
+          %a{:href => ""} 4
+        %li
+          %a{:href => ""} 5
+        %li
+          %a{:href => ""} 6
+        %li
+          %a{:href => ""} 7
+        %li
+          %a{:href => ""} 8
+        %li
+          %a{:href => ""} 9
+  / /.main
+  %aside
+    .avatar
+      %img{:alt => "", :src => "img/tmp/avatar2.png"}/
+    %h2
+      somenick12
+      %span диктор
+    %ul
+      %li.current
+        %a{:href => ""}<
+          %i.fa.fa-headphones
+          %span> Заказы
+          %span.val 12
+      %li
+        %a{:href => ""}<
+          %i.fa.fa-money
+          %span> Финансы
+      %li
+        %a{:href => ""}<
+          %i.fa.fa-star
+          %span> Избранное
+      %li
+        %a{:href => ""}<
+          %i.fa.fa-power-icon-cog
+          %span> Настройки
