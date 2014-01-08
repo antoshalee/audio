@@ -6,7 +6,7 @@
         %h2 Основная информация
         .item-input-text
           %label Название
-          %input.placeholder{"data-placeholder" => "Название заказа", :type => "text"}/
+          = f.text_field :name, class: 'placeholder', data: {placeholder: 'Название заказа'}
         .item-checkbox-list
           %label Категория
           .item.radio
