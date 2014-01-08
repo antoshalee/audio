@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   include AASM
   belongs_to :speaker
+  validates :speaker, presence: true
   # belongs_to :client
 
   # validates :price, numericality: {greater_than: 0}
