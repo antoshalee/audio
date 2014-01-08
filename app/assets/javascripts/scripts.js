@@ -62,21 +62,6 @@ function placeholder(item){
 
 function wizardLayout()
 {
-    // Слайдер Хронометраж
-    if($('#ui-slider-time').length)
-    {
-        var $slider = $('#ui-slider-time');
-
-        $slider.slider({
-            orientation: "horizontal",
-            range: "min",
-            value:10,
-            min: 0,
-            max: 50,
-            step: 10
-        });
-    }
-
     // Эмуляция placeholder
     if($('.placeholder').length)
     {
