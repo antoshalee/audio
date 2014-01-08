@@ -45,7 +45,6 @@ function placeholder(item){
     var $item = item,
         text = $item.data('placeholder');
 
-    $item.val(text).addClass('text-default');
 
     $item.focus(function(){
         if($(this).val() === text){
@@ -57,6 +56,8 @@ function placeholder(item){
             $(this).val(text).addClass('text-default');
         }
     });
+    if($item.val() != '') return;
+    $item.val(text).addClass('text-default');
 }
 
 function wizardLayout()

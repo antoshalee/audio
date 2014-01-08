@@ -23,7 +23,7 @@ class OrderStepsController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:text)
+    params.require(:order).permit(:text, :description)
   end
 
 end

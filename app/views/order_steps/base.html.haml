@@ -27,7 +27,7 @@
             Задание
             %span
               Укажите тип, тембр голоса, другие пожелания.
-          %textarea.placeholder{:cols => "30", "data-placeholder" => "Техническое задание", :rows => "10"}
+          = f.text_area :description, cols: 30, rows: 10, class: 'placeholder', data: {placeholder: 'Техническое задание'}
           .text-block
             %a{:href => ""} Правилами
             запрещено указывать контактную информацию.
