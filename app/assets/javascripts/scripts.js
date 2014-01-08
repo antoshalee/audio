@@ -70,46 +70,6 @@ function wizardLayout()
         });
     }
 
-    // Ударения
-    if($('.item-accent-text').length)
-    {
-        var $accent = $('.item-accent-text').html(),
-            $letters = ['а','е','и','о','у','ы','э','ю','я'],
-            $p = $accent.split('<br>'),
-            $text = '';
-
-        for(var $i=0; $i < $p.length; $i++)
-        {
-            var $stroke = $p[$i].split('');
-            for(var $y=0; $y < $stroke.length; $y++)
-            {
-                if($stroke[$y] !== ' ' || $stroke[$y] !== '')
-                {
-                    $text += '<span>' + $stroke[$y] + '</span>';
-                } else
-                {
-                    $text += $stroke[$y];
-                }
-
-            }
-            if ($i + 1 != $p.length)
-            {
-                $text += '<br/>';
-            }
-        }
-
-        $('.item-accent-text').html($text);
-
-        for(var $i=0; $i < $letters.length; $i++)
-        {
-            $('.item-accent-text').find('span:contains("' + $letters[$i] + '")').addClass('click');
-        }
-
-        $('.item-accent-text').find('.click').click(function(){
-            $(this).toggleClass('selected');
-        });
-
-    }
 
     // Свич форм регистрация / авторизация
 

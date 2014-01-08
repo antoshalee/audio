@@ -17,4 +17,17 @@ Piece '#ui-slider-time',
       max: 50,
       step: 10
 
+Piece ".item-accent-text",
+  initialize: ->
+    originalText = $(".item-accent-text").html().trim()
+    vowels = ["а", "е", "и", "о", "у", "ы", "э", "ю", "я"]
+    newText = ""
 
+    for char, i in originalText.split ''
+      if $.inArray(char, vowels) > -1
+        newText += "<span class='click'>#{char}</span>"
+      else
+        newText += char
+    $(".item-accent-text").html newText
+    $(".item-accent-text").find(".click").click ->
+      $(this).toggleClass "selected"
