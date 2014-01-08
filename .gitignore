@@ -18,3 +18,4 @@
 /log/*.log
 /log/development.sphinx.pid
 /tmp
+.DS_Store
