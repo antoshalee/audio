@@ -18,3 +18,4 @@
 //= require_tree ./core
 //= require speakers
 //= require order_steps
+//= require registration
