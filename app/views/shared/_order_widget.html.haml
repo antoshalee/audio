@@ -62,5 +62,14 @@
           %strong
             %i.fa.fa-check
             Работа принята.
-    / /.log
-  / /.body
+    - if can? :deny_by_speaker, order
+      .btns-holder
+        %a.btn-green.pos-left{:href => ""}
+          %i.fa.fa-check-circle-o>
+          Принять заказ и начать работу
+        %a.btn-orange.pos-left{:href => ""}
+          %i.fa.fa-times-circle-o>
+          Отклонить заказ
+        %a.btn-gray.pos-right{:href => ""}
+          %i.fa.fa-info-circle>
+          Уточнить

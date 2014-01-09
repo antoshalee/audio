@@ -16,6 +16,9 @@ gem 'russian'
 gem 'wicked'
 gem 'draper'
 
+# CanCan is not ready for Rails 4.. let try it anyway
+gem 'cancan'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
