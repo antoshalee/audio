@@ -203,62 +203,6 @@ function orderItemLayout(item)
 
 }
 
-function taskModal()
-{
-    // Добавляем overlay
-    $('body').append('<div class="overlay"></div>');
-
-    // Загружаем модальное окно и обвешиваем
-
-    var $link = $('.task-modal'),
-        $overlay = $('.overlay');
-
-    $.ajax({
-        url: "modal.html",
-        dataType: "html",
-        success: function(html) {
-            $('body').append(html);
-
-            var $modal = $('#task-modal');
-
-            $modal.find('audio').audioPlayer();
-
-            $link.click(function(){
-
-                var modalHeight = $modal.height(),
-                    windowHeight = $(window).height();
-
-                if (modalHeight >= windowHeight) {
-                    $modal.css({'top': $(window).scrollTop() + 10});
-                } else {
-                    $modal.css({'top': $(window).scrollTop() + (windowHeight - modalHeight)/2});
-                }
-
-                $modal.fadeIn(450);
-                $overlay.fadeIn(450);
-
-                return false;
-
-            });
-
-            $modal.find('.close').click(function(){
-                $modal.fadeOut(450);
-                $overlay.fadeOut(450);
-            });
-
-            $(document).click(function(e){
-                if (($(e.target).parents().filter('#task-modal:visible').length != 1)&&(!($(e.target).attr('id')=='task-modal'))) {
-                    $modal.fadeOut(450);
-                    $overlay.fadeOut(450);
-                }
-
-            });
-        }
-    });
-
-}
-
-
 $(document).ready(function(){
 
     if($('#ui-slider-voice').length)
@@ -294,10 +238,5 @@ $(document).ready(function(){
         });
     }
 
-    // модальное окно с Тех заданием
-    if($('.task-modal').length)
-    {
-        taskModal();
-    }
 
 });

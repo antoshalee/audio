@@ -1,0 +1,44 @@
+%a.close
+.title
+  Солнечный город
+  %span 18:32, 20 июля
+.inner
+  .task-header
+    %h2 Техническое задание
+    %a{:href => ""}
+      %i.fa.fa-file-text-o
+      Cкачать в PDF
+  .task-options
+    %ul
+      %li
+        %span Автор заказа
+        %span Lermon13
+      %li
+        %span Требуемый хронометраж
+        %span 30 секунд
+  .wrapper
+    %article
+      %h3 Задание
+      %p
+        Нужно зачитать в информационном стиле приложенный текст. Читать нужно быстро,
+        %br/
+        но торжественно, пафосно. Нужно зачитать в информационном стиле приложенный текст. Читать нужно быстро, но торжественно, пафосно.
+    %article.item-text-corrected
+      %h3 Текст начитки
+      %p
+        Компания «Р
+        %span.selected> у
+        мус» предлагает холодно кованые витые трубы, для декоративного оформления ваших самых оригинальных фантазий!
+        %br/
+        Компания «Румус» — рождая совершенство!
+    %article.audio-holder
+      %h3 Приложенные файлы
+      .audio-name podlozhka.wav
+      .audio-item
+        %audio{:controls => "", :preload => "auto"}
+          %source{:src => "files/audio.mp3"}/
+          %source{:src => "files/audio.ogg"}/
+          %source{:src => "files/audio.wav"}/
+        %a.btn-download{:href => ""}
+          %i.fa.fa-arrow-circle-o-down>
+          Скачать

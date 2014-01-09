@@ -1,0 +1,67 @@
+.order-item-layout
+  .header.open
+    %a.open-status
+    .username
+      .avatar
+      %a.name{:href => ""} Lermon2013
+    .order-name
+      ТрансКредитБанк
+    .date
+      18:32, 20 июля
+    .time
+      .accept
+        %i.fa.fa-check
+        Закрыт
+    .cost
+      200 руб.
+  / /.header
+  .body
+    .task
+      = link_to modal_order_path(order), class: 'task-modal', remote: true do
+        %i.fa.fa-arrow-down
+        %span Техническое задание
+    / /.task
+    .log
+      .msg
+        .time 18:45
+        .text-holder
+          %strong Начало работы
+      / .msg
+      /   .time 18:57
+      /   .text-holder
+      /     %strong Опубликована аудиозапись:
+      /     .audio-holder
+      /       %audio{:controls => "", :preload => "auto"}
+      /         %source{:src => "files/audio.mp3"}/
+      /         %source{:src => "files/audio.ogg"}/
+      /         %source{:src => "files/audio.wav"}/
+      /       %a.btn-download{:href => ""}
+      /         %i.fa.fa-arrow-circle-o-down>
+      /         Скачать
+      .msg
+        .time 19:06
+        .text-holder
+          %strong Необходима перечитка:
+          %p
+            Хотелось бы больше эмоций и акцента на названии нашей прекрасной компании.
+            Представьте, что вы Иосиф Кобзон. Скажите с чувством!
+      / .msg
+      /   .time 18:57
+      /   .text-holder
+      /     %strong Опубликована аудиозапись:
+      /     .audio-holder
+      /       %audio{:controls => "", :preload => "auto"}
+      /         %source{:src => "files/audio.mp3"}/
+      /         %source{:src => "files/audio.ogg"}/
+      /         %source{:src => "files/audio.wav"}/
+      /       %a.btn-download{:href => ""}
+      /         %i.fa.fa-arrow-circle-o-down>
+      /         Скачать
+      .msg.accept
+        .time 19:45
+        .text-holder
+          %strong
+            %i.fa.fa-check
+            Работа принята.
+    / /.log
+  / /.body

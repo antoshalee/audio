@@ -6,4 +6,9 @@ Audio::Application.routes.draw do
   root to: "home#index"
 
   get 'profile', to: 'orders#index', as: 'profile'
+
+  resources :orders, only: nil do
+  	member { get :modal }
+  end
+
 end
