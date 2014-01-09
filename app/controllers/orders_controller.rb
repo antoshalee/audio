@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-  	@orders = Order.all
+  	@orders = Order.active
   end
 
   def modal
