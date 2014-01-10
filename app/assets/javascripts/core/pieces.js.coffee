@@ -8,6 +8,9 @@ window.Piece = (selector, object) ->
 
 jQuery ->
   for piece in window.audio.pieces
-  	if $(piece.selector).size() > 0
-  		if jQuery.isFunction(piece.object.initialize)
-  			piece.object.initialize.apply(piece.object)
+    if $(piece.selector).size() > 0
+      if $.isFunction(piece.object.initialize)
+        piece.object.initialize.apply(piece.object)
+      if $.isFunction(piece.object.click)
+        $(piece.selector).click piece.object.click
+
