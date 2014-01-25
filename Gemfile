@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'russian'
 gem 'wicked'
 gem 'draper'
+gem 'has_scope'
 
 # CanCan is not ready for Rails 4.. let try it anyway
 gem 'cancan'

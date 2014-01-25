@@ -297,6 +297,7 @@ DEPENDENCIES
   guard-spork
   haml
   haml-rails
+  has_scope
   jbuilder (~> 1.2)
   jquery-rails
   json
