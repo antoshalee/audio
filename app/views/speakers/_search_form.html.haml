@@ -1,5 +1,164 @@
-%h2 Форма поиска
-= search_form_for @q do |f|
-  = f.label :voice_kind_cont
-  =# f.text_field :voice_kind_cont
-  = f.submit
+/ %h2 Форма поиска
+/ = search_form_for @q do |f|
+/   = f.label :voice_kind_cont
+/   =# f.text_field :voice_kind_cont
+/   = f.submit
+
+.bl-filters
+  %form{action: ""}
+    %h2 Подбор диктора
+    .ftr-gr
+      .item.checkbox
+        %h3 Голос
+        %label{for: "checkbox-1"}
+          %input#checkbox-1{checked: "checked", type: "checkbox"}/
+          %span Не важно
+      .item.radio
+        %label{for: "r1"}
+          %input#r1{name: "radio-1", type: "radio"}/
+          %span Мужской
+        %label{for: "r2"}
+          %input#r2{checked: "checked", name: "radio-1", type: "radio"}/
+          %span Женский
+      .item.ui-slider
+        #ui-slider-voice
+        .points.voice
+          .p1 Низкий
+          .p2 Средний
+          .p3 Высокий
+    .ftr-gr
+      .item.checkbox
+        %h3 Категория
+        %label{for: "checkbox-2"}
+          %input#checkbox-2{checked: "checked", type: "checkbox"}/
+          %span Не важно
+      .item.radio
+        %label{for: "r21"}
+          %input#r21{name: "radio-2", type: "radio"}/
+          %span Начитка
+        %label{for: "r22"}
+          %input#r22{checked: "checked", name: "radio-2", type: "radio"}/
+          %span Пародия
+        %label{for: "r23"}
+          %input#r23{name: "radio-2", type: "radio"}/
+          %span Вокал
+        %label{for: "r24"}
+          %input#r24{name: "radio-2", type: "radio"}/
+          %span Рэп
+    .ftr-gr.ckbx-list.items-toggle
+      .item.checkbox
+        %h3 Тип
+        %label{for: "checkbox-3"}
+          %input#checkbox-3{checked: "checked", type: "checkbox"}/
+          %span Не важно
+      .item.group
+        .ckbx-col
+          %div
+            %label{for: "chbx1"}
+              %input#chbx1{type: "checkbox"}/
+              %span Веселый
+          %div
+            %label{for: "chbx2"}
+              %input#chbx2{type: "checkbox"}/
+              %span Игровой
+          %div
+            %label{for: "chbx3"}
+              %input#chbx3{type: "checkbox"}/
+              %span Информационный
+        / /.ckbx-col
+        .ckbx-col
+          %div
+            %label{for: "chbx4"}
+              %input#chbx4{type: "checkbox"}/
+              %span Конферансье
+          %div
+            %label{for: "chbx5"}
+              %input#chbx5{type: "checkbox"}/
+              %span Клубный
+          %div
+            %label{for: "chbx6"}
+              %input#chbx6{type: "checkbox"}/
+              %span Народный
+        / /.ckbx-col
+      / /.item
+      .item.group.block-toggle
+        .ckbx-col
+          %div
+            %label{for: "chbx11"}
+              %input#chbx11{type: "checkbox"}/
+              %span Веселый
+          %div
+            %label{for: "chbx12"}
+              %input#chbx12{type: "checkbox"}/
+              %span Игровой
+          %div
+            %label{for: "chbx13"}
+              %input#chbx13{type: "checkbox"}/
+              %span Информационный
+        / /.ckbx-col
+        .ckbx-col
+          %div
+            %label{for: "chbx14"}
+              %input#chbx14{type: "checkbox"}/
+              %span Конферансье
+          %div
+            %label{for: "chbx15"}
+              %input#chbx15{type: "checkbox"}/
+              %span Клубный
+          %div
+            %label{for: "chbx16"}
+              %input#chbx16{type: "checkbox"}/
+              %span Народный
+        / /.ckbx-col
+      / /.item
+      .link-holder
+        %a.link-toggle Показать все варианты
+    / /.ckbx-list
+    .ftr-gr.ckbx-list
+      .item.checkbox
+        %h3 Возраст
+        %label{for: "checkbox-4"}
+          %input#checkbox-4{checked: "checked", type: "checkbox"}/
+          %span Не важно
+      .item.group
+        .ckbx-col
+          %div
+            %label{for: "chbx31"}
+              %input#chbx31{type: "checkbox"}/
+              %span Детский
+          %div
+            %label{for: "chbx32"}
+              %input#chbx32{type: "checkbox"}/
+              %span Молодой
+          %div
+            %label{for: "chbx33"}
+              %input#chbx33{type: "checkbox"}/
+              %span Пожилой
+        / /.ckbx-col
+        .ckbx-col
+          %div
+            %label{for: "chbx34"}
+              %input#chbx34{type: "checkbox"}/
+              %span Подростковый
+          %div
+            %label{for: "chbx35"}
+              %input#chbx35{type: "checkbox"}/
+              %span Взрослый
+          %div
+            %label{for: "chbx36"}
+              %input#chbx36{type: "checkbox"}/
+              %span Старческий
+        / /.ckbx-col
+      / /.item
+    / /.ckbx-list
+    .item.checkbox.full-width
+      %label{for: "checkbox-5"}
+        %input#checkbox-5{checked: "checked", type: "checkbox"}/
+        %span Показывать в результатах только дикторов со статусом «Онлайн»
+    .submit-holder
+      .holder
+        %a{href: ""}
+          Показать 23 предложения
+          %i.fa.fa-chevron-right
+        %input{type: "submit", value: ""}/
+/ /.bl-filters

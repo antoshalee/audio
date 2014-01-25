@@ -2,11 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-Piece '.piece_speakers_container',
+Piece '.speakers_container',
   initialize: ->
     $.get '/speakers', (data) ->
       console.log(data)
-      $('.piece_speakers_container').html(data)
+      $('.speakers_container').html(data)
       $('audio').audioPlayer();
 
 
