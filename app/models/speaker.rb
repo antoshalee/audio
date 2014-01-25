@@ -10,7 +10,7 @@ class Speaker < ActiveRecord::Base
 
   after_initialize :set_defaults
 
-  enumerize :sex, in: {male: 0, female: 1}
+  enumerize :sex, in: {male: 0, female: 1}, scope: true
   enumerize :timbre_level, in: {low: 0, middle: 1, high: 2}
 
   delegate :login, to: :user

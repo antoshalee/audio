@@ -13,13 +13,13 @@
         %label{for: "checkbox-1"}
           %input#checkbox-1{checked: "checked", type: "checkbox"}/
           %span Не важно
+
       .item.radio
-        %label{for: "r1"}
-          %input#r1{name: "radio-1", type: "radio"}/
-          %span Мужской
-        %label{for: "r2"}
-          %input#r2{checked: "checked", name: "radio-1", type: "radio"}/
-          %span Женский
+        - Speaker.sex.values.each do |value|
+          = label :with_sex, value.value do
+            = radio_button_tag :with_sex, value.value, value.male?
+            %span= value.text
+
       = hidden_field_tag :by_timbre_level
       .item.ui-slider
         #ui-slider-voice{data: {'input-selector' => '#by_timbre_level'}}
