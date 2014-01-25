@@ -15,6 +15,7 @@ class Speaker < ActiveRecord::Base
 
   delegate :login, to: :user
 
+  include Speaker::ScopeMethods
   include Speaker::Validations
 
   private

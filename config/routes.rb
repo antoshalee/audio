@@ -1,7 +1,10 @@
 Audio::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :speakers
+  resources :speakers do
+  	collection { get :count }
+  end
+
   resources :order_steps
   root to: "home#index"
 

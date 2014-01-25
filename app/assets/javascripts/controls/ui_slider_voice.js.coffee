@@ -12,3 +12,4 @@ Piece '#ui-slider-voice',
       value: $input.val()
       change: (event, ui) ->
         $input.val ui.value
+        $input.trigger('change')
