@@ -5,7 +5,7 @@ class Speaker < ActiveRecord::Base
   has_and_belongs_to_many :voice_types
   has_and_belongs_to_many :acceptable_order_categories,
     class_name: 'OrderCategory',
-    join_table: 'acceptable_order_categories_users',
+    join_table: 'acceptable_order_categories_speakers',
     association_foreign_key: :order_category_id
 
   after_initialize :set_defaults
