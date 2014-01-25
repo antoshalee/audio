@@ -5,4 +5,6 @@ Piece '.speakers_search_form',
       paramsString = $form.serialize()
       $.get "/speakers/count?#{paramsString}",
       (data) ->
-        console.log data
+        str = utils.pluralize(data.count, 'предложение', 'предложения', 'предложений')
+        $('.speakers_search_form_submit').text("Показать #{data.count} #{str}")
+
