@@ -16,6 +16,7 @@ gem 'russian'
 gem 'wicked'
 gem 'draper'
 gem 'has_scope'
+gem 'acts_as_list'
 
 # CanCan is not ready for Rails 4.. let try it anyway
 gem 'cancan'
