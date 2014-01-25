@@ -1,6 +1,7 @@
 class SpeakersController < ApplicationController
 
   has_scope :by_timbre_level
+  has_scope :by_order_category
 
   def index
     @speakers = Speaker.limit(10)

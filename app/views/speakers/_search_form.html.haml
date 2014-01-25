@@ -34,18 +34,12 @@
           %input#checkbox-2{checked: "checked", type: "checkbox"}/
           %span Не важно
       .item.radio
-        %label{for: "r21"}
-          %input#r21{name: "radio-2", type: "radio"}/
-          %span Начитка
-        %label{for: "r22"}
-          %input#r22{checked: "checked", name: "radio-2", type: "radio"}/
-          %span Пародия
-        %label{for: "r23"}
-          %input#r23{name: "radio-2", type: "radio"}/
-          %span Вокал
-        %label{for: "r24"}
-          %input#r24{name: "radio-2", type: "radio"}/
-          %span Рэп
+
+        - OrderCategory.order('position asc').each_with_index do |cat, index|
+          = label :by_order_category, cat.id do
+            = radio_button_tag :by_order_category, cat.id, (index == 0)
+            %span= cat.name
+
     .ftr-gr.ckbx-list.items-toggle
       .item.checkbox
         %h3 Тип
