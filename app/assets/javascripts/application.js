@@ -16,6 +16,7 @@
 //= require audioplayer
 //= require scripts
 //= require_tree ./core
+//= require_tree ./controls
 //= require speakers
 //= require order_steps
 //= require orders
