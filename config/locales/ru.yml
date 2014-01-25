@@ -15,13 +15,18 @@ ru:
         few: 'Типа голос'
         many: 'Типов голосов'
         other: 'Типы голоса'
-
-
+      order_category:
+        one: 'Категория'
+        few: 'Категория'
+        many: 'Категорий'
+        other: 'Категории'
     attributes:
       speaker:
         sex: Пол
         user: Пользователь
         timbre_level: Тембр
+      order_category:
+        name: 'Название'
       voice_type:
         name: 'Название'
       speaker:
