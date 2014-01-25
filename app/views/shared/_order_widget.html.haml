@@ -13,13 +13,11 @@
         Закрыт
     .cost
       200 руб.
-  / /.header
   .body
     .task
       = link_to modal_order_path(order), class: 'task-modal', remote: true do
         %i.fa.fa-arrow-down
         %span Техническое задание
-    / /.task
     .log
       .msg
         .time 18:45
@@ -70,6 +68,17 @@
         %a.btn-orange.pos-left{:href => ""}
           %i.fa.fa-times-circle-o>
           Отклонить заказ
-        %a.btn-gray.pos-right{:href => ""}
+        %a.btn-gray.pos-right.toggle-btn{:href => "#", data: {target: "#clarify-holder-#{order.id}"}}
           %i.fa.fa-info-circle>
           Уточнить
+      %div{style: 'display: none', id: "clarify-holder-#{order.id}"}
+        .title
+          %a.return{:href => ""}
+          Уточнить задание
+        .textarea-holder
+          %textarea{:cols => "30", :rows => "10"}
+          .tip Нельзя указывать контактную информацию.
+        .btns-holder
+          %a.btn-green.pos-left{:href => ""}
+            %i.fa.fa-check-circle-o>
+            Отправить вопрос

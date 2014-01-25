@@ -20,3 +20,4 @@
 //= require order_steps
 //= require orders
 //= require registration
+//= require buttons
