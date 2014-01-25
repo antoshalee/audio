@@ -20,8 +20,9 @@
         %label{for: "r2"}
           %input#r2{checked: "checked", name: "radio-1", type: "radio"}/
           %span Женский
+      = hidden_field_tag :by_timbre_level
       .item.ui-slider
-        #ui-slider-voice
+        #ui-slider-voice{data: {'input-selector' => '#by_timbre_level'}}
         .points.voice
           .p1 Низкий
           .p2 Средний
