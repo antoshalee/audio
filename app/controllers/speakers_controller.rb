@@ -8,6 +8,7 @@ class SpeakersController < ApplicationController
   end
 
   def count
+    raise "Not AJAX request" unless request.xhr?
     count = apply_scopes(Speaker.scoped).count
     render json: { count: count }
   end
