@@ -13,7 +13,12 @@ class ApplicationController < ActionController::Base
       :email,
       :password,
       :password_confirmation,
-      speaker_attributes: [:sex, :timbre_level, :voice_type_ids => []]
+      speaker_attributes: [
+        :sex,
+        :timbre_level,
+        :voice_type_ids => [],
+        :age_type_ids => []
+      ]
     ]
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(params) }
   end

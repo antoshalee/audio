@@ -87,38 +87,8 @@
             %br/
             или изменить после регистрации в личном
             кабинете
-        = render 'users/registrations/form/voice_types', f: speaker_f
-
-        / /.items-block-checkbox
-        .items-block-checkbox
-          %label Возраст
-          .col
-            .item-input-checkbox
-              %label{for: "chbx26"}
-                %input#chbx26{checked: "checked", type: "checkbox"}/
-                %span Десткий
-            .item-input-checkbox
-              %label{for: "chbx27"}
-                %input#chbx27{type: "checkbox"}/
-                %span Взрослый
-          .col
-            .item-input-checkbox
-              %label{for: "chbx28"}
-                %input#chbx28{type: "checkbox"}/
-                %span Подростковый
-            .item-input-checkbox
-              %label{for: "chbx29"}
-                %input#chbx29{type: "checkbox"}/
-                %span Пожилой
-          .col
-            .item-input-checkbox
-              %label{for: "chbx30"}
-                %input#chbx30{type: "checkbox"}/
-                %span Молодой
-            .item-input-checkbox
-              %label{for: "chbx31"}
-                %input#chbx31{type: "checkbox"}/
-                %span Старческий
+        = render 'users/registrations/form/voice_types',  f: speaker_f
+        = render 'users/registrations/form/age_types',    f: speaker_f
         = render 'users/registrations/form/timbre_level', f: speaker_f
         .tip
           %p
