@@ -3,6 +3,7 @@ class SpeakersController < ApplicationController
   has_scope :by_timbre_level
   has_scope :by_order_category
   has_scope :with_sex
+  has_scope :with_voice_types, type: :array
 
   def index
     @speakers = Speaker.limit(10)

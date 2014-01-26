@@ -8,6 +8,12 @@ class Speaker
       	joins(:acceptable_order_categories).
         where(acceptable_order_categories_speakers: {order_category_id: cat})
       end
+
+      scope :with_voice_types, ->(types) do
+        joins(:voice_types).
+        where(speakers_voice_types: {voice_type_id: types}).uniq
+      end
+
     end
 
   end

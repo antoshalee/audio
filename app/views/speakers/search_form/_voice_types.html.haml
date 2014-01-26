@@ -1,0 +1,18 @@
+- voice_types = VoiceType.order('position asc').all
+- hided_types = Array(voice_types[6..-1])
+.ftr-gr.ckbx-list.items-toggle
+  .item.checkbox
+    %h3 Тип
+    %label{for: "checkbox-3"}
+      %input#checkbox-3{checked: "checked", type: "checkbox"}/
+      %span Не важно
+  .item.group
+    - voice_types[0..5].in_groups(2, false) do |group|
+      .ckbx-col
+        = render partial: "speakers/search_form/voice_type", collection: group, as: :type
+  .item.group.block-toggle
+    - Array(voice_types[6..-1]).in_groups(2, false) do |group|
+      .ckbx-col
+        = render partial: "speakers/search_form/voice_type", collection: group, as: :type
+  .link-holder
+    %a.link-toggle Показать все варианты

@@ -40,74 +40,7 @@
             = radio_button_tag :by_order_category, cat.id, (index == 0)
             %span= cat.name
 
-    .ftr-gr.ckbx-list.items-toggle
-      .item.checkbox
-        %h3 Тип
-        %label{for: "checkbox-3"}
-          %input#checkbox-3{checked: "checked", type: "checkbox"}/
-          %span Не важно
-      .item.group
-        .ckbx-col
-          %div
-            %label{for: "chbx1"}
-              %input#chbx1{type: "checkbox"}/
-              %span Веселый
-          %div
-            %label{for: "chbx2"}
-              %input#chbx2{type: "checkbox"}/
-              %span Игровой
-          %div
-            %label{for: "chbx3"}
-              %input#chbx3{type: "checkbox"}/
-              %span Информационный
-        / /.ckbx-col
-        .ckbx-col
-          %div
-            %label{for: "chbx4"}
-              %input#chbx4{type: "checkbox"}/
-              %span Конферансье
-          %div
-            %label{for: "chbx5"}
-              %input#chbx5{type: "checkbox"}/
-              %span Клубный
-          %div
-            %label{for: "chbx6"}
-              %input#chbx6{type: "checkbox"}/
-              %span Народный
-        / /.ckbx-col
-      / /.item
-      .item.group.block-toggle
-        .ckbx-col
-          %div
-            %label{for: "chbx11"}
-              %input#chbx11{type: "checkbox"}/
-              %span Веселый
-          %div
-            %label{for: "chbx12"}
-              %input#chbx12{type: "checkbox"}/
-              %span Игровой
-          %div
-            %label{for: "chbx13"}
-              %input#chbx13{type: "checkbox"}/
-              %span Информационный
-        / /.ckbx-col
-        .ckbx-col
-          %div
-            %label{for: "chbx14"}
-              %input#chbx14{type: "checkbox"}/
-              %span Конферансье
-          %div
-            %label{for: "chbx15"}
-              %input#chbx15{type: "checkbox"}/
-              %span Клубный
-          %div
-            %label{for: "chbx16"}
-              %input#chbx16{type: "checkbox"}/
-              %span Народный
-        / /.ckbx-col
-      / /.item
-      .link-holder
-        %a.link-toggle Показать все варианты
+    = render 'speakers/search_form/voice_types'
     / /.ckbx-list
     .ftr-gr.ckbx-list
       .item.checkbox
