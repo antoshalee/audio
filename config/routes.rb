@@ -1,4 +1,5 @@
 Audio::Application.routes.draw do
+  get "records/cache"
   ActiveAdmin.routes(self)
   devise_for :users
   resources :speakers do
@@ -12,6 +13,10 @@ Audio::Application.routes.draw do
 
   resources :orders, only: nil do
   	member { get :modal }
+  end
+
+  resources :demos do
+    collection { post :cache }
   end
 
 end

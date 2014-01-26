@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126091703) do
+ActiveRecord::Schema.define(version: 20140126173448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,15 @@ ActiveRecord::Schema.define(version: 20140126091703) do
   add_index "billing_transfers", ["recipient_account_id"], name: "index_billing_transfers_on_recipient_account_id", using: :btree
   add_index "billing_transfers", ["sender_account_id"], name: "index_billing_transfers_on_sender_account_id", using: :btree
 
+  create_table "demos", force: true do |t|
+    t.string   "file"
+    t.integer  "speaker_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "demos", ["speaker_id"], name: "index_demos_on_speaker_id", using: :btree
+
   create_table "order_categories", force: true do |t|
     t.string   "name"
     t.integer  "position"
@@ -109,6 +118,12 @@ ActiveRecord::Schema.define(version: 20140126091703) do
 
   add_index "orders", ["client_id"], name: "index_orders_on_client_id", using: :btree
   add_index "orders", ["speaker_id"], name: "index_orders_on_speaker_id", using: :btree
+
+  create_table "records", force: true do |t|
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "speakers", force: true do |t|
     t.integer  "user_id"

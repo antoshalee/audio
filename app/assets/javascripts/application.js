@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui-slider
+//= require jquery.fileupload
 //= require audioplayer
 //= require scripts
 //= require_tree ./core
@@ -22,3 +23,4 @@
 //= require orders
 //= require registration
 //= require buttons
+//= require upload
