@@ -1,9 +1,8 @@
 .items-block-checkbox
   %label Тип голоса
-  - slice_count = (VoiceType.count.to_f / 3).ceil
-  - VoiceType.scoped.each_slice(slice_count) do |slice|
+  - VoiceType.scoped.in_groups(3, false) do |group|
     .col
-      - slice.each do |type|
+      - group.each do |type|
         .item-input-checkbox
           %label{for: "user_speaker_attributes_voice_type_ids_#{type.id}"}
             = check_box_tag "user[speaker_attributes][voice_type_ids][]", type.id, f.object.voice_types.include?(type), id: "user_speaker_attributes_voice_type_ids_#{type.id}"
