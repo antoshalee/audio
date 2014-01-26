@@ -1,5 +1,5 @@
 .bl-filters
-  %form.speakers_search_form{action: ""}
+  = form_tag speakers_path, method: :get, class: 'speakers_search_form' do
     %h2 Подбор диктора
     = render 'speakers/search_form/voice'
     = render 'speakers/search_form/order_category'
