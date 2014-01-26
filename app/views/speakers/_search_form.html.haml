@@ -1,45 +1,8 @@
-/ %h2 Форма поиска
-/ = search_form_for @q do |f|
-/   = f.label :voice_kind_cont
-/   =# f.text_field :voice_kind_cont
-/   = f.submit
-
 .bl-filters
   %form.speakers_search_form{action: ""}
     %h2 Подбор диктора
-    .ftr-gr
-      .item.checkbox
-        %h3 Голос
-        %label{for: "checkbox-1"}
-          %input#checkbox-1{checked: "checked", type: "checkbox"}/
-          %span Не важно
-
-      .item.radio
-        - Speaker.sex.values.each do |value|
-          = label :with_sex, value.value do
-            = radio_button_tag :with_sex, value.value, value.male?
-            %span= value.text
-
-      = hidden_field_tag :with_timbre_level
-      .item.ui-slider
-        #ui-slider-voice{data: {'input-selector' => '#with_timbre_level'}}
-        .points.voice
-          .p1 Низкий
-          .p2 Средний
-          .p3 Высокий
-    .ftr-gr
-      .item.checkbox
-        %h3 Категория
-        %label{for: "checkbox-2"}
-          %input#checkbox-2{checked: "checked", type: "checkbox"}/
-          %span Не важно
-      .item.radio
-
-        - OrderCategory.order('position asc').each_with_index do |cat, index|
-          = label :by_order_category, cat.id do
-            = radio_button_tag :by_order_category, cat.id, (index == 0)
-            %span= cat.name
-
+    = render 'speakers/search_form/voice'
+    = render 'speakers/search_form/order_category'
     = render 'speakers/search_form/voice_types'
     = render 'speakers/search_form/age_types'
     .item.checkbox.full-width
@@ -52,4 +15,3 @@
           Показать 23 предложения
           %i.fa.fa-chevron-right
         %input{type: "submit", value: ""}/
-/ /.bl-filters

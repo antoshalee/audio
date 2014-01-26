@@ -1,0 +1,20 @@
+.ftr-gr
+  .item.checkbox
+    %h3 Голос
+    %label{for: "checkbox-1"}
+      %input#checkbox-1{checked: "checked", type: "checkbox"}/
+      %span Не важно
+
+  .item.radio
+    - Speaker.sex.values.each do |value|
+      = label :with_sex, value.value do
+        = radio_button_tag :with_sex, value.value, value.male?
+        %span= value.text
+
+  = hidden_field_tag :with_timbre_level
+  .item.ui-slider
+    #ui-slider-voice{data: {'input-selector' => '#with_timbre_level'}}
+    .points.voice
+      .p1 Низкий
+      .p2 Средний
+      .p3 Высокий
