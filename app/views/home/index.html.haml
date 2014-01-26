@@ -49,7 +49,7 @@
   .main
     %h2 10 популярных дикторов
     .speakers_container
-
+      = render partial: "speakers/list_item", collection: @speakers, as: :speaker
     .block-results-holder
       .link-holder
         %a{href: ""}
@@ -59,5 +59,3 @@
         всего
         %span 492
         диктора
-  / /.main
-/ /.cols2-layout

@@ -1,5 +1,4 @@
 class SpeakersController < ApplicationController
-
   has_scope :with_timbre_level
   has_scope :by_order_category
   has_scope :with_sex
@@ -7,8 +6,7 @@ class SpeakersController < ApplicationController
   has_scope :with_age_types, type: :array
 
   def index
-    @speakers = Speaker.limit(10)
-    render layout: false
+    @speakers = apply_scopes(Speaker.scoped)
   end
 
   def count

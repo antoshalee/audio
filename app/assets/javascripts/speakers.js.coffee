@@ -4,6 +4,7 @@
 
 Piece '.speakers_container',
   initialize: ->
+    return
     $.get '/speakers', (data) ->
       console.log(data)
       $('.speakers_container').html(data)

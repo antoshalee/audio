@@ -1,13 +1,15 @@
 %header
   .wrap
-    %h1.logo
-      Аудиозаказ
+    - if current_page?(root_path)
+      %h1.logo Аудиозаказ
+    - else
+      %a{href: root_path, class: 'logo'} Аудиозаказ
     %nav.item-1
       %ul
         %li
-          = link_to "Личный кабинет", profile_path
+          = link_to 'Личный кабинет', profile_path
         %li
-          %a{href: "/"} Дикторы
+          = link_to 'Дикторы', speakers_path
     - if user_signed_in?
       %nav.item-2.user
         %ul
