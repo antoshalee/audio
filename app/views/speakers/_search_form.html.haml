@@ -41,44 +41,7 @@
             %span= cat.name
 
     = render 'speakers/search_form/voice_types'
-    / /.ckbx-list
-    .ftr-gr.ckbx-list
-      .item.checkbox
-        %h3 Возраст
-        %label{for: "checkbox-4"}
-          %input#checkbox-4{checked: "checked", type: "checkbox"}/
-          %span Не важно
-      .item.group
-        .ckbx-col
-          %div
-            %label{for: "chbx31"}
-              %input#chbx31{type: "checkbox"}/
-              %span Детский
-          %div
-            %label{for: "chbx32"}
-              %input#chbx32{type: "checkbox"}/
-              %span Молодой
-          %div
-            %label{for: "chbx33"}
-              %input#chbx33{type: "checkbox"}/
-              %span Пожилой
-        / /.ckbx-col
-        .ckbx-col
-          %div
-            %label{for: "chbx34"}
-              %input#chbx34{type: "checkbox"}/
-              %span Подростковый
-          %div
-            %label{for: "chbx35"}
-              %input#chbx35{type: "checkbox"}/
-              %span Взрослый
-          %div
-            %label{for: "chbx36"}
-              %input#chbx36{type: "checkbox"}/
-              %span Старческий
-        / /.ckbx-col
-      / /.item
-    / /.ckbx-list
+    = render 'speakers/search_form/age_types'
     .item.checkbox.full-width
       %label{for: "checkbox-5"}
         %input#checkbox-5{checked: "checked", type: "checkbox"}/

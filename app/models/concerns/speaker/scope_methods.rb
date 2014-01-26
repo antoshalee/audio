@@ -13,6 +13,11 @@ class Speaker
         where(speakers_voice_types: {voice_type_id: types}).uniq
       end
 
+      scope :with_age_types, ->(types) do
+        joins(:age_types).
+        where(age_types_speakers: {age_type_id: types}).uniq
+      end
+
     end
 
   end

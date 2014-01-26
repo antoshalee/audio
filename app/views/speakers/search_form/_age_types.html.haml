@@ -1,0 +1,14 @@
+.ftr-gr.ckbx-list
+  .item.checkbox
+    %h3 Возраст
+    %label{for: "checkbox-4"}
+      %input#checkbox-4{checked: "checked", type: "checkbox"}/
+      %span Не важно
+  .item.group
+    - AgeType.order('position asc').in_groups(2, false) do |group|
+      .ckbx-col
+        - group.each do |type|
+          %div
+            %label{for: "with_age_types_#{type.id}"}
+              = check_box_tag "with_age_types[]", type.id, false, id: "with_age_types_#{type.id}"
+              %span= type.name
