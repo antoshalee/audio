@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126070440) do
+ActiveRecord::Schema.define(version: 20140126091703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,21 @@ ActiveRecord::Schema.define(version: 20140126070440) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "age_types", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "age_types_speakers", force: true do |t|
+    t.integer "age_type_id"
+    t.integer "speaker_id"
+  end
+
+  add_index "age_types_speakers", ["age_type_id"], name: "index_age_types_speakers_on_age_type_id", using: :btree
+  add_index "age_types_speakers", ["speaker_id"], name: "index_age_types_speakers_on_speaker_id", using: :btree
 
   create_table "billing_accounts", force: true do |t|
     t.integer  "balance"
