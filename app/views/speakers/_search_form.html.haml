@@ -20,9 +20,9 @@
             = radio_button_tag :with_sex, value.value, value.male?
             %span= value.text
 
-      = hidden_field_tag :by_timbre_level
+      = hidden_field_tag :with_timbre_level
       .item.ui-slider
-        #ui-slider-voice{data: {'input-selector' => '#by_timbre_level'}}
+        #ui-slider-voice{data: {'input-selector' => '#with_timbre_level'}}
         .points.voice
           .p1 Низкий
           .p2 Средний
