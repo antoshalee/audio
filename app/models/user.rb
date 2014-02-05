@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :speaker
   validates :login, presence: true
 
+  def speaker?
+    speaker.present?
+  end
+
 end

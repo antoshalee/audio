@@ -39,8 +39,9 @@
     .avatar
       %img{:alt => "", :src => "img/tmp/avatar2.png"}/
     %h2
-      somenick12
-      %span диктор
+      = current_user.login
+      - if current_user.speaker?
+        %span диктор
     %ul
       %li.current
         %a{:href => ""}<
