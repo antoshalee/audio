@@ -11,7 +11,11 @@ class OrderStepsController < ApplicationController
 
   def update
     @order = Order.find session[:order_id]
-    @order.update_attributes(order_params)
+
+    if params[:order].present?
+      @order.update_attributes(order_params)
+    end
+
     @order.activate! if step == steps.last
     render_wizard @order
   end

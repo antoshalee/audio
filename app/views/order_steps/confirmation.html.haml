@@ -1,7 +1,7 @@
 .wizard-layout#wizard-layout
   %h1 — Оформление заказа —
   .step-holder
-    %form{:action => ""}
+    = form_for @order, :url => wizard_path, :method => :put, html: { class: 'order_wizard_form' } do |f|
       .wrapper
         %h2 Подтверждение
         .item-text
@@ -53,6 +53,6 @@
       = link_to previous_wizard_path, class: 'prev' do
         %i.fa.fa-arrow-left
         Назад
-      = link_to next_wizard_path, class: 'next' do
+      = link_to next_wizard_path, class: 'next order_wizard_form_submit' do
         %i.fa.fa-arrow-right
         Продолжить
