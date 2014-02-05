@@ -12,7 +12,10 @@ Audio::Application.routes.draw do
   get 'profile', to: 'orders#index', as: 'profile'
 
   resources :orders, only: nil do
-  	member { get :modal }
+  	member do
+      get :modal
+      post :accept
+    end
   end
 
   resources :demos do

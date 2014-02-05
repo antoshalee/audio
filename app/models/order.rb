@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   include AASM
   belongs_to :speaker
   belongs_to :client, class_name: 'User'
+  has_many :events
   validates :speaker, presence: true
   validates :state, presence: true
   # belongs_to :client
@@ -11,10 +12,16 @@ class Order < ActiveRecord::Base
   aasm column: 'state' do
     state :created, :initial => true
     state :active
+    state :accepted
 
     event :activate do
-      transitions :from => :created, :to => :active
+      transitions :to => :active
     end
+
+    event :accept do
+      transitions :to => :accepted
+    end
+
   end
 
   scope :active, ->{ where state: :active }
