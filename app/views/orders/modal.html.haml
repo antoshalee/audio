@@ -12,10 +12,10 @@
     %ul
       %li
         %span Автор заказа
-        %span Lermon13
+        %span= @order.client.login
       %li
         %span Требуемый хронометраж
-        %span 30 секунд
+        %span #{@order.duration} секунд
   .wrapper
     %article
       %h3 Задание

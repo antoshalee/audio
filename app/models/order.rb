@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   include AASM
   belongs_to :speaker
+  belongs_to :client, class_name: 'User'
   validates :speaker, presence: true
   validates :state, presence: true
   # belongs_to :client

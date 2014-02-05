@@ -22,7 +22,7 @@ class OrderStepsController < ApplicationController
 
   def create
     speaker = Speaker.find(params[:speaker])
-    @order = Order.create!(speaker: speaker)
+    @order = Order.create!(speaker: speaker, client: current_user)
 
     session[:order_id] = @order.id
     redirect_to wizard_path(steps.first)
