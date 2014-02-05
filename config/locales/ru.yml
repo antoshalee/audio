@@ -1,5 +1,8 @@
 ru:
   enumerize:
+    event:
+      kind:
+        accepted: Начало работы
     speaker:
       sex:
         male: Мужской

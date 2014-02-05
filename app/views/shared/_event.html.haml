@@ -1,0 +1,4 @@
+.msg
+  .time= l(event.created_at, format: '%H:%M')
+  .text-holder
+    %strong= event.kind.text
