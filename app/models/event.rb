@@ -9,5 +9,5 @@ class Event < ActiveRecord::Base
   enumerize :kind, in: %w(
     accepted
     record_attached
-  )
+  ), predicates: true
 end
