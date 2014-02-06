@@ -15,11 +15,17 @@ Audio::Application.routes.draw do
   	member do
       get :modal
       post :accept
+      post :attach_record
     end
   end
 
   resources :demos do
     collection { post :cache }
   end
+
+  resources :records do
+    collection { post :cache }
+  end
+
 
 end

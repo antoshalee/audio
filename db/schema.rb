@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205185107) do
+ActiveRecord::Schema.define(version: 20140206191523) do
 
   create_table "acceptable_order_categories_speakers", force: true do |t|
     t.integer "order_category_id", null: false
@@ -132,7 +132,11 @@ ActiveRecord::Schema.define(version: 20140205185107) do
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner_id",   null: false
+    t.string   "owner_type", null: false
   end
+
+  add_index "records", ["owner_id"], name: "index_records_on_owner_id", using: :btree
 
   create_table "speakers", force: true do |t|
     t.integer  "user_id"

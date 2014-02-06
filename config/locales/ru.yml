@@ -3,6 +3,7 @@ ru:
     event:
       kind:
         accepted: Начало работы
+        record_attached: Опубликована аудиозапись
     speaker:
       sex:
         male: Мужской

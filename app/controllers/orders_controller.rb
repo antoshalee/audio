@@ -20,4 +20,15 @@ class OrdersController < ApplicationController
     end
     redirect_to :back
   end
+
+  def attach_record
+    @order = Order.find params[:id]
+    authorize! :attach_record_to, @order
+
+    event_params = params.require(:event).permit([:records_attributes => [:file_cache]])
+
+    @order.events.create!(event_params.merge(kind: 'record_attached', user: current_user))
+    redirect_to :back
+  end
+
 end

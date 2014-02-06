@@ -1,11 +1,9 @@
-# TODO: deprecated
-# move to records controller
-class DemosController < ApplicationController
+class RecordsController < ApplicationController
   def cache
     html_result = ""
-    params[:demos].each do |file|
+    params[:records].each do |file|
       cache_name = cache_as_audio file
-      html_result += render_to_string(partial: "demo_block", locals: {cache_name: cache_name})
+      html_result += render_to_string(partial: "order_event", locals: {cache_name: cache_name})
     end
     render text: html_result, content_type: "text/html"
   end
