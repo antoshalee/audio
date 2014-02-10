@@ -2,8 +2,9 @@ ru:
   enumerize:
     event:
       kind:
-        accepted: Начало работы
+        started: Начало работы
         record_attached: Опубликована аудиозапись
+        declined: 'Необходима перечитка:'
     speaker:
       sex:
         male: Мужской

@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :records
 
   enumerize :kind, in: %w(
+  	started
+  	declined
     accepted
     record_attached
   ), predicates: true

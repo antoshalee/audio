@@ -14,8 +14,10 @@ Audio::Application.routes.draw do
   resources :orders, only: nil do
   	member do
       get :modal
-      post :accept
+      post :start
       post :attach_record
+      post :decline
+      post :accept
     end
   end
 

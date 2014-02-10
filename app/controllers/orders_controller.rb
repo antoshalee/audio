@@ -11,12 +11,12 @@ class OrdersController < ApplicationController
   	render layout: false
   end
 
-  def accept
+  def start
     @order = Order.find params[:id]
-    authorize! :accept_by_speaker, @order
+    authorize! :start, @order
     ActiveRecord::Base.transaction do
-      @order.accept!
-      @order.events.create!(kind: 'accepted', user: current_user)
+      @order.start!
+      @order.events.create!(kind: 'started', user: current_user)
     end
     redirect_to :back
   end
@@ -24,11 +24,30 @@ class OrdersController < ApplicationController
   def attach_record
     @order = Order.find params[:id]
     authorize! :attach_record_to, @order
-
     event_params = params.require(:event).permit([:records_attributes => [:file_cache]])
-
-    @order.events.create!(event_params.merge(kind: 'record_attached', user: current_user))
+    ActiveRecord::Base.transaction do
+      @order.attach_record!
+      @order.events.create!(event_params.merge(kind: 'record_attached', user: current_user))
+    end
     redirect_to :back
   end
+
+  def decline
+    @order = Order.find params[:id]
+    authorize! :decline, @order
+    event_params = params.require(:event).permit([:message])
+    ActiveRecord::Base.transaction do
+      @order.decline!
+      @order.events.create!(event_params.merge(kind: 'declined', user: current_user))
+    end
+    redirect_to :back
+  end
+
+  def accept
+
+  end
+
+
+
 
 end

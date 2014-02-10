@@ -20,50 +20,15 @@
         %span Техническое задание
     .log
       = render partial: 'shared/event', collection: order.events
-      .msg
-        .time 18:45
-        .text-holder
-          %strong Начало работы
-      / .msg
-      /   .time 18:57
-      /   .text-holder
-      /     %strong Опубликована аудиозапись:
-      /     .audio-holder
-      /       %audio{:controls => "", :preload => "auto"}
-      /         %source{:src => "files/audio.mp3"}/
-      /         %source{:src => "files/audio.ogg"}/
-      /         %source{:src => "files/audio.wav"}/
-      /       %a.btn-download{:href => ""}
-      /         %i.fa.fa-arrow-circle-o-down>
-      /         Скачать
-      .msg
-        .time 19:06
-        .text-holder
-          %strong Необходима перечитка:
-          %p
-            Хотелось бы больше эмоций и акцента на названии нашей прекрасной компании.
-            Представьте, что вы Иосиф Кобзон. Скажите с чувством!
-      / .msg
-      /   .time 18:57
-      /   .text-holder
-      /     %strong Опубликована аудиозапись:
-      /     .audio-holder
-      /       %audio{:controls => "", :preload => "auto"}
-      /         %source{:src => "files/audio.mp3"}/
-      /         %source{:src => "files/audio.ogg"}/
-      /         %source{:src => "files/audio.wav"}/
-      /       %a.btn-download{:href => ""}
-      /         %i.fa.fa-arrow-circle-o-down>
-      /         Скачать
       .msg.accept
         .time 19:45
         .text-holder
           %strong
             %i.fa.fa-check
             Работа принята.
-    - if can? :accept_by_speaker, order
+    - if can? :start, order
       .btns-holder
-        = link_to accept_order_path(order), method: :post, class: %w(btn-green pos-left) do
+        = link_to start_order_path(order), method: :post, class: %w(btn-green pos-left) do
           %i.fa.fa-check-circle-o>
           Принять заказ и начать работу
         %a.btn-orange.pos-left{:href => ""}
@@ -97,7 +62,30 @@
           %ul#fu-123.form-files-uploaded
             / The file uploads will be shown here
         .btns-holder
-          %button.btn-green.pos-left{:href => ""}
+          %button.btn-green.pos-left
             %i.fa.fa-check-circle-o>
             Отправить
-        / /.btns-holder
+    - if can? :accept, order
+      .btns-holder
+        %a.btn-green.pos-left{:href => ""}
+          %i.fa.fa-check-circle-o>
+          Принять работу и скачать файлы
+        %a.btn-orange.pos-left.toggle-btn{:href => "#", data: {target: "#respeaking-holder-#{order.id}"}}
+          %i.fa.fa-times-circle-o>
+          Необходима перечитка (осталось 3)
+      %div{style: 'display: none', id: "respeaking-holder-#{order.id}"}
+        .title
+          %a.return{:href => ""}
+          Причина перечитки (осталось 3)
+        = form_tag decline_order_path(order), method: :post do
+          .textarea-holder
+            %textarea{cols: "30", rows: "10", name: "event[message]"}
+            .tip
+              Вы можете требовать перечитку не более 3 раз.
+              = succeed "\u{41d}\u{435}\u{43b}\u{44c}\u{437}\u{44f}" do
+                %br/
+              указывать контактную информацию.
+          .btns-holder
+            %button.btn-green.pos-left
+              %i.fa.fa-check-circle-o>
+              Отправить вопрос
