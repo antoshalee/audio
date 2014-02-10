@@ -2,12 +2,12 @@ class OrdersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-  	@orders = Order.where(speaker: current_user.try(:speaker))
+  	@orders = Order.where(speaker: current_user.try(:speaker)).decorate
   end
 
   def modal
   	raise "Not AJAX request" unless request.xhr?
-  	@order = Order.find params[:id]
+  	@order = Order.find(params[:id]).decorate
   	render layout: false
   end
 
