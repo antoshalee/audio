@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     params = [
       :login,
       :email,
+      :phone,
       :password,
       :password_confirmation,
       speaker_attributes: [
