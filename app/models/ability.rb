@@ -9,9 +9,10 @@ class Ability
         speaker_id: user.speaker.id, state: ['started', 'declined']
     end
 
-    can [:accept, :decline], Order,
+    can :accept, Order,
       client_id: user.id, state: ['record_attached']
 
-
+    can :decline, Order,
+      client_id: user.id, state: ['record_attached'], declines_count: 0..(Order::DECLINES_LIMIT-1)
   end
 end
