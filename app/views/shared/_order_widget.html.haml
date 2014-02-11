@@ -3,7 +3,7 @@
     %a.open-status
     .username
       .avatar
-      %a.name{:href => ""} Lermon2013
+      %a.name{:href => ""}= order.coworker_of(current_user).login
     .order-name= order.name
     .date
       = order.created_at_short

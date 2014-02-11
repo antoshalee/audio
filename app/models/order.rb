@@ -41,6 +41,12 @@ class Order < ActiveRecord::Base
 
   scope :active, ->{ where state: :active }
 
+  def coworker_of user
+    return self.speaker.user if user == self.client
+    return self.client if user == self.speaker.user
+    nil
+  end
+
   # alias aasm_assign_speaker assign_speaker
 
   # def assign_speaker speaker
