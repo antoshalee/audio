@@ -5,9 +5,6 @@ class Order < ActiveRecord::Base
   has_many :events, order: 'id asc', dependent: :destroy
   validates :speaker, presence: true
   validates :state, presence: true
-  # belongs_to :client
-
-  # validates :price, numericality: {greater_than: 0}
 
   aasm column: 'state' do
     state :created, :initial => true
@@ -46,12 +43,5 @@ class Order < ActiveRecord::Base
     return self.client if user == self.speaker.user
     nil
   end
-
-  # alias aasm_assign_speaker assign_speaker
-
-  # def assign_speaker speaker
-  #   self.speaker = speaker
-  #   aasm_assign_speaker
-  # end
 
 end

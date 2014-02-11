@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206191523) do
+ActiveRecord::Schema.define(version: 20140211164258) do
 
   create_table "acceptable_order_categories_speakers", force: true do |t|
     t.integer "order_category_id", null: false
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20140206191523) do
   end
 
   create_table "orders", force: true do |t|
-    t.string   "state",       default: "created", null: false
+    t.string   "state",          default: "created", null: false
     t.text     "description"
     t.integer  "speaker_id"
     t.integer  "client_id"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20140206191523) do
     t.text     "text"
     t.integer  "duration"
     t.string   "name"
+    t.integer  "declines_count", default: 0
   end
 
   add_index "orders", ["client_id"], name: "index_orders_on_client_id", using: :btree
