@@ -6,7 +6,7 @@ class Ability
       can [:deny_by_speaker, :start], Order,
         speaker_id: user.speaker.id, state: ['active']
       can :attach_record_to, Order,
-        speaker_id: user.speaker.id, state: ['started']
+        speaker_id: user.speaker.id, state: ['started', 'declined']
     end
 
     can [:accept, :decline], Order,
