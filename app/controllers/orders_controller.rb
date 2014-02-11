@@ -5,6 +5,16 @@ class OrdersController < ApplicationController
   	@orders = Order.where(speaker: current_user.try(:speaker)).decorate
   end
 
+  def speaker
+    @orders = Order.where(speaker: current_user.try(:speaker)).decorate
+    render :index
+  end
+
+  def client
+    @orders = Order.where(client: current_user).decorate
+    render :index
+  end
+
   def modal
   	raise "Not AJAX request" unless request.xhr?
   	@order = Order.find(params[:id]).decorate

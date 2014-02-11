@@ -9,9 +9,14 @@ Audio::Application.routes.draw do
   resources :order_steps
   root to: "home#index"
 
-  get 'profile', to: 'orders#index', as: 'profile'
+  get 'profile', to: redirect('/orders/client')
+
 
   resources :orders, only: nil do
+    collection do
+      get :speaker
+      get :client
+    end
   	member do
       get :modal
       post :start
