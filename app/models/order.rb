@@ -36,6 +36,11 @@ class Order < ActiveRecord::Base
       transitions :to => :declined
     end
 
+    event :reject do
+      transitions :to => :rejected
+    end
+
+
   end
 
   scope :active, ->{ where state: :active }

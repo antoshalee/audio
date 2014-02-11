@@ -74,6 +74,10 @@
           %a.btn-orange.pos-left.toggle-btn{:href => "#", data: {target: "#respeaking-holder-#{order.id}"}}
             %i.fa.fa-times-circle-o>
             Необходима перечитка (осталось #{order.declines_remaining})
+        - if can? :reject, order
+          %a.btn-orange.pos-left.toggle-btn{:href => "#", data: {target: "#reject-holder-#{order.id}"}}
+            %i.fa.fa-times-circle-o>
+            Меня не устраивает результат
       - if can? :decline, order
         %div{style: 'display: none', id: "respeaking-holder-#{order.id}"}
           .title
@@ -91,3 +95,22 @@
               %button.btn-green.pos-left
                 %i.fa.fa-check-circle-o>
                 Отправить вопрос
+      - if can? :reject, order
+        %div{style: 'display: none', id: "reject-holder-#{order.id}"}
+          .title
+            %a.return.toggle-btn{href: "#", data: {target: "#reject-holder-#{order.id}"}}
+            Меня не устраивает результат
+          .textarea-holder.captcha-holder
+            %p
+              Опишите подробно причину, по которой вас не устраивает результат работы по заказу.
+              %br/
+              Администрация сайта ознакомится с вашим сообщением и примет решение по заказу.
+            %textarea{cols: "30", rows: "10"}
+            .block-captcha
+              %img{alt: "", src: "img/tmp/captcha.png"}/
+          .btns-holder
+            %a.btn-green.pos-left{href: ""}
+              %i.fa.fa-check-circle-o>
+              Отправить
+          / /.btns-holder
+

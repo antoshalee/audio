@@ -14,5 +14,8 @@ class Ability
 
     can :decline, Order,
       client_id: user.id, state: ['record_attached'], declines_count: 0..(Order::DECLINES_LIMIT-1)
+
+    can :reject, Order,
+      client_id: user.id, state: ['record_attached'], declines_count: Order::DECLINES_LIMIT
   end
 end
