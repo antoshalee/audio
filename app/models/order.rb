@@ -1,5 +1,7 @@
 class Order < ActiveRecord::Base
   include AASM
+  DECLINES_LIMIT = 3
+
   belongs_to :speaker
   belongs_to :client, class_name: 'User'
   has_many :events, order: 'id asc', dependent: :destroy
@@ -42,6 +44,10 @@ class Order < ActiveRecord::Base
     return self.speaker.user if user == self.client
     return self.client if user == self.speaker.user
     nil
+  end
+
+  def declines_remaining
+    DECLINES_LIMIT - declines_count
   end
 
 end
