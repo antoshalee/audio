@@ -5,9 +5,9 @@ class Speaker < ActiveRecord::Base
   has_many :demos
   has_and_belongs_to_many :voice_types
   has_and_belongs_to_many :age_types
-  has_and_belongs_to_many :acceptable_order_categories,
+  has_and_belongs_to_many :categories,
     class_name: 'OrderCategory',
-    join_table: 'acceptable_order_categories_speakers',
+    join_table: 'categories_speakers',
     association_foreign_key: :order_category_id
 
   accepts_nested_attributes_for :demos

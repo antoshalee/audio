@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211164258) do
+ActiveRecord::Schema.define(version: 20140212143200) do
 
-  create_table "acceptable_order_categories_speakers", force: true do |t|
-    t.integer "order_category_id", null: false
-    t.integer "speaker_id",        null: false
-  end
-
-  add_index "acceptable_order_categories_speakers", ["order_category_id"], name: "index_acceptable_order_categories_speakers_on_order_category_id", using: :btree
-  add_index "acceptable_order_categories_speakers", ["speaker_id"], name: "index_acceptable_order_categories_speakers_on_speaker_id", using: :btree
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -82,6 +77,14 @@ ActiveRecord::Schema.define(version: 20140211164258) do
 
   add_index "billing_transfers", ["recipient_account_id"], name: "index_billing_transfers_on_recipient_account_id", using: :btree
   add_index "billing_transfers", ["sender_account_id"], name: "index_billing_transfers_on_sender_account_id", using: :btree
+
+  create_table "categories_speakers", force: true do |t|
+    t.integer "order_category_id", null: false
+    t.integer "speaker_id",        null: false
+  end
+
+  add_index "categories_speakers", ["order_category_id"], name: "index_categories_speakers_on_order_category_id", using: :btree
+  add_index "categories_speakers", ["speaker_id"], name: "index_categories_speakers_on_speaker_id", using: :btree
 
   create_table "demos", force: true do |t|
     t.string   "file"
