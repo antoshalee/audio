@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
         :timbre_level,
         :demos_attributes => [:file, :file_cache],
         :voice_type_ids => [],
-        :age_type_ids => []
+        :age_type_ids => [],
+        :category_ids => []
       ]
     ]
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(params) }

@@ -1,29 +1,9 @@
 .items-block-checkbox
-  %label Заказы
-  .col
-    .item-input-checkbox
-      %label{for: "chbx1"}
-        %input#chbx1{checked: "checked", type: "checkbox"}/
-        %span Начитка
-    .item-input-checkbox
-      %label{for: "chbx2"}
-        %input#chbx2{type: "checkbox"}/
-        %span Вокал
-  .col
-    .item-input-checkbox
-      %label{for: "chbx3"}
-        %input#chbx3{type: "checkbox"}/
-        %span Пародия
-    .item-input-checkbox
-      %label{for: "chbx4"}
-        %input#chbx4{type: "checkbox"}/
-        %span Вокал
--#.items-block-checkbox
   %label Тип голоса
-  - VoiceType.scoped.in_groups(2, false) do |group|
+  - OrderCategory.scoped.in_groups(2, false) do |group|
     .col
-      - group.each do |type|
+      - group.each do |cat|
         .item-input-checkbox
-          %label{for: "user_speaker_attributes_voice_type_ids_#{type.id}"}
-            = check_box_tag "user[speaker_attributes][voice_type_ids][]", type.id, f.object.voice_types.include?(type), id: "user_speaker_attributes_voice_type_ids_#{type.id}"
-            %span= type.name
+          %label{for: "user_speaker_attributes_category_ids_#{cat.id}"}
+            = check_box_tag "user[speaker_attributes][category_ids][]", cat.id, f.object.categories.include?(cat), id: "user_speaker_attributes_category_ids_#{cat.id}"
+            %span= cat.name
