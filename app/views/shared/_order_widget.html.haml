@@ -18,14 +18,15 @@
       = link_to modal_order_path(order), class: 'task-modal', remote: true do
         %i.fa.fa-arrow-down
         %span Техническое задание
-    .log
-      = render partial: 'shared/event', collection: order.events
-      .msg.accept
-        .time 19:45
-        .text-holder
-          %strong
-            %i.fa.fa-check
-            Работа принята.
+    - if order.has_events?
+      .log
+        = render partial: 'shared/event', collection: order.events
+        .msg.accept
+          .time 19:45
+          .text-holder
+            %strong
+              %i.fa.fa-check
+              Работа принята.
     - if can? :start, order
       .btns-holder
         = link_to start_order_path(order), method: :post, class: %w(btn-green pos-left) do

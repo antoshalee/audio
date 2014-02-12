@@ -51,6 +51,10 @@ class Order < ActiveRecord::Base
     nil
   end
 
+  def has_events?
+    events.count > 0
+  end
+
   def declines_remaining
     DECLINES_LIMIT - declines_count
   end
