@@ -59,28 +59,8 @@
 
       = f.fields_for :speaker do |speaker_f|
         = render 'users/registrations/form/sex', f: speaker_f
+        = render 'users/registrations/form/categories', f: speaker_f
 
-        .items-block-checkbox
-          %label Заказы
-          .col
-            .item-input-checkbox
-              %label{for: "chbx1"}
-                %input#chbx1{checked: "checked", type: "checkbox"}/
-                %span Начитка
-            .item-input-checkbox
-              %label{for: "chbx2"}
-                %input#chbx2{type: "checkbox"}/
-                %span Вокал
-          .col
-            .item-input-checkbox
-              %label{for: "chbx3"}
-                %input#chbx3{type: "checkbox"}/
-                %span Пародия
-            .item-input-checkbox
-              %label{for: "chbx4"}
-                %input#chbx4{type: "checkbox"}/
-                %span Вокал
-        / /.items-block-checkbox
         .tip
           %p
             Информацию можно будет уточнить
