@@ -21,12 +21,6 @@
     - if order.has_events?
       .log
         = render partial: 'shared/event', collection: order.events
-        .msg.accept
-          .time 19:45
-          .text-holder
-            %strong
-              %i.fa.fa-check
-              Работа принята.
     - if can? :start, order
       .btns-holder
         = link_to start_order_path(order), method: :post, class: %w(btn-green pos-left) do
@@ -68,7 +62,7 @@
             Отправить
     - if can? :accept, order
       .btns-holder
-        %a.btn-green.pos-left{:href => ""}
+        = link_to accept_order_path(order), method: :post, class: %w(btn-green pos-left) do
           %i.fa.fa-check-circle-o>
           Принять работу и скачать файлы
         - if can? :decline, order

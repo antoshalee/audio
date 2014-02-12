@@ -1,14 +1,23 @@
-.msg
-  .time= l(event.created_at, format: '%H:%M')
-  .text-holder
-    %strong= event.kind.text
-    - if event.record_attached?
-      .audio-holder
-        - event.records.each do |record|
-          %audio{controls: "", preload: "none"}
-            %source{src: record.file.url }
-          %a.btn-download
-            %i.fa.fa-arrow-circle-o-down>
-            Скачать
-    - if event.declined?
-      %p= event.message
+-# TODO: refactor
+- if event.accepted?
+  .msg.accept
+    .time= l(event.created_at, format: '%H:%M')
+    .text-holder
+      %strong
+        %i.fa.fa-check
+        = event.kind.text
+- else
+  .msg
+    .time= l(event.created_at, format: '%H:%M')
+    .text-holder
+      %strong= event.kind.text
+      - if event.record_attached?
+        .audio-holder
+          - event.records.each do |record|
+            %audio{controls: "", preload: "none"}
+              %source{src: record.file.url }
+            %a.btn-download
+              %i.fa.fa-arrow-circle-o-down>
+              Скачать
+      - if event.declined?
+        %p= event.message

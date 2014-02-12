@@ -54,10 +54,12 @@ class OrdersController < ApplicationController
   end
 
   def accept
-
+    @order = Order.find params[:id]
+    authorize! :accept, @order
+    ActiveRecord::Base.transaction do
+      @order.accept!
+      @order.events.create!(kind: 'accepted', user: current_user)
+    end
+    redirect_to :back
   end
-
-
-
-
 end
