@@ -18,6 +18,7 @@ gem 'draper'
 gem 'has_scope'
 gem 'acts_as_list'
 gem 'carrierwave'
+gem 'capistrano', "2.15.5"
 
 # CanCan is not ready for Rails 4.. let try it anyway
 gem 'cancan'
@@ -76,8 +77,4 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
