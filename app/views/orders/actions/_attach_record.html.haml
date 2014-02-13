@@ -1,15 +1,17 @@
 .file-upload-holder
-  %form.form-upload-files{action: cache_records_path, "data-upload" => "fu-123", :enctype => "multipart/form-data", :method => "post"}
+  %form.form-upload-files{action: cache_records_path, "data-upload" => "fu_#{order.id}", "data-hidden-container" => "hidden_container_#{order.id}", :enctype => "multipart/form-data", :method => "post"}
     .form-drop
       Перетащите сюда файлы для отправки
       %a
         %i.fa.fa-arrow-circle-o-up>
         Добавить файлы
+      = hidden_field_tag "resource", "order_event"
       %input{:multiple => "", :name => "records[]", :type => "file"}/
 = form_tag attach_record_order_path(order), method: :post do
   .files-uploaded
-    %ul#fu-123.form-files-uploaded
+    %ul.form-files-uploaded{id: "fu_#{order.id}"}
       / The file uploads will be shown here
+  %div{id: "hidden_container_#{order.id}"}
   .btns-holder
     %button.btn-green.pos-left
       %i.fa.fa-check-circle-o>

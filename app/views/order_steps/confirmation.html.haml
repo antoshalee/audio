@@ -35,16 +35,12 @@
           %h3 Текст начитки
           %p
             = @order.text
-        .item-files-uploaded
-          %h3 Приложенные файлы
-          %audio{:controls => "", :preload => "auto"}
-            %source{:src => "files/audio.mp3"}/
-            %source{:src => "files/audio.ogg"}/
-            %source{:src => "files/audio.wav"}/
-          %audio{:controls => "", :preload => "auto"}
-            %source{:src => "files/audio.mp3"}/
-            %source{:src => "files/audio.ogg"}/
-            %source{:src => "files/audio.wav"}/
+        - if @order.has_records?
+          .item-files-uploaded
+            %h3 Приложенные файлы
+            - @order.records.each do |record|
+              %audio{controls: "", preload: "none"}
+                %source{src: record.file.url }
         .item-order-cost
           %h3
             Стоимость заказа:

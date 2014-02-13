@@ -10,6 +10,7 @@ $ ->
   $(".form-upload-files").each ->
     $form = $(this)
     ul = $("#" + $form.data("upload"))
+    $hidden_container = $("##{$form.data('hidden-container')}")
     $dropZone = $form.find(".form-drop")
     $form.find(".form-drop a").click ->
       $(this).parent().find("input").click()
@@ -29,7 +30,7 @@ $ ->
         jqXHR = data.submit()
 
       done: (e, data) ->
-        $(data.context).append(data.result)
+        $hidden_container.append(data.result)
 
       progress: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)

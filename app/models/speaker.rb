@@ -2,7 +2,7 @@ class Speaker < ActiveRecord::Base
   extend Enumerize
 
   belongs_to :user
-  has_many :demos
+  has_many :records, as: :owner
   has_and_belongs_to_many :voice_types
   has_and_belongs_to_many :age_types
   has_and_belongs_to_many :categories,
@@ -10,7 +10,7 @@ class Speaker < ActiveRecord::Base
     join_table: 'categories_speakers',
     association_foreign_key: :order_category_id
 
-  accepts_nested_attributes_for :demos
+  accepts_nested_attributes_for :records
 
   after_initialize :set_defaults
 

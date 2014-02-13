@@ -5,6 +5,8 @@ class Order < ActiveRecord::Base
   belongs_to :speaker
   belongs_to :client, class_name: 'User'
   has_many :events, order: 'id asc', dependent: :destroy
+  has_many :records, as: :owner, dependent: :destroy
+  accepts_nested_attributes_for :records
   validates :speaker, presence: true
   validates :state, presence: true
 
@@ -62,6 +64,10 @@ class Order < ActiveRecord::Base
 
   def has_events?
     events.count > 0
+  end
+
+  def has_records?
+    records.count > 0
   end
 
   def declines_remaining
