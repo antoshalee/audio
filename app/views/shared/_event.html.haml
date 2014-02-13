@@ -19,5 +19,5 @@
             %a.btn-download
               %i.fa.fa-arrow-circle-o-down>
               Скачать
-      - if event.declined?
+      - if event.message?
         %p= event.message

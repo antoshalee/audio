@@ -6,6 +6,8 @@ ru:
         record_attached: Опубликована аудиозапись
         declined: 'Необходима перечитка:'
         accepted: 'Работа принята'
+        clarification_asked: 'Необходимо уточнение:'
+        clarified: 'Ответ:'
     speaker:
       sex:
         male: Мужской

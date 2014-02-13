@@ -7,10 +7,8 @@ Audio::Application.routes.draw do
   end
 
   resources :order_steps
-  root to: "home#index"
 
   get 'profile', to: redirect('/orders/client')
-
 
   resources :orders, only: nil do
     collection do
@@ -20,6 +18,8 @@ Audio::Application.routes.draw do
   	member do
       get :modal
       post :start
+      post :ask_clarification
+      post :clarify
       post :attach_record
       post :decline
       post :accept
@@ -34,5 +34,6 @@ Audio::Application.routes.draw do
     collection { post :cache }
   end
 
+  root to: "home#index"
 
 end

@@ -15,6 +15,8 @@ class Order < ActiveRecord::Base
     state :started
     state :record_attached
     state :declined
+    state :clarification_asked
+    state :clarified
 
     event :activate do
       transitions :to => :active
@@ -40,6 +42,13 @@ class Order < ActiveRecord::Base
       transitions :to => :rejected
     end
 
+    event :ask_clarification do
+      transitions :to => :clarification_asked
+    end
+
+    event :clarify do
+      transitions :to => :clarified
+    end
 
   end
 

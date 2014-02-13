@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource except: %i(index speaker client modal)
 
   def index
   	@orders = Order.where(speaker: current_user.try(:speaker)).decorate
@@ -21,45 +22,41 @@ class OrdersController < ApplicationController
   	render layout: false
   end
 
+  def ask_clarification
+    perform_action :ask_clarification, :clarification_asked, [:message]
+  end
+
+  def clarify
+    perform_action :clarify, :clarified, [:message]
+  end
+
   def start
-    @order = Order.find params[:id]
-    authorize! :start, @order
-    ActiveRecord::Base.transaction do
-      @order.start!
-      @order.events.create!(kind: 'started', user: current_user)
-    end
-    redirect_to :back
+    perform_action :start, :started
   end
 
   def attach_record
-    @order = Order.find params[:id]
-    authorize! :attach_record_to, @order
-    event_params = params.require(:event).permit([:records_attributes => [:file_cache]])
-    ActiveRecord::Base.transaction do
-      @order.attach_record!
-      @order.events.create!(event_params.merge(kind: 'record_attached', user: current_user))
-    end
-    redirect_to :back
+    perform_action :attach_record, :record_attached,
+      [:records_attributes => [:file_cache]]
   end
 
   def decline
-    @order = Order.find params[:id]
-    authorize! :decline, @order
-    event_params = params.require(:event).permit([:message])
+    perform_action :decline, :declined, [:message]
+  end
+
+  def accept
+    perform_action :accept, :accepted
+  end
+
+  private
+
+  def perform_action action, event_kind, permitted=[]
+    attrs = {kind: event_kind, user: current_user}
+    attrs.merge!(params.require(:event).permit(permitted)) if permitted.present?
     ActiveRecord::Base.transaction do
-      @order.decline!
-      @order.events.create!(event_params.merge(kind: 'declined', user: current_user))
+      @order.send("#{action}!")
+      @order.events.create!(attrs)
     end
     redirect_to :back
   end
 
-  def accept
-    @order = Order.find params[:id]
-    authorize! :accept, @order
-    ActiveRecord::Base.transaction do
-      @order.accept!
-      @order.events.create!(kind: 'accepted', user: current_user)
-    end
-    redirect_to :back
-  end
 end

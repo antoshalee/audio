@@ -36,14 +36,25 @@
         .title
           %a.return{:href => ""}
           Уточнить задание
+        = form_tag ask_clarification_order_path(order), method: :post do
+          .textarea-holder
+            %textarea{cols: "30", rows: "10", name: "event[message]"}
+            .tip Нельзя указывать контактную информацию.
+          .btns-holder
+            %button.btn-green.pos-left
+              %i.fa.fa-check-circle-o>
+              Отправить вопрос
+    - if can? :clarify, order
+      .title Ваш ответ
+      = form_tag clarify_order_path(order), method: :post do
         .textarea-holder
-          %textarea{:cols => "30", :rows => "10"}
+          %textarea{:cols => "30", :rows => "10", name: "event[message]"}
           .tip Нельзя указывать контактную информацию.
         .btns-holder
-          %a.btn-green.pos-left{:href => ""}
+          %button.btn-green.pos-left
             %i.fa.fa-check-circle-o>
-            Отправить вопрос
-    - if can? :attach_record_to, order
+            Отправить
+    - if can? :attach_record, order
       .file-upload-holder
         %form.form-upload-files{action: cache_records_path, "data-upload" => "fu-123", :enctype => "multipart/form-data", :method => "post"}
           .form-drop

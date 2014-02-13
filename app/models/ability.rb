@@ -3,11 +3,14 @@ class Ability
 
   def initialize(user)
     if user.speaker
-      can [:deny_by_speaker, :start], Order,
+      can [:deny_by_speaker, :start, :ask_clarification], Order,
         speaker_id: user.speaker.id, state: ['active']
-      can :attach_record_to, Order,
-        speaker_id: user.speaker.id, state: ['started', 'declined']
+      can :attach_record, Order,
+        speaker_id: user.speaker.id, state: %w(started declined clarified)
     end
+
+    can :clarify, Order,
+      client_id: user.id, state: ['clarification_asked']
 
     can :accept, Order,
       client_id: user.id, state: ['record_attached']
