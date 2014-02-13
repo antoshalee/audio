@@ -18,6 +18,7 @@ Audio::Application.routes.draw do
   	member do
       get :modal
       post :start
+      post :deny_by_speaker
       post :ask_clarification
       post :clarify
       post :attach_record

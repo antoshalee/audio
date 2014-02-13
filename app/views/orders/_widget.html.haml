@@ -1,0 +1,35 @@
+.order-item-layout
+  .header.open
+    %a.open-status
+    .username
+      .avatar
+      %a.name{:href => ""}= order.coworker_of(current_user).login
+    .order-name= order.name
+    .date
+      = order.created_at_short
+    .time
+      .accept
+        %i.fa.fa-check
+        Закрыт
+    .cost
+      200 руб.
+  .body
+    .task
+      = link_to modal_order_path(order), class: 'task-modal', remote: true do
+        %i.fa.fa-arrow-down
+        %span Техническое задание
+    - if order.has_events?
+      .log
+        = render partial: 'event', collection: order.events
+    - if can? :start, order
+      = render 'orders/actions/start', order: order
+    - if can? :clarify, order
+      = render 'orders/actions/clarify', order: order
+    - if can? :attach_record, order
+      = render 'orders/actions/attach_record', order: order
+    - if can? :accept, order
+      = render 'orders/actions/accept', order: order
+      - if can? :decline, order
+        = render 'orders/actions/decline', order: order
+      - if can? :reject, order
+        = render 'orders/actions/reject', order: order

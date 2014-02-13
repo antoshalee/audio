@@ -12,7 +12,7 @@
           %input#checkbox-1{:checked => "checked", :type => "checkbox"}/
           %span Показывать закрытые
 
-    = render partial: 'shared/order_widget', collection: @orders, as: :order
+    = render partial: 'widget', collection: @orders, as: :order
     .paginator
       %ul
         %li.current

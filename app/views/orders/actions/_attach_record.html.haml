@@ -1,0 +1,16 @@
+.file-upload-holder
+  %form.form-upload-files{action: cache_records_path, "data-upload" => "fu-123", :enctype => "multipart/form-data", :method => "post"}
+    .form-drop
+      Перетащите сюда файлы для отправки
+      %a
+        %i.fa.fa-arrow-circle-o-up>
+        Добавить файлы
+      %input{:multiple => "", :name => "records[]", :type => "file"}/
+= form_tag attach_record_order_path(order), method: :post do
+  .files-uploaded
+    %ul#fu-123.form-files-uploaded
+      / The file uploads will be shown here
+  .btns-holder
+    %button.btn-green.pos-left
+      %i.fa.fa-check-circle-o>
+      Отправить
