@@ -59,7 +59,6 @@
             %a.btn-order{href: ""}
               Заказать
               %i.fa.fa-chevron-right
-        / /.row
         .row
           %audio{controls: "", preload: "auto"}
             %source{src: "files/audio.mp3"}
@@ -69,7 +68,6 @@
             %span Герой нашего времени
           .link-more
             %a{href: ""} еще
-      / /.audio-item
       %article.audio-item
         .row
           .user-info
@@ -87,7 +85,6 @@
             %a.btn-order{href: ""}
               Заказать
               %i.fa.fa-chevron-right
-        / /.row
         .row
           %audio{controls: "", preload: "auto"}
             %source{src: "files/audio.mp3"}
@@ -97,8 +94,6 @@
             %span Герой нашего времени
           .link-more
             %a{href: ""} еще
-      / /.audio-item
-  / /.main
   %aside
     .avatar
       %img{alt: "", src: "img/tmp/avatar2.png"}/
@@ -107,6 +102,5 @@
       %span диктор
     %ul
       %li
-        %a.make-order{href: ""}
+        = link_to order_steps_path(speaker: @speaker.id), class: 'make-order', method: :post do
           %span Заказать читку
-/ /.user-page-layout
