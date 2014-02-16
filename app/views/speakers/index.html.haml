@@ -1,3 +1,4 @@
+- total_speakers = Speaker.count
 .cols2-layout
   %aside
     .br-holder
@@ -15,8 +16,5 @@
           %i.fa.fa-chevron-right
       .val
         всего
-        %span 492
-        диктора
-
-
-/ # = render partial: "list_item", collection: @speakers, as: :speaker
+        %span= total_speakers
+        = Russian.p(total_speakers, 'диктор', 'диктора', 'дикторов')

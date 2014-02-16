@@ -1,3 +1,4 @@
+- total_speakers = Speaker.count
 %section.block-br-index
   %h2
     Аудиозаказ — сайт, где профессиональные
@@ -57,5 +58,5 @@
           %i.fa.fa-chevron-right
       .val
         всего
-        %span 492
-        диктора
+        %span= total_speakers
+        = Russian.p(total_speakers, 'диктор', 'диктора', 'дикторов')
