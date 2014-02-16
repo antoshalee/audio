@@ -22,6 +22,10 @@ class Speaker < ActiveRecord::Base
   include Speaker::ScopeMethods
   include Speaker::Validations
 
+  def has_records?
+    records.count > 0
+  end
+
   private
 
   def set_defaults

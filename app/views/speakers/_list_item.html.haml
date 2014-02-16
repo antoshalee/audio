@@ -15,13 +15,12 @@
       = link_to order_steps_path(speaker: speaker.id), class: 'btn-order', method: :post do
         Заказать
         %i.fa.fa-chevron-right
-  / /.row
-  .row
-    %audio{controls: "", preload: "auto"}
-      %source{src: "files/audio.mp3"}
-      %source{src: "files/audio.ogg"}
-      %source{src: "files/audio.wav"}
-    .song-name
-      %span Герой нашего времени
-    .link-more
-      = link_to 'еще', user_path(speaker.user)
+  - if speaker.has_records?
+    - record = speaker.records.first
+    .row
+      %audio{controls: "", preload: "none"}
+        %source{src: record.file.url}
+      .song-name
+        %span= record.title
+      .link-more
+        = link_to 'еще', user_path(speaker.user)
