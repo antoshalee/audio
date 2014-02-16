@@ -1622,6 +1622,18 @@ footer
             background-color: #ced8dc;
           }
         }
+        &.make-order {
+          background: #60b25b;
+          border-radius: 6px !important;
+          text-align: center;
+          color: #fff;
+          span {
+           margin-left: 0px;
+          }
+          &:hover {
+           background-color: #48a243;
+          }
+        }
       }
       i
       {
@@ -1655,6 +1667,18 @@ footer
       line-height: 14px;
       color: #46565c;
       margin: 0 0 31px 0;
+      .user-position-label {
+        color: #46565c;
+        font-size: 18px;
+        font-weight: normal;
+        margin-left: 12px;
+      }
+      .user-price-label {
+        color: #46565c;
+        float: right;
+        font-size: 15px;
+        font-weight: normal;
+      }
     }
 
     .menu
@@ -4303,6 +4327,79 @@ footer
     i
     {
       margin-right: 6px;
+    }
+  }
+}
+.user-short-addit-info {
+  background: #d8e0e6;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #333;
+  padding: 0 10px;
+  border-radius: 2px;
+  margin-bottom: 42px;
+  .user-online-label {
+    display: inline-block;
+    height: 24px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 0 10px;
+    margin: 8px 0 0;
+    float: right;
+    &._online {
+      background: #60b25b;
+    }
+  }
+}
+.user-info-block {
+  margin-bottom: 42px;
+  h3 {
+    font-size: 18px;
+    font-weight: 100;
+    color: #6d7c81;
+    padding: 0 0 10px 0;
+    border-bottom: 1px #dbdcdc solid;
+    margin-bottom: 14px;
+  }
+  ul {
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+    li {
+      margin: 0 0 5px;
+      list-style: none;
+      padding: 0px;
+      .label {
+        display: inline-block;
+        width: 160px;
+        margin-right: 16px;
+      }
+      .date {
+        color:#6d7c81;
+      }
+      .audio-holder {
+        margin-bottom: 18px;
+        &:after {
+          content: '.';
+          display: block;
+          height: 0;
+          visibility: hidden;
+          clear: both;
+        }
+      }
+      &:after {
+        content: '.';
+        display: block;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+      }
     }
   }
 }

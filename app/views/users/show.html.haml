@@ -1,0 +1,128 @@
+.user-page-layout
+  .main
+    %h1
+      = @user.login
+      %span.user-position-label диктор, вокалист
+      %span.user-price-label от 300 руб.
+    .user-short-addit-info
+      Понедельник—пятница, 12:00—19:00
+      %span.user-online-label._online Сейчас на сайте
+    .user-info-block
+      %h3 Характеристики голоса
+      %ul
+        %li
+          %span.label> Голос:
+          = @speaker.sex_text
+        %li
+          %span.label> Тембр:
+          = @speaker.timbre_text
+        %li
+          %span.label> Категории:
+          = @speaker.categories_text
+        %li
+          %span.label> Тип голоса (стиль):
+          = @speaker.voice_types_text
+        %li
+          %span.label> Тип голоса (возраст):
+          = @speaker.age_types_text
+    .user-info-block
+      %h3 Аудиозаписи
+      %ul
+        - @speaker.records.each do |record|
+          %li
+            %span.date 20.10.2012
+            — Рекламная начитка для Кока-колы
+            .audio-holder
+              .audioplayer.audioplayer-stopped
+                %audio{controls: "", preload: "auto", style: "width: 0px; height: 0px; visibility: hidden;"}
+                  %source{src: "files/audio.mp3"}
+                    %source{src: "files/audio.ogg"}
+                      %source{src: "files/audio.wav"}
+                .audioplayer-playpause{title: "Play"}
+                  %a{href: "#"} Play
+                .audioplayer-time.audioplayer-time-current 00:00
+                .audioplayer-bar
+                  .audioplayer-bar-loaded
+                  .audioplayer-bar-played
+                .audioplayer-time.audioplayer-time-duration …
+                .audioplayer-volume
+                  .audioplayer-volume-button{title: "Volume"}
+                    %a{href: "#"} Volume
+                  .audioplayer-volume-adjust
+                    %div
+                      %div{style: "height: 100%;"}
+              %a.btn-download-worker{href: ""}
+                %i.fa.fa-arrow-circle-o-down
+              %a.btn-portfolio-worker{href: ""}
+                %i.fa.fa-briefcase
+
+    .user-info-block
+      %h3 Другие дикторы
+      %article.audio-item
+        .row
+          .user-info
+            .avatar
+              %img{alt: "", src: "img/tmp/avatar.png"}/
+            %h3
+              %a.name{href: "#"} lermon2013lermon2013
+              %a.like.selected{href: ""}
+              %span.tag диктор, вокалист
+          .order-holder
+            .work-time.selected
+              ПН–ПТ, 12:00–19:00
+            .price
+              от 300 руб.
+            %a.btn-order{href: ""}
+              Заказать
+              %i.fa.fa-chevron-right
+        / /.row
+        .row
+          %audio{controls: "", preload: "auto"}
+            %source{src: "files/audio.mp3"}
+            %source{src: "files/audio.ogg"}
+            %source{src: "files/audio.wav"}
+          .song-name
+            %span Герой нашего времени
+          .link-more
+            %a{href: ""} еще
+      / /.audio-item
+      %article.audio-item
+        .row
+          .user-info
+            .avatar
+              %img{alt: "", src: "img/tmp/avatar.png"}/
+            %h3
+              %a.name{href: "#"} lermon2013lermon2013
+              %a.like.selected{href: ""}
+              %span.tag диктор, вокалист
+          .order-holder
+            .work-time.selected
+              ПН–ПТ, 12:00–19:00
+            .price
+              от 300 руб.
+            %a.btn-order{href: ""}
+              Заказать
+              %i.fa.fa-chevron-right
+        / /.row
+        .row
+          %audio{controls: "", preload: "auto"}
+            %source{src: "files/audio.mp3"}
+            %source{src: "files/audio.ogg"}
+            %source{src: "files/audio.wav"}
+          .song-name
+            %span Герой нашего времени
+          .link-more
+            %a{href: ""} еще
+      / /.audio-item
+  / /.main
+  %aside
+    .avatar
+      %img{alt: "", src: "img/tmp/avatar2.png"}/
+    %h2
+      somenick12
+      %span диктор
+    %ul
+      %li
+        %a.make-order{href: ""}
+          %span Заказать читку
+/ /.user-page-layout

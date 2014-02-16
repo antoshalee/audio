@@ -1,10 +1,13 @@
 Audio::Application.routes.draw do
+  get "users/show"
   get "records/cache"
   ActiveAdmin.routes(self)
   devise_for :users
   resources :speakers do
   	collection { get :count }
   end
+
+  resources :users, only: :show
 
   resources :order_steps
 
