@@ -1,6 +1,11 @@
 class SpeakerDecorator < Draper::Decorator
   delegate_all
 
+  def role_text
+    categories.map { |cat| cat.role_name.presence.mb_chars.downcase.to_s }.
+      compact.uniq.join ", "
+  end
+
   def sex_text
     sex.text.mb_chars.downcase
   end

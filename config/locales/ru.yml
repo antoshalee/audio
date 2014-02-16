@@ -40,6 +40,7 @@ ru:
         timbre_level: Тембр
       order_category:
         name: 'Название'
+        role_name: 'Название роли'
       voice_type:
         name: 'Название'
       age_type:
