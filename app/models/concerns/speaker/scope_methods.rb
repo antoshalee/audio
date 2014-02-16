@@ -4,7 +4,7 @@ class Speaker
 
     included do
       scope :by_order_category, ->(cat) do
-      	joins(:acceptable_order_categories).
+      	joins(:categories).
         where(categories_speakers: {order_category_id: cat})
       end
 
