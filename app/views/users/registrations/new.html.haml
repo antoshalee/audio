@@ -83,7 +83,7 @@
         = render 'users/registrations/form/timbre_level', f: speaker_f
         .item-work-time
           %label{:for => "work-time"} Стоимость начитки:
-          %input#work-time{:type => "text"}/
+          = speaker_f.text_field :rate, class: 'numbers-only'
           руб. за 30 секунд
         .tip
           %p
@@ -161,7 +161,7 @@
             будут ожидать быстрого ответа.
         .item-work-time
           %label{for: "work-time"} Срок выполнения заказа:
-          %input#work-time{type: "text"}/
+          %input.numbers-only{type: "text"}/
           часа
       %h2 Лицензионное соглашение
       .item-input-checkbox

@@ -11,7 +11,7 @@
       .work-time.selected
         ПН–ПТ, 12:00–19:00
       .price
-        от 300 руб.
+        от #{speaker.rate} руб.
       = link_to order_steps_path(speaker: speaker.id), class: 'btn-order', method: :post do
         Заказать
         %i.fa.fa-chevron-right

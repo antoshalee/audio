@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
       :avatar,
       speaker_attributes: [
         :sex,
+        :rate,
         :timbre_level,
         :records_attributes => [:file, :file_cache],
         :voice_type_ids => [],
