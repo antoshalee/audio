@@ -51,6 +51,17 @@
       .tip
         %p
           Наши правила запрещают использовать реальные имена. Выбранное вами имя будет проверено модератором сайта.
+      .item-input-text
+        %br
+          %label Аватар
+          = f.file_field :avatar, class: 'input-file'
+      .tip
+        %p
+          Загрузите вашу фотографию,
+          %br
+            чтобы выделиться. Используйте фото
+            %br
+              в формате png или jpg.
       %h2 Информация об исполнителе
       .item-input-checkbox
         %label{for: "chbx133"}
@@ -70,6 +81,10 @@
         = render 'users/registrations/form/voice_types',  f: speaker_f
         = render 'users/registrations/form/age_types',    f: speaker_f
         = render 'users/registrations/form/timbre_level', f: speaker_f
+        .item-work-time
+          %label{:for => "work-time"} Стоимость начитки:
+          %input#work-time{:type => "text"}/
+          руб. за 30 секунд
         .tip
           %p
             Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.

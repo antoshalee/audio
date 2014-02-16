@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :speaker
   validates :login, presence: true
 
+  mount_uploader :avatar, UserAvatarUploader
+
   def to_param
     login
   end

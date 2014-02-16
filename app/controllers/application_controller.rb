@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
       :phone,
       :password,
       :password_confirmation,
+      :avatar,
       speaker_attributes: [
         :sex,
         :timbre_level,

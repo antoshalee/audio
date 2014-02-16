@@ -2881,7 +2881,8 @@ footer
     {
       float: left;
       font-size: 15px;
-      line-height: 34px;
+      line-height: 18px;
+      padding-top: 8px;
       color: #667a81;
       font-weight: bold;
       width: 120px;
@@ -2890,6 +2891,15 @@ footer
     {
       .input-text(320px,34px);
       float: left;
+      &.input-file {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-indent: 0 !important;
+        line-height: 34px !important;
+        height: auto !important;
+        padding-top: 4px;
+      }
     }
     & + .item-input-text
     {
@@ -3356,7 +3366,7 @@ footer
     {
       p
       {
-        top: 39px;
+        top: -46px;
       }
     }
   }
