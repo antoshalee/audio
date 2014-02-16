@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :speaker
+  has_one :speaker, dependent: :destroy
   accepts_nested_attributes_for :speaker
   validates :login, presence: true
 
