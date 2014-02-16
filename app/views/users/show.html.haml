@@ -30,31 +30,15 @@
       %ul
         - @speaker.records.each do |record|
           %li
-            %span.date 20.10.2012
-            — Рекламная начитка для Кока-колы
+            %span.date= l(record.created_at.to_date)
+            = "— #{record.title}"
+
             .audio-holder
-              .audioplayer.audioplayer-stopped
-                %audio{controls: "", preload: "auto", style: "width: 0px; height: 0px; visibility: hidden;"}
-                  %source{src: "files/audio.mp3"}
-                    %source{src: "files/audio.ogg"}
-                      %source{src: "files/audio.wav"}
-                .audioplayer-playpause{title: "Play"}
-                  %a{href: "#"} Play
-                .audioplayer-time.audioplayer-time-current 00:00
-                .audioplayer-bar
-                  .audioplayer-bar-loaded
-                  .audioplayer-bar-played
-                .audioplayer-time.audioplayer-time-duration …
-                .audioplayer-volume
-                  .audioplayer-volume-button{title: "Volume"}
-                    %a{href: "#"} Volume
-                  .audioplayer-volume-adjust
-                    %div
-                      %div{style: "height: 100%;"}
-              %a.btn-download-worker{href: ""}
-                %i.fa.fa-arrow-circle-o-down
-              %a.btn-portfolio-worker{href: ""}
-                %i.fa.fa-briefcase
+              %audio{controls: "", preload: "none"}
+                %source{src: record.file.url }
+              %a.btn-download
+                %i.fa.fa-arrow-circle-o-down>
+                Скачать
 
     .user-info-block
       %h3 Другие дикторы
@@ -119,7 +103,7 @@
     .avatar
       %img{alt: "", src: "img/tmp/avatar2.png"}/
     %h2
-      somenick12
+      = @user.login
       %span диктор
     %ul
       %li
