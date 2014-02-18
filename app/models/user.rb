@@ -11,10 +11,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, UserAvatarUploader
 
-  def to_param
-    login
-  end
-
   def speaker?
     speaker.present?
   end

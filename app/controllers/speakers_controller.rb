@@ -9,6 +9,12 @@ class SpeakersController < ApplicationController
     @speakers = apply_scopes(Speaker.scoped).decorate
   end
 
+  def show
+    @user = User.find_by_login(params[:id])
+    raise ActiveRecord::RecordNotFound unless (@user && @user.speaker?)
+    @speaker = @user.speaker.decorate
+  end
+
   def count
     raise "Not AJAX request" unless request.xhr?
     count = apply_scopes(Speaker.scoped).count

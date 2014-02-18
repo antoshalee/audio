@@ -7,8 +7,6 @@ Audio::Application.routes.draw do
   	collection { get :count }
   end
 
-  resources :users, only: :show
-
   resources :order_steps
 
   get 'profile', to: redirect('/orders/client')

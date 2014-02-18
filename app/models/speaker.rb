@@ -24,6 +24,10 @@ class Speaker < ActiveRecord::Base
   include Speaker::ScopeMethods
   include Speaker::Validations
 
+  def to_param
+    login
+  end
+
   def has_records?
     records.count > 0
   end
