@@ -11,7 +11,7 @@
           %h3 Информация о заказе
           .username
             .avatar
-              %img{:alt => "", :src => "img/tmp/avatar2.png"}/
+              = image_tag @speaker.user.avatar.middle.url
             .title
               = link_to @speaker.login, "#"
               %span диктор, вокалист
@@ -20,17 +20,8 @@
               %span Категория
               %span Начитка
             %li
-              %span Тип
-              %span Информационный
-            %li
-              %span Тембр
-              %span= @speaker.timbre_level.text
-            %li
-              %span Возраст
-              %span Взрослый
-            %li
               %span Хронометраж
-              %span 15 секунд
+              %span #{@order.duration} сек
         .item-text-corrected
           %h3 Текст начитки
           %p
