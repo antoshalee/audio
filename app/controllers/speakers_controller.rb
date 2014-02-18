@@ -4,6 +4,7 @@ class SpeakersController < ApplicationController
   has_scope :with_sex
   has_scope :with_voice_types, type: :array
   has_scope :with_age_types, type: :array
+  helper_method :similar_speakers
 
   def index
     @speakers = apply_scopes(Speaker.scoped).decorate
@@ -19,6 +20,12 @@ class SpeakersController < ApplicationController
     raise "Not AJAX request" unless request.xhr?
     count = apply_scopes(Speaker.scoped).count
     render json: { count: count }
+  end
+
+  private
+
+  def similar_speakers
+    Speaker.order("RANDOM()").where.not(id: @speaker.id).decorate.first(2)
   end
 
 end

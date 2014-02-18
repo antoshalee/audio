@@ -42,58 +42,7 @@
 
     .user-info-block
       %h3 Другие дикторы
-      %article.audio-item
-        .row
-          .user-info
-            .avatar
-              %img{alt: "", src: "img/tmp/avatar.png"}/
-            %h3
-              %a.name{href: "#"} lermon2013lermon2013
-              %a.like.selected{href: ""}
-              %span.tag диктор, вокалист
-          .order-holder
-            .work-time.selected
-              ПН–ПТ, 12:00–19:00
-            .price
-              от 300 руб.
-            %a.btn-order{href: ""}
-              Заказать
-              %i.fa.fa-chevron-right
-        .row
-          %audio{controls: "", preload: "auto"}
-            %source{src: "files/audio.mp3"}
-            %source{src: "files/audio.ogg"}
-            %source{src: "files/audio.wav"}
-          .song-name
-            %span Герой нашего времени
-          .link-more
-            %a{href: ""} еще
-      %article.audio-item
-        .row
-          .user-info
-            .avatar
-              %img{alt: "", src: "img/tmp/avatar.png"}/
-            %h3
-              %a.name{href: "#"} lermon2013lermon2013
-              %a.like.selected{href: ""}
-              %span.tag диктор, вокалист
-          .order-holder
-            .work-time.selected
-              ПН–ПТ, 12:00–19:00
-            .price
-              от 300 руб.
-            %a.btn-order{href: ""}
-              Заказать
-              %i.fa.fa-chevron-right
-        .row
-          %audio{controls: "", preload: "auto"}
-            %source{src: "files/audio.mp3"}
-            %source{src: "files/audio.ogg"}
-            %source{src: "files/audio.wav"}
-          .song-name
-            %span Герой нашего времени
-          .link-more
-            %a{href: ""} еще
+      = render partial: 'list_item', collection: similar_speakers, as: :speaker
   %aside
     .avatar
       %img{alt: "", src: @user.avatar.middle.url}/
