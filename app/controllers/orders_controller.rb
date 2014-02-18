@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
   def client
     @orders = Order.where(client: current_user).
-      page(params[:page]).per(1).decorate
+      page(params[:page]).per(5).decorate
     render :index
   end
 
