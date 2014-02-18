@@ -12,11 +12,12 @@
           %input#checkbox-1{:checked => "checked", :type => "checkbox"}/
           %span Показывать закрытые
 
-    = render partial: 'shared/order_widget', collection: @orders, as: :order
+    = render partial: 'widget', collection: @orders, as: :order
     = paginate @orders
+
   %aside
     .avatar
-      %img{:alt => "", :src => "img/tmp/avatar2.png"}/
+      %img{:alt => "", :src => current_user.avatar.middle.url}/
     %h2
       = current_user.login
       - if current_user.speaker?

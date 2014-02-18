@@ -14,6 +14,8 @@ class Event < ActiveRecord::Base
   	declined
     accepted
     record_attached
+    clarification_asked
+    clarified
   ), predicates: true
 
   self.kind.values.each do |k|

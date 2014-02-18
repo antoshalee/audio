@@ -2,26 +2,25 @@
   .row
     .user-info
       .avatar
-        %img{alt: "", src: "img/tmp/avatar.png"}/
+        %img{alt: "", src: speaker.user.avatar.small.url}/
       %h3
-        %a.name{href: "#"}= speaker.user.login
+        %a.name{href: user_path(speaker.user)}= speaker.user.login
         %a.like.selected{href: ""}
-        %span.tag диктор, вокалист
+        %span.tag= speaker.role_text
     .order-holder
       .work-time.selected
         ПН–ПТ, 12:00–19:00
       .price
-        от 300 руб.
+        от #{speaker.rate} руб.
       = link_to order_steps_path(speaker: speaker.id), class: 'btn-order', method: :post do
         Заказать
         %i.fa.fa-chevron-right
-  / /.row
-  .row
-    %audio{controls: "", preload: "auto"}
-      %source{src: "files/audio.mp3"}
-      %source{src: "files/audio.ogg"}
-      %source{src: "files/audio.wav"}
-    .song-name
-      %span Герой нашего времени
-    .link-more
-      %a{href: ""} еще
+  - if speaker.has_records?
+    - record = speaker.records.first
+    .row
+      %audio{controls: "", preload: "none"}
+        %source{src: record.file.url}
+      .song-name
+        %span= record.title
+      .link-more
+        = link_to 'еще', user_path(speaker.user)

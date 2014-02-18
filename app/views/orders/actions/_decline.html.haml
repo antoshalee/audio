@@ -1,0 +1,16 @@
+%div{style: 'display: none', id: "respeaking-holder-#{order.id}"}
+  .title
+    %a.return{:href => ""}
+    Причина перечитки (осталось #{order.declines_remaining})
+  = form_tag decline_order_path(order), method: :post do
+    .textarea-holder
+      %textarea{cols: "30", rows: "10", name: "event[message]"}
+      .tip
+        Вы можете требовать перечитку не более 3 раз.
+        = succeed "\u{41d}\u{435}\u{43b}\u{44c}\u{437}\u{44f}" do
+          %br/
+        указывать контактную информацию.
+    .btns-holder
+      %button.btn-green.pos-left
+        %i.fa.fa-check-circle-o>
+        Отправить вопрос

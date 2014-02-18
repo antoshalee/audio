@@ -1,0 +1,16 @@
+%div{style: 'display: none', id: "reject-holder-#{order.id}"}
+  .title
+    %a.return.toggle-btn{href: "#", data: {target: "#reject-holder-#{order.id}"}}
+    Меня не устраивает результат
+  .textarea-holder.captcha-holder
+    %p
+      Опишите подробно причину, по которой вас не устраивает результат работы по заказу.
+      %br/
+      Администрация сайта ознакомится с вашим сообщением и примет решение по заказу.
+    %textarea{cols: "30", rows: "10"}
+    .block-captcha
+      %img{alt: "", src: "img/tmp/captcha.png"}/
+  .btns-holder
+    %a.btn-green.pos-left{href: ""}
+      %i.fa.fa-check-circle-o>
+      Отправить

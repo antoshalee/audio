@@ -1,0 +1,9 @@
+.items-block-checkbox
+  %label Тип голоса
+  - OrderCategory.scoped.in_groups(2, false) do |group|
+    .col
+      - group.each do |cat|
+        .item-input-checkbox
+          %label{for: "user_speaker_attributes_category_ids_#{cat.id}"}
+            = check_box_tag "user[speaker_attributes][category_ids][]", cat.id, f.object.categories.include?(cat), id: "user_speaker_attributes_category_ids_#{cat.id}"
+            %span= cat.name

@@ -2,15 +2,15 @@ class Speaker < ActiveRecord::Base
   extend Enumerize
 
   belongs_to :user
-  has_many :demos
+  has_many :records, as: :owner
   has_and_belongs_to_many :voice_types
   has_and_belongs_to_many :age_types
-  has_and_belongs_to_many :acceptable_order_categories,
+  has_and_belongs_to_many :categories,
     class_name: 'OrderCategory',
-    join_table: 'acceptable_order_categories_speakers',
+    join_table: 'categories_speakers',
     association_foreign_key: :order_category_id
 
-  accepts_nested_attributes_for :demos
+  accepts_nested_attributes_for :records
 
   after_initialize :set_defaults
 
@@ -19,8 +19,14 @@ class Speaker < ActiveRecord::Base
 
   delegate :login, to: :user
 
+  validates :rate, presence: true
+
   include Speaker::ScopeMethods
   include Speaker::Validations
+
+  def has_records?
+    records.count > 0
+  end
 
   private
 

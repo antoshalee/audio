@@ -5,6 +5,9 @@ ru:
         started: Начало работы
         record_attached: Опубликована аудиозапись
         declined: 'Необходима перечитка:'
+        accepted: 'Работа принята'
+        clarification_asked: 'Необходимо уточнение:'
+        clarified: 'Ответ:'
     speaker:
       sex:
         male: Мужской
@@ -37,6 +40,7 @@ ru:
         timbre_level: Тембр
       order_category:
         name: 'Название'
+        role_name: 'Название роли'
       voice_type:
         name: 'Название'
       age_type:

@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211164258) do
-
-  create_table "acceptable_order_categories_speakers", force: true do |t|
-    t.integer "order_category_id", null: false
-    t.integer "speaker_id",        null: false
-  end
-
-  add_index "acceptable_order_categories_speakers", ["order_category_id"], name: "index_acceptable_order_categories_speakers_on_order_category_id", using: :btree
-  add_index "acceptable_order_categories_speakers", ["speaker_id"], name: "index_acceptable_order_categories_speakers_on_speaker_id", using: :btree
+ActiveRecord::Schema.define(version: 20140216110955) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -83,6 +75,14 @@ ActiveRecord::Schema.define(version: 20140211164258) do
   add_index "billing_transfers", ["recipient_account_id"], name: "index_billing_transfers_on_recipient_account_id", using: :btree
   add_index "billing_transfers", ["sender_account_id"], name: "index_billing_transfers_on_sender_account_id", using: :btree
 
+  create_table "categories_speakers", force: true do |t|
+    t.integer "order_category_id", null: false
+    t.integer "speaker_id",        null: false
+  end
+
+  add_index "categories_speakers", ["order_category_id"], name: "index_categories_speakers_on_order_category_id", using: :btree
+  add_index "categories_speakers", ["speaker_id"], name: "index_categories_speakers_on_speaker_id", using: :btree
+
   create_table "demos", force: true do |t|
     t.string   "file"
     t.integer  "speaker_id"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20140211164258) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role_name"
   end
 
   create_table "orders", force: true do |t|
@@ -135,6 +136,7 @@ ActiveRecord::Schema.define(version: 20140211164258) do
     t.datetime "updated_at"
     t.integer  "owner_id",   null: false
     t.string   "owner_type", null: false
+    t.string   "title"
   end
 
   add_index "records", ["owner_id"], name: "index_records_on_owner_id", using: :btree
@@ -146,6 +148,7 @@ ActiveRecord::Schema.define(version: 20140211164258) do
     t.datetime "updated_at"
     t.integer  "timbre_level",   null: false
     t.integer  "sex",            null: false
+    t.integer  "rate"
   end
 
   add_index "speakers", ["sex"], name: "index_speakers_on_sex", using: :btree
@@ -178,10 +181,12 @@ ActiveRecord::Schema.define(version: 20140211164258) do
     t.datetime "updated_at"
     t.string   "phone"
     t.string   "login"
+    t.string   "avatar"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["login"], name: "index_users_on_login", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "voice_types", force: true do |t|

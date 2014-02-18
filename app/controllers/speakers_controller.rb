@@ -6,7 +6,7 @@ class SpeakersController < ApplicationController
   has_scope :with_age_types, type: :array
 
   def index
-    @speakers = apply_scopes(Speaker.scoped)
+    @speakers = apply_scopes(Speaker.scoped).decorate
   end
 
   def count

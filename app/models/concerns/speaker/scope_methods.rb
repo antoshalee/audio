@@ -4,8 +4,8 @@ class Speaker
 
     included do
       scope :by_order_category, ->(cat) do
-      	joins(:acceptable_order_categories).
-        where(acceptable_order_categories_speakers: {order_category_id: cat})
+      	joins(:categories).
+        where(categories_speakers: {order_category_id: cat})
       end
 
       scope :with_voice_types, ->(types) do

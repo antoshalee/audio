@@ -1,0 +1,12 @@
+.btns-holder
+  = link_to accept_order_path(order), method: :post, class: %w(btn-green pos-left) do
+    %i.fa.fa-check-circle-o>
+    Принять работу и скачать файлы
+  - if can? :decline, order
+    %a.btn-orange.pos-left.toggle-btn{:href => "#", data: {target: "#respeaking-holder-#{order.id}"}}
+      %i.fa.fa-times-circle-o>
+      Необходима перечитка (осталось #{order.declines_remaining})
+  - if can? :reject, order
+    %a.btn-orange.pos-left.toggle-btn{:href => "#", data: {target: "#reject-holder-#{order.id}"}}
+      %i.fa.fa-times-circle-o>
+      Меня не устраивает результат

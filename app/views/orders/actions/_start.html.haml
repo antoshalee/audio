@@ -1,0 +1,22 @@
+.btns-holder
+  = link_to start_order_path(order), method: :post, class: %w(btn-green pos-left) do
+    %i.fa.fa-check-circle-o>
+    Принять заказ и начать работу
+  %a.btn-orange.pos-left{:href => ""}
+    %i.fa.fa-times-circle-o>
+    Отклонить заказ
+  %a.btn-gray.pos-right.toggle-btn{:href => "#", data: {target: "#clarify-holder-#{order.id}"}}
+    %i.fa.fa-info-circle>
+    Уточнить
+%div{style: 'display: none', id: "clarify-holder-#{order.id}"}
+  .title
+    %a.return{:href => ""}
+    Уточнить задание
+  = form_tag ask_clarification_order_path(order), method: :post do
+    .textarea-holder
+      %textarea{cols: "30", rows: "10", name: "event[message]"}
+      .tip Нельзя указывать контактную информацию.
+    .btns-holder
+      %button.btn-green.pos-left
+        %i.fa.fa-check-circle-o>
+        Отправить вопрос

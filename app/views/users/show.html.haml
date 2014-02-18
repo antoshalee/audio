@@ -1,0 +1,106 @@
+.user-page-layout
+  .main
+    %h1
+      = @user.login
+      %span.user-position-label диктор, вокалист
+      %span.user-price-label от #{@speaker.rate} руб.
+    .user-short-addit-info
+      Понедельник—пятница, 12:00—19:00
+      %span.user-online-label._online Сейчас на сайте
+    .user-info-block
+      %h3 Характеристики голоса
+      %ul
+        %li
+          %span.label> Голос:
+          = @speaker.sex_text
+        %li
+          %span.label> Тембр:
+          = @speaker.timbre_text
+        %li
+          %span.label> Категории:
+          = @speaker.categories_text
+        %li
+          %span.label> Тип голоса (стиль):
+          = @speaker.voice_types_text
+        %li
+          %span.label> Тип голоса (возраст):
+          = @speaker.age_types_text
+    .user-info-block
+      %h3 Аудиозаписи
+      %ul
+        - @speaker.records.each do |record|
+          %li
+            %span.date= l(record.created_at.to_date)
+            = "— #{record.title}"
+
+            .audio-holder
+              %audio{controls: "", preload: "none"}
+                %source{src: record.file.url }
+              %a.btn-download
+                %i.fa.fa-arrow-circle-o-down>
+                Скачать
+
+    .user-info-block
+      %h3 Другие дикторы
+      %article.audio-item
+        .row
+          .user-info
+            .avatar
+              %img{alt: "", src: "img/tmp/avatar.png"}/
+            %h3
+              %a.name{href: "#"} lermon2013lermon2013
+              %a.like.selected{href: ""}
+              %span.tag диктор, вокалист
+          .order-holder
+            .work-time.selected
+              ПН–ПТ, 12:00–19:00
+            .price
+              от 300 руб.
+            %a.btn-order{href: ""}
+              Заказать
+              %i.fa.fa-chevron-right
+        .row
+          %audio{controls: "", preload: "auto"}
+            %source{src: "files/audio.mp3"}
+            %source{src: "files/audio.ogg"}
+            %source{src: "files/audio.wav"}
+          .song-name
+            %span Герой нашего времени
+          .link-more
+            %a{href: ""} еще
+      %article.audio-item
+        .row
+          .user-info
+            .avatar
+              %img{alt: "", src: "img/tmp/avatar.png"}/
+            %h3
+              %a.name{href: "#"} lermon2013lermon2013
+              %a.like.selected{href: ""}
+              %span.tag диктор, вокалист
+          .order-holder
+            .work-time.selected
+              ПН–ПТ, 12:00–19:00
+            .price
+              от 300 руб.
+            %a.btn-order{href: ""}
+              Заказать
+              %i.fa.fa-chevron-right
+        .row
+          %audio{controls: "", preload: "auto"}
+            %source{src: "files/audio.mp3"}
+            %source{src: "files/audio.ogg"}
+            %source{src: "files/audio.wav"}
+          .song-name
+            %span Герой нашего времени
+          .link-more
+            %a{href: ""} еще
+  %aside
+    .avatar
+      %img{alt: "", src: @user.avatar.middle.url}/
+    %h2
+      = @user.login
+      %span диктор
+    %ul
+      %li
+        = link_to order_steps_path(speaker: @speaker.id), class: 'make-order', method: :post do
+          %span Заказать читку

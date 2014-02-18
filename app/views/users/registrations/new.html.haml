@@ -51,6 +51,17 @@
       .tip
         %p
           Наши правила запрещают использовать реальные имена. Выбранное вами имя будет проверено модератором сайта.
+      .item-input-text
+        %br
+          %label Аватар
+          = f.file_field :avatar, class: 'input-file'
+      .tip
+        %p
+          Загрузите вашу фотографию,
+          %br
+            чтобы выделиться. Используйте фото
+            %br
+              в формате png или jpg.
       %h2 Информация об исполнителе
       .item-input-checkbox
         %label{for: "chbx133"}
@@ -59,28 +70,8 @@
 
       = f.fields_for :speaker do |speaker_f|
         = render 'users/registrations/form/sex', f: speaker_f
+        = render 'users/registrations/form/categories', f: speaker_f
 
-        .items-block-checkbox
-          %label Заказы
-          .col
-            .item-input-checkbox
-              %label{for: "chbx1"}
-                %input#chbx1{checked: "checked", type: "checkbox"}/
-                %span Начитка
-            .item-input-checkbox
-              %label{for: "chbx2"}
-                %input#chbx2{type: "checkbox"}/
-                %span Вокал
-          .col
-            .item-input-checkbox
-              %label{for: "chbx3"}
-                %input#chbx3{type: "checkbox"}/
-                %span Пародия
-            .item-input-checkbox
-              %label{for: "chbx4"}
-                %input#chbx4{type: "checkbox"}/
-                %span Вокал
-        / /.items-block-checkbox
         .tip
           %p
             Информацию можно будет уточнить
@@ -90,6 +81,10 @@
         = render 'users/registrations/form/voice_types',  f: speaker_f
         = render 'users/registrations/form/age_types',    f: speaker_f
         = render 'users/registrations/form/timbre_level', f: speaker_f
+        .item-work-time
+          %label{:for => "work-time"} Стоимость начитки:
+          = speaker_f.text_field :rate, class: 'numbers-only'
+          руб. за 30 секунд
         .tip
           %p
             Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.
@@ -100,6 +95,7 @@
         .files-uploaded
           %ul#fu-123.form-files-uploaded
             / The file uploads will be shown here
+        #hidden_container
         %h2 Присутствие на сайте
         #online-radio-list.item-radio-list
           %label Онлайн
@@ -165,7 +161,7 @@
             будут ожидать быстрого ответа.
         .item-work-time
           %label{for: "work-time"} Срок выполнения заказа:
-          %input#work-time{type: "text"}/
+          %input.numbers-only{type: "text"}/
           часа
       %h2 Лицензионное соглашение
       .item-input-checkbox
@@ -182,12 +178,13 @@
           Зарегистрироваться
         %input{type: "submit", value: ""}/
   .file-upload-holder
-    %form.form-upload-files{action: cache_demos_path, "data-upload" => "fu-123", enctype: "multipart/form-data", method: "post"}
+    %form.form-upload-files{action: cache_records_path, "data-upload" => "fu-123", "data-hidden-container" => "hidden_container", enctype: "multipart/form-data", method: "post"}
       .form-drop
         Перетащите сюда файлы для отправки
         %span Файлы в форматах WAV, MP3, не более 5 МБ
         %a
           %i.fa.fa-arrow-circle-o-up>
           Добавить файлы
-        %input{multiple: "multiple", name: "demos[]", type: "file"}/
+        = hidden_field_tag "resource", "speaker"
+        %input{multiple: "multiple", name: "records[]", type: "file"}/
 / /.registration-layout
