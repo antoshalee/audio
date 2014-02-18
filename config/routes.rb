@@ -1,6 +1,5 @@
 Audio::Application.routes.draw do
-  get "users/show"
-  get "records/cache"
+
   ActiveAdmin.routes(self)
   devise_for :users
   resources :speakers do
