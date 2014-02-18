@@ -6,12 +6,14 @@ class OrdersController < ApplicationController
   end
 
   def speaker
-    @orders = Order.where(speaker: current_user.try(:speaker)).decorate
+    @orders = Order.where(speaker: current_user.try(:speaker)).
+      page(params[:page]).per(5).decorate
     render :index
   end
 
   def client
-    @orders = Order.where(client: current_user).decorate
+    @orders = Order.where(client: current_user).
+      page(params[:page]).per(1).decorate
     render :index
   end
 
