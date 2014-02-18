@@ -3,17 +3,20 @@ class OrdersController < ApplicationController
   load_and_authorize_resource except: %i(index speaker client modal)
 
   def index
-  	@orders = Order.where(speaker: current_user.try(:speaker)).decorate
+  	@orders = Order.where.not(state: :created)
+      where(speaker: current_user.try(:speaker)).decorate
   end
 
   def speaker
-    @orders = Order.where(speaker: current_user.try(:speaker)).
+    @orders = Order.where.not(state: :created).
+      where(speaker: current_user.try(:speaker)).
       page(params[:page]).per(5).decorate
     render :index
   end
 
   def client
-    @orders = Order.where(client: current_user).
+    @orders = Order.where.not(state: :created).
+      where(client: current_user).
       page(params[:page]).per(5).decorate
     render :index
   end
