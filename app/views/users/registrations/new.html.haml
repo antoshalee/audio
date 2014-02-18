@@ -64,105 +64,106 @@
               в формате png или jpg.
       %h2 Информация об исполнителе
       .item-input-checkbox
-        %label{for: "chbx133"}
-          %input#chbx133{checked: "checked", type: "checkbox"}/
+        %label{for: "toggle_speaker_form_chbx"}
+          %input#toggle_speaker_form_chbx{checked: "checked", type: "checkbox"}/
           %span Я хочу исполнять заказы (потребуется заполнение дополнительных полей)
 
-      = f.fields_for :speaker do |speaker_f|
-        = render 'users/registrations/form/sex', f: speaker_f
-        = render 'users/registrations/form/categories', f: speaker_f
+      .speaker_subform
+        = f.fields_for :speaker do |speaker_f|
+          = render 'users/registrations/form/sex', f: speaker_f
+          = render 'users/registrations/form/categories', f: speaker_f
 
-        .tip
-          %p
-            Информацию можно будет уточнить
-            %br/
-            или изменить после регистрации в личном
-            кабинете
-        = render 'users/registrations/form/voice_types',  f: speaker_f
-        = render 'users/registrations/form/age_types',    f: speaker_f
-        = render 'users/registrations/form/timbre_level', f: speaker_f
-        .item-work-time
-          %label{:for => "work-time"} Стоимость начитки:
-          = speaker_f.text_field :rate, class: 'numbers-only'
-          руб. за 30 секунд
-        .tip
-          %p
-            Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.
-        .item-file-upload-cap
-          %label
-            Демо
-        / /.item-files-upload
-        .files-uploaded
-          %ul#fu-123.form-files-uploaded
-            / The file uploads will be shown here
-        #hidden_container
-        %h2 Присутствие на сайте
-        #online-radio-list.item-radio-list
-          %label Онлайн
-          %ul
-            %li
-              %label
-                %input{checked: "checked", name: "online", type: "radio"}/
-                %span Каждый день
-            %li
-              %label
-                %input{name: "online", type: "radio"}/
-                %span По будням
-            %li
-              %label
-                %input{name: "online", type: "radio"}/
-                %span По выходным
-            %li
-              %label
-                %input.show{name: "online", type: "radio"}/
-                %span Выбрать дни
-          .date-list
-            .date
-              %span.day ПН
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-            .date
-              %span.day ВТ
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-            .date
-              %span.day СР
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-            .date
-              %span.day ЧТ
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-            .date
-              %span.day ПТ
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-            .date
-              %span.day.off СБ
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-            .date
-              %span.day.off ВС
-              %input{type: "text"}/
-              %span.def —
-              %input{type: "text"}/
-        .tip
-          %p
-            Укажите промежутки времени, когда для
-            заказчиков вы будете отображаться
-            %br/
-            со статусом «Онлайн». В это время от вас
-            будут ожидать быстрого ответа.
-        .item-work-time
-          %label{for: "work-time"} Срок выполнения заказа:
-          %input.numbers-only{type: "text"}/
-          часа
+          .tip
+            %p
+              Информацию можно будет уточнить
+              %br/
+              или изменить после регистрации в личном
+              кабинете
+          = render 'users/registrations/form/voice_types',  f: speaker_f
+          = render 'users/registrations/form/age_types',    f: speaker_f
+          = render 'users/registrations/form/timbre_level', f: speaker_f
+          .item-work-time
+            %label{:for => "work-time"} Стоимость начитки:
+            = speaker_f.text_field :rate, class: 'numbers-only'
+            руб. за 30 секунд
+          .tip
+            %p
+              Выбранные аудиозаписи будут отображаться на сайте в каталоге и на странице вашего профиля.
+          .item-file-upload-cap
+            %label
+              Демо
+          / /.item-files-upload
+          .files-uploaded
+            %ul#fu-123.form-files-uploaded
+              / The file uploads will be shown here
+          #hidden_container
+          %h2 Присутствие на сайте
+          #online-radio-list.item-radio-list
+            %label Онлайн
+            %ul
+              %li
+                %label
+                  %input{checked: "checked", name: "online", type: "radio"}/
+                  %span Каждый день
+              %li
+                %label
+                  %input{name: "online", type: "radio"}/
+                  %span По будням
+              %li
+                %label
+                  %input{name: "online", type: "radio"}/
+                  %span По выходным
+              %li
+                %label
+                  %input.show{name: "online", type: "radio"}/
+                  %span Выбрать дни
+            .date-list
+              .date
+                %span.day ПН
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+              .date
+                %span.day ВТ
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+              .date
+                %span.day СР
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+              .date
+                %span.day ЧТ
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+              .date
+                %span.day ПТ
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+              .date
+                %span.day.off СБ
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+              .date
+                %span.day.off ВС
+                %input{type: "text"}/
+                %span.def —
+                %input{type: "text"}/
+          .tip
+            %p
+              Укажите промежутки времени, когда для
+              заказчиков вы будете отображаться
+              %br/
+              со статусом «Онлайн». В это время от вас
+              будут ожидать быстрого ответа.
+          .item-work-time
+            %label{for: "work-time"} Срок выполнения заказа:
+            %input.numbers-only{type: "text"}/
+            часа
       %h2 Лицензионное соглашение
       .item-input-checkbox
         %label{for: "chbx32"}
