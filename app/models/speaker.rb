@@ -1,7 +1,5 @@
 class Speaker < ActiveRecord::Base
   extend Enumerize
-  ONLINE_SCHEDULE_KEYS =
-    Date::DAYNAMES.map(&:downcase) + %w(daily weekdays weekend)
 
   belongs_to :user
   has_many :records, as: :owner
@@ -23,12 +21,10 @@ class Speaker < ActiveRecord::Base
   delegate :login, to: :user
 
   validates :rate, presence: true
-  validate :online_schedule_must_present
-
-  serialize :online_schedule, Hash
 
   include Speaker::ScopeMethods
   include Speaker::Validations
+  include Speaker::OnlineSchedule
 
   def to_param
     login
@@ -42,16 +38,6 @@ class Speaker < ActiveRecord::Base
 
   def set_defaults
     self.timbre_level = :middle if self.new_record? && !timbre_level
-  end
-
-  def online_schedule_must_present
-    if self.online_schedule.blank?
-      errors.add(:online_schedule, "should not be blank")
-    end
-  end
-
-  def reject_empty_online_days
-    online_schedule.reject! { |_, range| range.all?(&:blank?) }
   end
 
 end
