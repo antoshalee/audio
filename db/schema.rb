@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224175512) do
+ActiveRecord::Schema.define(version: 20140224195335) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -146,12 +146,15 @@ ActiveRecord::Schema.define(version: 20140224175512) do
     t.string   "account_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "timbre_level",    null: false
-    t.integer  "sex",             null: false
+    t.integer  "timbre_level",                        null: false
+    t.integer  "sex",                                 null: false
     t.integer  "rate"
     t.text     "online_schedule"
+    t.boolean  "online",              default: false
+    t.datetime "online_next_refresh"
   end
 
+  add_index "speakers", ["online_next_refresh"], name: "index_speakers_on_online_next_refresh", using: :btree
   add_index "speakers", ["sex"], name: "index_speakers_on_sex", using: :btree
   add_index "speakers", ["user_id"], name: "index_speakers_on_user_id", using: :btree
 
