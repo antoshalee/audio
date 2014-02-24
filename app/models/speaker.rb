@@ -19,8 +19,6 @@ class Speaker < ActiveRecord::Base
 
   delegate :login, to: :user
 
-  validates :rate, presence: true
-
   include Speaker::ScopeMethods
   include Speaker::Validations
   include Speaker::OnlineSchedule

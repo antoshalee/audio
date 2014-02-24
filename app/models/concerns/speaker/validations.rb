@@ -4,6 +4,7 @@ class Speaker
 
     included do
       validates :sex, presence: true
+      validates :rate, presence: true
     end
   end
 end
