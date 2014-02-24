@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
@@ -15,14 +14,16 @@ class ApplicationController < ActionController::Base
       :password,
       :password_confirmation,
       :avatar,
-      speaker_attributes: [
+      :speaker_attributes => [
         :sex,
         :rate,
         :timbre_level,
         :records_attributes => [:file, :file_cache],
-        :voice_type_ids => [],
-        :age_type_ids => [],
-        :category_ids => []
+        :voice_type_ids     => [],
+        :age_type_ids       => [],
+        :category_ids       => [],
+        :online_schedule    =>
+          Hash[Date::DAYNAMES.map { |d| [d.downcase, []] }]
       ]
     ]
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(params) }

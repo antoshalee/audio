@@ -97,69 +97,7 @@
             %ul#fu-123.form-files-uploaded
               / The file uploads will be shown here
           #hidden_container
-          %h2 Присутствие на сайте
-          #online-radio-list.item-radio-list
-            %label Онлайн
-            %ul
-              %li
-                %label
-                  %input{checked: "checked", name: "online", type: "radio"}/
-                  %span Каждый день
-              %li
-                %label
-                  %input{name: "online", type: "radio"}/
-                  %span По будням
-              %li
-                %label
-                  %input{name: "online", type: "radio"}/
-                  %span По выходным
-              %li
-                %label
-                  %input.show{name: "online", type: "radio"}/
-                  %span Выбрать дни
-            .date-list
-              .date
-                %span.day ПН
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-              .date
-                %span.day ВТ
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-              .date
-                %span.day СР
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-              .date
-                %span.day ЧТ
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-              .date
-                %span.day ПТ
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-              .date
-                %span.day.off СБ
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-              .date
-                %span.day.off ВС
-                %input{type: "text"}/
-                %span.def —
-                %input{type: "text"}/
-          .tip
-            %p
-              Укажите промежутки времени, когда для
-              заказчиков вы будете отображаться
-              %br/
-              со статусом «Онлайн». В это время от вас
-              будут ожидать быстрого ответа.
+          = render 'users/registrations/form/online_schedule', f: speaker_f
           .item-work-time
             %label{for: "work-time"} Срок выполнения заказа:
             %input.numbers-only{type: "text"}/

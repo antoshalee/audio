@@ -1,0 +1,63 @@
+%h2 Присутствие на сайте
+#online-radio-list.item-radio-list
+  %label Онлайн
+  %ul
+    %li
+      %label
+        %input{checked: "checked", name: "online", type: "radio"}/
+        %span Каждый день
+    %li
+      %label
+        %input{name: "online", type: "radio"}/
+        %span По будням
+    %li
+      %label
+        %input{name: "online", type: "radio"}/
+        %span По выходным
+    %li
+      %label
+        %input.show{name: "online", type: "radio"}/
+        %span Выбрать дни
+  .date-list
+    .date
+      %span.day ПН
+      = text_field_tag "user[speaker_attributes][online_schedule][monday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][monday][]"
+    .date
+      %span.day ВТ
+      = text_field_tag "user[speaker_attributes][online_schedule][tuesday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][tuesday][]"
+    .date
+      %span.day СР
+      = text_field_tag "user[speaker_attributes][online_schedule][wednesday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][wednesday][]"
+    .date
+      %span.day ЧТ
+      = text_field_tag "user[speaker_attributes][online_schedule][thursday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][thursday][]"
+    .date
+      %span.day ПТ
+      = text_field_tag "user[speaker_attributes][online_schedule][friday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][friday][]"
+    .date
+      %span.day.off СБ
+      = text_field_tag "user[speaker_attributes][online_schedule][saturday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][saturday][]"
+    .date
+      %span.day.off ВС
+      = text_field_tag "user[speaker_attributes][online_schedule][sunday][]"
+      %span.def —
+      = text_field_tag "user[speaker_attributes][online_schedule][sunday][]"
+.tip
+  %p
+    Укажите промежутки времени, когда для
+    заказчиков вы будете отображаться
+    %br/
+    со статусом «Онлайн». В это время от вас
+    будут ожидать быстрого ответа.
