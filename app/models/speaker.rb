@@ -21,6 +21,8 @@ class Speaker < ActiveRecord::Base
 
   validates :rate, presence: true
 
+  serialize :online_schedule, Hash
+
   include Speaker::ScopeMethods
   include Speaker::Validations
 
