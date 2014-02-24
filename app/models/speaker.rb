@@ -1,5 +1,7 @@
 class Speaker < ActiveRecord::Base
   extend Enumerize
+  ONLINE_SCHEDULE_KEYS =
+    Date::DAYNAMES.map(&:downcase) + %w(daily weekdays weekend)
 
   belongs_to :user
   has_many :records, as: :owner

@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
         :age_type_ids       => [],
         :category_ids       => [],
         :online_schedule    =>
-          Hash[Date::DAYNAMES.map { |d| [d.downcase, []] }]
+          Hash[Speaker::ONLINE_SCHEDULE_KEYS.map { |d| [d, []] }]
       ]
     ]
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(params) }
