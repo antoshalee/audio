@@ -7,6 +7,7 @@ class Speaker
 
     included do
       serialize :online_schedule, Hash
+      before_validation :reject_empty_online_days
     end
 
     private

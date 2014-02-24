@@ -13,7 +13,6 @@ class Speaker < ActiveRecord::Base
   accepts_nested_attributes_for :records
 
   after_initialize :set_defaults
-  before_validation :reject_empty_online_days
 
   enumerize :sex, in: {male: 0, female: 1}, scope: true
   enumerize :timbre_level, in: {low: 0, middle: 1, high: 2}, scope: true
