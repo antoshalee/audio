@@ -1,4 +1,12 @@
 ru:
+  short_weekdays:
+    monday: ПН
+    tuesday: ВТ
+    wednesday: СР
+    thursday: ЧТ
+    friday: ПТ
+    saturday: СБ
+    sunday: ВС
   enumerize:
     event:
       kind:

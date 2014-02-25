@@ -8,8 +8,8 @@
         %a.like.selected{href: ""}
         %span.tag= speaker.role_text
     .order-holder
-      .work-time.selected
-        ПН–ПТ, 12:00–19:00
+      .work-time{class: (speaker.online? && 'selected')}
+        = speaker.online_text
       .price
         от #{speaker.rate} руб.
       = link_to order_steps_path(speaker: speaker.id), class: 'btn-order', method: :post do
