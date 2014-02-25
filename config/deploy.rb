@@ -26,7 +26,7 @@ set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 after "deploy:restart", "deploy:cleanup"
 
 require "bundler/capistrano"
-
+require "whenever/capistrano"
 
 
 namespace :deploy do
