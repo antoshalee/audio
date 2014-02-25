@@ -18,6 +18,8 @@ class Speaker
         where(age_types_speakers: {age_type_id: types}).uniq
       end
 
+      scope :online, -> { where(online: true) }
+
     end
 
   end

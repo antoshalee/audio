@@ -4,6 +4,7 @@ class SpeakersController < ApplicationController
   has_scope :with_sex
   has_scope :with_voice_types, type: :array
   has_scope :with_age_types, type: :array
+  has_scope :online, type: :boolean
   helper_method :similar_speakers
 
   def index

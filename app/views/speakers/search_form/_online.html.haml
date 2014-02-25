@@ -1,0 +1,4 @@
+.item.checkbox.full-width
+  %label{for: "online_only"}
+    = check_box_tag "online", 'true', params[:online], id: "online_only"
+    %span Показывать в результатах только дикторов со статусом «Онлайн»

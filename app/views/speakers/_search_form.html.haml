@@ -5,10 +5,7 @@
     = render 'speakers/search_form/order_category'
     = render 'speakers/search_form/voice_types'
     = render 'speakers/search_form/age_types'
-    .item.checkbox.full-width
-      %label{for: "checkbox-5"}
-        %input#checkbox-5{checked: "checked", type: "checkbox"}/
-        %span Показывать в результатах только дикторов со статусом «Онлайн»
+    = render 'speakers/search_form/online'
     .submit-holder
       .holder
         %a.speakers_search_form_submit{href: ""}<
