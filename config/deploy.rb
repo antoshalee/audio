@@ -21,7 +21,7 @@ set :ssh_options, { forward_agent: true, auth_methods: %w(publickey) }
 # === Unicorn ====
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
-
+set :whenever_command, "bundle exec whenever"
 
 after "deploy:restart", "deploy:cleanup"
 
