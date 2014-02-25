@@ -27,7 +27,9 @@ class Speaker
         range = range.map { |t| Time.zone.parse t }
         return true if now.between?(range[0], range[1])
       end
-      false
+      return false
+    rescue
+      return false
     end
 
     # 'monday', 'tuesday' etc
