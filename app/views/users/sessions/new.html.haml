@@ -1,0 +1,21 @@
+.wizard-layout#wizard-layout
+  %h1 — Вход —
+  .step-holder
+    .wrapper
+      %h2 Авторизация
+      #login.login
+        = form_tag session_path(resource_name), method: :post do
+          .item-input-text
+            %input.placeholder{"data-placeholder" => "Эл. почта", name: 'user[email]', type: "text"}/
+          .item-input-text.password.enter
+            %input.placeholder{"data-placeholder" => "", name: 'user[password]', type: "password"}/
+          .submit-holder.enter
+            .holder
+              %a{:href => ""}
+                %i.fa.fa-unlock
+                Войти
+              %input{type: "submit", :value => ""}/
+            .item-input-checkbox
+              %label{:for => "chbx133"}
+                %input#chbx133{:checked => "checked", name: 'user[remember_me]', type: "checkbox"}/
+                %span Запомнить

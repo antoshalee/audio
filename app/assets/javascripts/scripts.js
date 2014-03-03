@@ -55,32 +55,32 @@ function wizardLayout()
 
     // Свич форм регистрация / авторизация
 
-    if($('#login').length)
-    {
-        var $container = $('#login'),
-            $form1 = $container.find('.form-1'),
-            $form2 = $container.find('.form-2'),
-            $radio = $container.find('.item-checkbox-list input').eq(0);
+    // if($('#login').length)
+    // {
+    //     var $container = $('#login'),
+    //         $form1 = $container.find('.form-1'),
+    //         $form2 = $container.find('.form-2'),
+    //         $radio = $container.find('.item-checkbox-list input').eq(0);
 
-        function checkRadio()
-        {
-            if($radio.is(':checked'))
-            {
-                $form1.show();
-                $form2.hide();
-            } else
-            {
-                $form2.show();
-                $form1.hide();
-            }
-        }
+    //     function checkRadio()
+    //     {
+    //         if($radio.is(':checked'))
+    //         {
+    //             $form1.show();
+    //             $form2.hide();
+    //         } else
+    //         {
+    //             $form2.show();
+    //             $form1.hide();
+    //         }
+    //     }
 
-        $('.item-checkbox-list input').change(function(){
-            checkRadio();
-        });
+    //     $('.item-checkbox-list input').change(function(){
+    //         checkRadio();
+    //     });
 
-        checkRadio();
-    }
+    //     checkRadio();
+    // }
 
 }
 
