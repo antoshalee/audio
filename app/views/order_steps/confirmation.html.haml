@@ -25,7 +25,7 @@
         .item-text-corrected
           %h3 Текст начитки
           %p
-            = @order.text
+            = @order.marked_text.html_safe
         - if @order.has_records?
           .item-files-uploaded
             %h3 Приложенные файлы

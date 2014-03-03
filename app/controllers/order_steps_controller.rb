@@ -31,7 +31,7 @@ class OrderStepsController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:text, :description, :name, :duration, :records_attributes => [:file_cache])
+    params.require(:order).permit(:text, :marked_text, :description, :name, :duration, :records_attributes => [:file_cache])
   end
 
 end

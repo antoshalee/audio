@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224195335) do
+ActiveRecord::Schema.define(version: 20140303172132) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -125,6 +128,7 @@ ActiveRecord::Schema.define(version: 20140224195335) do
     t.integer  "duration"
     t.string   "name"
     t.integer  "declines_count", default: 0
+    t.text     "marked_text"
   end
 
   add_index "orders", ["client_id"], name: "index_orders_on_client_id", using: :btree

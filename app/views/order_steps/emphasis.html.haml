@@ -12,9 +12,7 @@
             Обратите внимание на специализированные термины, фамилии и названия.
         .item-accent-text
           = @order.text
-          / TODO: emphasis input
-          = f.hidden_field :text
-      / /.wrapper
+        = f.hidden_field :marked_text, value: @order.text
     .controls
       = link_to previous_wizard_path, class: 'prev' do
         %i.fa.fa-arrow-left

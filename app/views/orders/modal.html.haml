@@ -22,7 +22,7 @@
       %p= @order.description
     %article.item-text-corrected
       %h3 Текст начитки
-      %p= @order.text
+      %p= @order.marked_text.html_safe
     %article.audio-holder
       %h3 Приложенные файлы
       .audio-name podlozhka.wav
