@@ -1,5 +1,6 @@
 Audio::Application.routes.draw do
 
+  get "settings/account"
   ActiveAdmin.routes(self)
   devise_for :users
   resources :speakers do
@@ -9,6 +10,9 @@ Audio::Application.routes.draw do
   resources :order_steps
 
   get 'profile', to: redirect('/orders/client')
+
+  get 'settings' => 'settings#account'
+  patch 'settings/update' => 'settings#update'
 
   resources :orders, only: nil do
     collection do

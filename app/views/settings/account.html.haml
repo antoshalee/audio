@@ -1,0 +1,59 @@
+.user-page-layout
+  .main
+    %h1 Настройки
+    %ul.menu
+      %li.current
+        %a{:href => ""} Аккаунт и уведомления
+      %li
+        %a{:href => ""} Информация об исполнителе
+      %li
+        %a{:href => ""} Присутствие на сайте
+    = form_for current_user, url: settings_update_path, html: {id: 'settings_account_form'} do |f|
+      .current-layout
+        %article
+          %h2 Основная информация
+          .item-input-text
+            %label Эл. почта
+            = f.text_field :email
+          .item-input-text
+            %label Телефон
+            = f.text_field :phone, class: 'phone-mask'
+        %article
+          %h2 Уведомления
+          %p Я хочу узнавать об изменении статуса заказов
+          .item-input-checkbox
+            %label{:for => "chbx11"}
+              %input#chbx11{:type => "checkbox"}/
+              %span По электронной почте
+          .item-input-checkbox
+            %label{:for => "chbx12"}
+              %input#chbx12{:type => "checkbox"}/
+              %span СМС-сообщением
+          %p Я хочу узнавать о специальных акциях и новостях сайта
+          .item-input-checkbox
+            %label{:for => "chbx13"}
+              %input#chbx13{:type => "checkbox"}/
+              %span По электронной почте
+          .item-input-checkbox
+            %label{:for => "chbx14"}
+              %input#chbx14{:type => "checkbox"}/
+              %span СМС-сообщением
+        %article
+          %h2 Смена пароля
+          .item-input-text
+            %label Старый пароль
+            %input{:type => "password"}/
+          .item-input-text
+            %label Новый пароль
+            %input{:type => "password"}/
+          .item-input-text.repeat-pass
+            %label Еще раз
+            %input{:type => "password"}/
+      .submit-holder
+        .holder
+          %a{:href => ""}
+            %i.fa.fa-unlock
+            Сохранить изменения
+          %input{:type => "submit", :value => ""}/
+
+  = render 'shared/profile_aside'

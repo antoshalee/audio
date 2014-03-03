@@ -1,0 +1,25 @@
+%aside
+  .avatar
+    %img{:alt => "", :src => current_user.avatar.middle.url}/
+  %h2
+    = current_user.login
+    - if current_user.speaker?
+      %span диктор
+  %ul
+    %li.current
+      %a{:href => ""}<
+        %i.fa.fa-headphones
+        %span> Заказы
+        %span.val 12
+    %li
+      %a{:href => ""}<
+        %i.fa.fa-money
+        %span> Финансы
+    %li
+      %a{:href => ""}<
+        %i.fa.fa-star
+        %span> Избранное
+    %li
+      %a{:href => "/settings"}<
+        %i.fa.fa-power-icon-cog
+        %span> Настройки

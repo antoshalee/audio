@@ -24,3 +24,4 @@
 //= require registration
 //= require buttons
 //= require upload
+//= require settings
