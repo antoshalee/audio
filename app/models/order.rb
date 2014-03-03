@@ -21,6 +21,7 @@ class Order < ActiveRecord::Base
     state :declined
     state :clarification_asked
     state :clarified
+    state :denied_by_speaker
 
     event :activate do
       transitions :to => :active
@@ -32,6 +33,10 @@ class Order < ActiveRecord::Base
 
     event :start do
       transitions :to => :started
+    end
+
+    event :deny_by_speaker do
+      transitions :to => :denied_by_speaker
     end
 
     event :attach_record do

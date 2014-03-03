@@ -16,6 +16,7 @@ ru:
         accepted: 'Работа принята'
         clarification_asked: 'Необходимо уточнение:'
         clarified: 'Ответ:'
+        denied_by_speaker: 'Заказ отклонен исполнителем'
     speaker:
       sex:
         male: Мужской

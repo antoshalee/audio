@@ -39,6 +39,10 @@ class OrdersController < ApplicationController
     perform_action :start, :started
   end
 
+  def deny_by_speaker
+    perform_action :deny_by_speaker, :denied_by_speaker
+  end
+
   def attach_record
     perform_action :attach_record, :record_attached,
       [:records_attributes => [:file_cache]]

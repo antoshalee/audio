@@ -6,6 +6,13 @@
       %strong
         %i.fa.fa-check
         = event.kind.text
+- if event.denied_by_speaker?
+  .msg.reject
+    .time= l(event.created_at, format: '%H:%M')
+    .text-holder
+      %strong
+        %i.fa.fa-times
+        = event.kind.text
 - else
   .msg
     .time= l(event.created_at, format: '%H:%M')

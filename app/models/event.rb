@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
 
   enumerize :kind, in: %w(
   	started
+    denied_by_speaker
   	declined
     accepted
     record_attached

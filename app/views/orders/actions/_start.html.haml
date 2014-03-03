@@ -2,7 +2,9 @@
   = link_to start_order_path(order), method: :post, class: %w(btn-green pos-left) do
     %i.fa.fa-check-circle-o>
     Принять заказ и начать работу
-  %a.btn-orange.pos-left{:href => ""}
+
+
+  = link_to deny_by_speaker_order_path(order), method: :post, class: %w(btn-orange pos-left) do
     %i.fa.fa-times-circle-o>
     Отклонить заказ
   %a.btn-gray.pos-right.toggle-btn{:href => "#", data: {target: "#clarify-holder-#{order.id}"}}
