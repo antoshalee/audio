@@ -3,7 +3,9 @@
     %a.open-status
     .username
       .avatar
-      %a.name{:href => ""}= order.coworker_of(current_user).try(:login)
+      - coworker = order.coworker_of(current_user)
+      - if coworker.present?
+        = link_to_if coworker.speaker?, coworker.login, speaker_path(coworker.login), class: 'name'
     .date
       = order.created_at_short
     .time
