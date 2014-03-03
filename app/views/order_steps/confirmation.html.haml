@@ -35,7 +35,7 @@
         .item-order-cost
           %h3
             Стоимость заказа:
-            %span 200 руб.
+            %span= "#{@order.price} руб."
     .controls
       = link_to previous_wizard_path, class: 'prev' do
         %i.fa.fa-arrow-left

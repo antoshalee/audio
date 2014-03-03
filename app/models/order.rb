@@ -10,6 +10,8 @@ class Order < ActiveRecord::Base
   validates :speaker, presence: true
   validates :state, presence: true
 
+  before_save :calculate_price
+
   aasm column: 'state' do
     state :created, :initial => true
     state :active
@@ -72,6 +74,14 @@ class Order < ActiveRecord::Base
 
   def declines_remaining
     DECLINES_LIMIT - declines_count
+  end
+
+  private
+
+  def calculate_price
+    if duration.present? && speaker.present?
+      self.price = ([30, duration].max.to_f / 30 * speaker.rate).to_i
+    end
   end
 
 end
