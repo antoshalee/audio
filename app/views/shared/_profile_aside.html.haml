@@ -6,8 +6,8 @@
     - if current_user.speaker?
       %span диктор
   %ul
-    %li.current
-      %a{:href => ""}<
+    %li{class: (params[:controller] == 'orders' && :current)}
+      %a{:href => "/orders/client"}<
         %i.fa.fa-headphones
         %span> Заказы
         %span.val 12
@@ -19,7 +19,7 @@
       %a{:href => ""}<
         %i.fa.fa-star
         %span> Избранное
-    %li
+    %li{class: (params[:controller] == 'settings' && :current)}
       %a{:href => "/settings"}<
         %i.fa.fa-power-icon-cog
         %span> Настройки
