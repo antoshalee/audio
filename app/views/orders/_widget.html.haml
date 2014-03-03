@@ -1,18 +1,24 @@
 .order-item-layout
-  .header.open
+  .header.simple.open
     %a.open-status
     .username
       .avatar
       %a.name{:href => ""}= order.coworker_of(current_user).try(:login)
-    .order-name= order.name
     .date
       = order.created_at_short
     .time
-      .accept
-        %i.fa.fa-check
-        Закрыт
+      - if order.accepted?
+        .accept
+          %i.fa.fa-check
+          Закрыт
+      - else
+        %i.fa.fa-clock-o
+        2 часа
     .cost
       200 руб.
+
+
+
   .body
     .task
       = link_to modal_order_path(order), class: 'task-modal', remote: true do
