@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
   ), predicates: true
 
   self.kind.values.each do |k|
-    scope k, where(kind: k)
+    scope k, -> { where(kind: k) }
   end
 
   private

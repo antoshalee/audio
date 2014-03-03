@@ -4,7 +4,7 @@ class Order < ActiveRecord::Base
 
   belongs_to :speaker
   belongs_to :client, class_name: 'User'
-  has_many :events, order: 'id asc', dependent: :destroy
+  has_many :events, -> { order 'id asc' }, dependent: :destroy
   has_many :records, as: :owner, dependent: :destroy
   accepts_nested_attributes_for :records
   validates :speaker, presence: true
