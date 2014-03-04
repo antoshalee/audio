@@ -18,6 +18,9 @@
           .item-input-text
             %label Телефон
             = f.text_field :phone, class: 'phone-mask'
+          .item-input-text
+            %label Аватар
+            = f.file_field :avatar, class: 'input-file'
         %article
           %h2 Уведомления
           %p Я хочу узнавать об изменении статуса заказов

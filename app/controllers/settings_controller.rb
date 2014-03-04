@@ -12,7 +12,7 @@ class SettingsController < ApplicationController
   private
 
   def permitted_user_params
-    params.require(:user).permit(:phone, :email)
+    params.require(:user).permit(:phone, :email, :avatar)
   end
 
 end
