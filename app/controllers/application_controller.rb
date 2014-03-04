@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     params = [
       :login,
+      :random_login,
       :email,
       :phone,
       :password,

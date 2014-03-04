@@ -20,4 +20,10 @@ class User < ActiveRecord::Base
     orders.not_draft.count + (speaker.present? ? speaker.orders.not_draft.count : 0)
   end
 
+  def random_login= value
+    if value == "1" || value == true
+      self.login = RandomLogin.generate
+    end
+  end
+
 end
