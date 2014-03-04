@@ -13,7 +13,7 @@
       %a{:href => "/orders/client"}<
         %i.fa.fa-headphones
         %span> Заказы
-        %span.val 12
+        %span.val= current_user.total_orders_count
     %li
       %a{:href => ""}<
         %i.fa.fa-money

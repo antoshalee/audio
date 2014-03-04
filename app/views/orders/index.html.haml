@@ -5,8 +5,9 @@
       %ul
         %li{class: (params[:action] == 'client' && 'current') }
           %a{:href => client_orders_path} Я заказываю
-        %li{class: (params[:action] == 'speaker' && 'current') }
-          %a{:href => speaker_orders_path} Мне заказывают
+        - if current_user.speaker?
+          %li{class: (params[:action] == 'speaker' && 'current') }
+            %a{:href => speaker_orders_path} Мне заказывают
       .filter
         %label.checkbox{:for => "checkbox-1"}
           %input#checkbox-1{:checked => "checked", :type => "checkbox"}/

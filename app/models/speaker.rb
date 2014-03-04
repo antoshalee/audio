@@ -3,6 +3,7 @@ class Speaker < ActiveRecord::Base
 
   belongs_to :user
   has_many :records, as: :owner
+  has_many :orders
   has_and_belongs_to_many :voice_types
   has_and_belongs_to_many :age_types
   has_and_belongs_to_many :categories,

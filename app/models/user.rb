@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :speaker, dependent: :destroy
+  has_many :orders, foreign_key: 'client_id' # as client
   accepts_nested_attributes_for :speaker
   validates :login, presence: true
 
@@ -13,6 +14,10 @@ class User < ActiveRecord::Base
 
   def speaker?
     speaker.present?
+  end
+
+  def total_orders_count
+    orders.not_draft.count + (speaker.present? ? speaker.orders.not_draft.count : 0)
   end
 
 end

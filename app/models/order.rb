@@ -62,6 +62,8 @@ class Order < ActiveRecord::Base
   end
 
   scope :active, ->{ where state: :active }
+  scope :not_draft, ->{ where "state <> 'created' "}
+
 
   def coworker_of user
     return self.speaker.user if user == self.client
