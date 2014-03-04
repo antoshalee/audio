@@ -45,7 +45,11 @@
       = render partial: 'list_item', collection: similar_speakers, as: :speaker
   %aside
     .avatar
-      %img{alt: "", src: @user.avatar.middle.url}/
+      - if @user.avatar.present?
+        = image_tag @user.avatar.middle.url
+      - else
+        = image_tag image_path('avatar_default_middle.png')
+
     %h2
       = @user.login
       %span диктор

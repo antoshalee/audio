@@ -2,7 +2,10 @@
   .row
     .user-info
       .avatar
-        %img{alt: "", src: speaker.user.avatar.small.url}/
+        - if speaker.user.avatar.present?
+          = image_tag speaker.user.avatar.small.url
+        - else
+          = image_tag image_path('avatar_default_small.png')
       %h3
         %a.name{href: speaker_path(speaker)}= speaker.user.login
         %a.like.selected{href: ""}

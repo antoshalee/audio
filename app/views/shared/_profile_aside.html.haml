@@ -1,6 +1,9 @@
 %aside
   .avatar
-    %img{:alt => "", :src => current_user.avatar.middle.url}/
+    - if current_user.avatar.present?
+      %img{:alt => "", :src => current_user.avatar.middle.url}/
+    - else
+      = image_tag image_path('avatar_default_middle.png')
   %h2
     = current_user.login
     - if current_user.speaker?
