@@ -1,10 +1,10 @@
 Audio::Application.routes.draw do
 
-  get "settings/account"
   ActiveAdmin.routes(self)
   devise_for :users
   resources :speakers do
   	collection { get :count }
+    member { post :toggle_favorite }
   end
 
   resources :order_steps
@@ -30,6 +30,8 @@ Audio::Application.routes.draw do
       post :accept
     end
   end
+
+  resources :favorites, only: :index
 
   resources :demos do
     collection { post :cache }

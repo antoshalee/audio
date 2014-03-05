@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_one :speaker, dependent: :destroy
   has_many :orders, foreign_key: 'client_id' # as client
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_speakers, through: :favorites, source: :speaker
+
   accepts_nested_attributes_for :speaker
   validates :login, presence: true
 

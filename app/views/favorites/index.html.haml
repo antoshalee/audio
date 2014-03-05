@@ -1,0 +1,7 @@
+.user-page-layout
+  .main
+    %h1 Избранное
+    = render partial: 'speakers/list_item', collection: @speakers, as: :speaker
+
+
+  = render 'shared/profile_aside'

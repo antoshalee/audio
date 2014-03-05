@@ -1,4 +1,4 @@
-%article.audio-item
+%article.audio-item{data: {id: speaker.id}}
   .row
     .user-info
       .avatar
@@ -8,7 +8,7 @@
           = image_tag image_path('avatar_default_small.png')
       %h3
         %a.name{href: speaker_path(speaker)}= speaker.user.login
-        %a.like.selected{href: ""}
+        %a.like.toggle_favorite{href: "#", class: (favorite_speaker_ids.include?(speaker.id) && "selected"), data: {id: speaker.id} }
         %span.tag= speaker.role_text
     .order-holder
       .work-time{class: (speaker.online? && 'selected')}

@@ -18,8 +18,8 @@
       %a{:href => ""}<
         %i.fa.fa-money
         %span> Финансы
-    %li
-      %a{:href => ""}<
+    %li{class: (params[:controller] == 'favorites' && :current)}
+      %a{href: favorites_path}<
         %i.fa.fa-star
         %span> Избранное
     %li{class: (params[:controller] == 'settings' && :current)}
