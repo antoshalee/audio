@@ -23,7 +23,7 @@
           - event.records.each do |record|
             %audio{controls: "", preload: "none"}
               %source{src: record.file.url }
-            %a.btn-download
+            %a.btn-download{href: (event.order.accepted? && download_record_path(record))}
               %i.fa.fa-arrow-circle-o-down>
               Скачать
       - if event.message?

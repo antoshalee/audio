@@ -20,5 +20,6 @@ class Ability
 
     can :reject, Order,
       client_id: user.id, state: ['record_attached'], declines_count: Order::DECLINES_LIMIT
+
   end
 end

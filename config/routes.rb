@@ -39,6 +39,7 @@ Audio::Application.routes.draw do
 
   resources :records do
     collection { post :cache }
+    member { get :download }
   end
 
   root to: "home#index"

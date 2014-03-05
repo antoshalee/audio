@@ -8,6 +8,12 @@ class RecordsController < ApplicationController
     render text: html_result, content_type: "text/html"
   end
 
+  def download
+    record = Record.find params[:id]
+    file = record.file.file
+    send_file file.path, :filename => file.filename
+  end
+
   private
 
   def cache_as_audio file
