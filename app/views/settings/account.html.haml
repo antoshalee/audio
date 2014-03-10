@@ -8,8 +8,12 @@
         %a{:href => ""} Информация об исполнителе
       %li
         %a{:href => ""} Присутствие на сайте
-    = form_for current_user, url: settings_update_path, html: {id: 'settings_account_form'} do |f|
+    = form_for @user, url: settings_update_path, html: {id: 'settings_account_form'} do |f|
       .current-layout
+        - if @user.errors.any?
+          %ul
+            - @user.errors.full_messages.each do |error|
+              %li= error
         %article
           %h2 Основная информация
           .item-input-text
@@ -45,13 +49,13 @@
           %h2 Смена пароля
           .item-input-text
             %label Старый пароль
-            %input{:type => "password"}/
+            = f.password_field :current_password
           .item-input-text
             %label Новый пароль
-            %input{:type => "password"}/
+            = f.password_field :password
           .item-input-text.repeat-pass
             %label Еще раз
-            %input{:type => "password"}/
+            = f.password_field :password_confirmation
       .submit-holder
         .holder
           %a{:href => ""}
