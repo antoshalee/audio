@@ -15,6 +15,7 @@ role :db,  "ec2-54-201-100-181.us-west-2.compute.amazonaws.com", :primary => tru
 set :deploy_to, "/home/ubuntu/audio"
 set :user, "ubuntu"
 set :use_sudo, false
+set :shared_children, shared_children + %w{public/uploads}
 
 set :ssh_options, { forward_agent: true, auth_methods: %w(publickey) }
 
