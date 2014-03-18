@@ -87,8 +87,10 @@ class Order < ActiveRecord::Base
   private
 
   def calculate_duration
-    words_count = self.text.split(/\s+/).length
-    self.duration = words_count > 0 ? words_count/2 + 1 : 0
+    if text.present?
+      words_count = self.text.split(/\s+/).length
+      self.duration = words_count > 0 ? words_count/2 + 1 : 0
+    end
   end
 
   def calculate_price
