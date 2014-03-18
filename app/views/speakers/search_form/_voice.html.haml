@@ -1,4 +1,4 @@
-- group_opened = (params.key? 'with_timbre_level')
+- group_opened = @force_groups_to_be_opened || (params.key? 'with_timbre_level')
 .ftr-gr
   .item.checkbox
     %h3 Голос

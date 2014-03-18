@@ -1,4 +1,4 @@
-- group_opened = (params.key? 'by_order_category')
+- group_opened = @force_groups_to_be_opened || (params.key? 'by_order_category')
 .ftr-gr
   .item.checkbox
     %h3 Категория

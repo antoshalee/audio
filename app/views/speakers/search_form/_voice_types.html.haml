@@ -1,4 +1,4 @@
-- group_opened = (params.key? 'with_voice_types')
+- group_opened = @force_groups_to_be_opened || (params.key? 'with_voice_types')
 - voice_types = VoiceType.order('position asc').all
 - hided_types = Array(voice_types[6..-1])
 

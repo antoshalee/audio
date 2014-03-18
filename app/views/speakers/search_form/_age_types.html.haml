@@ -1,4 +1,4 @@
-- group_opened = (params.key? 'with_age_types')
+- group_opened = @force_groups_to_be_opened || (params.key? 'with_age_types')
 .ftr-gr.ckbx-list
   .item.checkbox
     %h3 Возраст
