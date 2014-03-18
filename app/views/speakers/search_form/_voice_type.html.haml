@@ -1,4 +1,5 @@
+- checked = params[:with_voice_types].presence && type.id.to_s.in?(params[:with_voice_types])
 %div
   %label{for: "with_voice_types_#{type.id}"}
-    = check_box_tag "with_voice_types[]", type.id, type.id.to_s.in?(params[:with_voice_types]), id: "with_voice_types_#{type.id}"
+    = check_box_tag "with_voice_types[]", type.id, checked, id: "with_voice_types_#{type.id}"
     %span= type.name
