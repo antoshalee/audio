@@ -25,14 +25,7 @@
           %br/
           заказов. Ваш телефон не будет отображаться
           на сайте и не будет передан третьим лицам.
-      .items-block-password.checkbox-lock
-        .checkbox
-          %label{for: "checkbox-password"}
-            %input#checkbox-password{checked: "checked", type: "checkbox"}/
-            %span
-              Сгенерировать случайный пароль
-              %br>/
-              и отправить на почту
+      .items-block-password
         .item-input-text
           %label Пароль
           = f.password_field :password
