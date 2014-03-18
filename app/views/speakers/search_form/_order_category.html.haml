@@ -2,11 +2,12 @@
   .item.checkbox
     %h3 Категория
     %label{for: "checkbox-2"}
-      %input#checkbox-2{checked: "checked", type: "checkbox"}/
+      %input#checkbox-2{checked: "checked", type: "checkbox", class: "group_switcher", data: {'rel-group' => 'category'}}/
       %span Не важно
-  .item.radio
+  .display_switchable{ data: {group: 'category'} }
+    .item.radio.display_switchable
 
-    - OrderCategory.order('position asc').each_with_index do |cat, index|
-      = label :by_order_category, cat.id do
-        = radio_button_tag :by_order_category, cat.id, (index == 0)
-        %span= cat.name
+      - OrderCategory.order('position asc').each_with_index do |cat, index|
+        = label :by_order_category, cat.id do
+          = radio_button_tag :by_order_category, cat.id, (index == 0), data: {group: 'category'}
+          %span= cat.name
