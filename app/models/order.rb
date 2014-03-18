@@ -10,6 +10,7 @@ class Order < ActiveRecord::Base
   validates :speaker, presence: true
   validates :state, presence: true
 
+  before_validation :calculate_duration
   before_save :calculate_price
 
   aasm column: 'state' do
@@ -84,6 +85,11 @@ class Order < ActiveRecord::Base
   end
 
   private
+
+  def calculate_duration
+    words_count = self.text.split(/\s+/).length
+    self.duration = words_count > 0 ? words_count/2 + 1 : 0
+  end
 
   def calculate_price
     if duration.present? && speaker.present?

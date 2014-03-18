@@ -17,6 +17,15 @@ Piece '#ui-slider-time',
       max: 50,
       step: 10
 
+Piece '.order_wizard_text',
+  initialize: ($el) ->
+    $textarea = $el.find('textarea')
+    $textarea.keyup ->
+      words = $textarea.val().split(/\s+/).length
+      seconds = if words > 0 then Math.floor(words/2) + 1 else 0
+      seconds_word = utils.pluralize(seconds, 'секунда', 'секунды', 'секунд')
+      $('.seconds_label').text("#{seconds} #{seconds_word}")
+
 Piece ".item-accent-text",
   initialize: ->
     refreshMarkedText = ->
