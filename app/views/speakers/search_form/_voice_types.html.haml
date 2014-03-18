@@ -1,4 +1,4 @@
-- group_opened = @force_groups_to_be_opened || (params.key? 'with_voice_types')
+- group_open = @force_groups_to_be_open || (params.key? 'with_voice_types')
 - voice_types = VoiceType.order('position asc').all
 - hided_types = Array(voice_types[6..-1])
 
@@ -6,7 +6,7 @@
   .item.checkbox
     %h3 Тип
     %label{for: "checkbox-3"}
-      = check_box_tag nil, nil, !group_opened, class: "group_switcher", id: "checkbox-3", data: {'rel-group' => 'voice_types'}
+      = check_box_tag nil, nil, !group_open, class: "group_switcher", id: "checkbox-3", data: {'rel-group' => 'voice_types'}
       %span Не важно
   .display_switchable{ data: {group: 'voice_types'} }
     .item.group

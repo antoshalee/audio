@@ -1,9 +1,9 @@
-- group_opened = @force_groups_to_be_opened || (params.key? 'by_order_category')
+- group_open = @force_groups_to_be_open || (params.key? 'by_order_category')
 .ftr-gr
   .item.checkbox
     %h3 Категория
     %label{for: "checkbox-2"}
-      = check_box_tag nil, nil, !group_opened, class: "group_switcher", id: "checkbox-2", data: {'rel-group' => 'category'}
+      = check_box_tag nil, nil, !group_open, class: "group_switcher", id: "checkbox-2", data: {'rel-group' => 'category'}
       %span Не важно
   .display_switchable{ data: {group: 'category'} }
     .item.radio.display_switchable

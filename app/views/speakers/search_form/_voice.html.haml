@@ -1,9 +1,9 @@
-- group_opened = @force_groups_to_be_opened || (params.key? 'with_timbre_level')
+- group_open = @force_groups_to_be_open || (params.key? 'with_timbre_level')
 .ftr-gr
   .item.checkbox
     %h3 Голос
     %label{for: "checkbox-1"}
-      = check_box_tag nil, nil, !group_opened, class: "group_switcher", id: "checkbox-1", data: {'rel-group' => 'voice'}
+      = check_box_tag nil, nil, !group_open, class: "group_switcher", id: "checkbox-1", data: {'rel-group' => 'voice'}
       %span Не важно
   .display_switchable{ data: {group: 'voice'} }
     .item.radio

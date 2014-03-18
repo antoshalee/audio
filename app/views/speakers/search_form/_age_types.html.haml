@@ -1,9 +1,9 @@
-- group_opened = @force_groups_to_be_opened || (params.key? 'with_age_types')
+- group_open = @force_groups_to_be_open || (params.key? 'with_age_types')
 .ftr-gr.ckbx-list
   .item.checkbox
     %h3 Возраст
     %label{for: "checkbox-4"}
-      = check_box_tag nil, nil, !group_opened, class: "group_switcher", id: "checkbox-4", data: {'rel-group' => 'age_types'}
+      = check_box_tag nil, nil, !group_open, class: "group_switcher", id: "checkbox-4", data: {'rel-group' => 'age_types'}
       %span Не важно
   .display_switchable{ data: {group: 'age_types'} }
     .item.group
