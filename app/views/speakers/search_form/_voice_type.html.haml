@@ -1,4 +1,4 @@
 %div
   %label{for: "with_voice_types_#{type.id}"}
-    = check_box_tag "with_voice_types[]", type.id, false, id: "with_voice_types_#{type.id}"
+    = check_box_tag "with_voice_types[]", type.id, type.id.to_s.in?(params[:with_voice_types]), id: "with_voice_types_#{type.id}"
     %span= type.name
