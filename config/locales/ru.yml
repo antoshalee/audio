@@ -52,6 +52,8 @@ ru:
         sex: Пол
         user: Пользователь
         timbre_level: Тембр
+        rate: Стоимость начитки
+        voice_types: 'Типы голоса'
       page:
         name: Название
         text: Текст
@@ -63,5 +65,5 @@ ru:
         name: 'Название'
       age_type:
         name: 'Название'
-      speaker:
-        voice_types: 'Типы голоса'
+      user:
+        password: Пароль
