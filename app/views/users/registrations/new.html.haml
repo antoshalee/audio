@@ -6,7 +6,7 @@
 
     - if resource.errors.any?
       - errors_text = resource.errors.full_messages.join "<br>"
-      = js add_gritter(errors_text, class_name: "gritter-light", title: "Ошибка", image: :error)
+      = js add_gritter(errors_text, class_name: "gritter-light", title: "Ошибка")
 
       / %ul
       /   - resource.errors.full_messages.each do |error|
