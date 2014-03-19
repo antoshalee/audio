@@ -54,6 +54,7 @@ ru:
         timbre_level: Тембр
         rate: Стоимость начитки
         voice_types: 'Типы голоса'
+        records: 'Аудиозаписи'
       page:
         name: Название
         text: Текст
