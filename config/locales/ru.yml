@@ -68,3 +68,4 @@ ru:
         name: 'Название'
       user:
         password: Пароль
+        password_confirmation: Пароль

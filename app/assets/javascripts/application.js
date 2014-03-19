@@ -25,3 +25,4 @@
 //= require buttons
 //= require upload
 //= require settings
+//= require gritter

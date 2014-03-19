@@ -22,6 +22,7 @@ gem 'capistrano', "2.15.5"
 gem 'rmagick', '~> 2.13.2'
 gem 'whenever', require: false
 gem 'active_admin_editor'
+gem "gritter", "1.1.0"
 
 # CanCan is not ready for Rails 4.. let try it anyway
 gem 'cancan'

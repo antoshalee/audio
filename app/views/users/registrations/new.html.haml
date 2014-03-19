@@ -5,9 +5,12 @@
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
 
     - if resource.errors.any?
-      %ul
-        - resource.errors.full_messages.each do |error|
-          %li= error
+      - errors_text = resource.errors.full_messages.join "<br>"
+      = js add_gritter(errors_text, class_name: "gritter-light", title: "Ошибка", image: :error)
+
+      / %ul
+      /   - resource.errors.full_messages.each do |error|
+      /     %li= error
 
     .wrapper
       %h2 Основная информация
