@@ -2,7 +2,7 @@
   .main
     %h1
       = @user.login
-      %span.user-position-label диктор, вокалист
+      %span.user-position-label= @speaker.role_text
       %span.user-price-label от #{@speaker.rate} руб.
     .user-short-addit-info
       Понедельник—пятница, 12:00—19:00
@@ -52,7 +52,7 @@
 
     %h2
       = @user.login
-      %span диктор
+      %span= @speaker.role_text
     %ul
       %li
         = link_to order_steps_path(speaker: @speaker.id), class: 'make-order', method: :post do
