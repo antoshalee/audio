@@ -42,11 +42,20 @@ ru:
         few: 'Категория'
         many: 'Категорий'
         other: 'Категории'
+      page:
+        one: 'Страница'
+        few: 'Страницы'
+        many: 'Страниц'
+        other: 'Страницы'
     attributes:
       speaker:
         sex: Пол
         user: Пользователь
         timbre_level: Тембр
+      page:
+        name: Название
+        text: Текст
+        slug: Slug
       order_category:
         name: 'Название'
         role_name: 'Название роли'

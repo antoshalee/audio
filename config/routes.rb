@@ -44,4 +44,6 @@ Audio::Application.routes.draw do
 
   root to: "home#index"
 
+  get '/:url' => 'pages#show', :constraints => { :url => /.*/ }
+
 end
