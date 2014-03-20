@@ -7,7 +7,8 @@ class SettingsController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update_with_password(permitted_user_params)
+
+    if update_current_user
       redirect_to action: :account
     else
       render action: :account
@@ -18,6 +19,16 @@ class SettingsController < ApplicationController
 
   def permitted_user_params
     params.require(:user).permit(:phone, :email, :avatar, :password, :password_confirmation, :current_password)
+  end
+
+  def update_current_user
+
+
+    if permitted_user_params[:current_password].present?
+      @user.update_with_password(permitted_user_params)
+    else
+      @user.update_attributes(permitted_user_params.delete_if { |k,v| v.blank? })
+    end
   end
 
 end

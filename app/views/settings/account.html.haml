@@ -11,9 +11,8 @@
     = form_for @user, url: settings_update_path, html: {id: 'settings_account_form'} do |f|
       .current-layout
         - if @user.errors.any?
-          %ul
-            - @user.errors.full_messages.each do |error|
-              %li= error
+          - errors_text = @user.errors.full_messages.join "<br>"
+          = js add_gritter(errors_text, class_name: "gritter-light", title: "Ошибка")
         %article
           %h2 Основная информация
           .item-input-text
