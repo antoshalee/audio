@@ -52,6 +52,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'aasm'
 
 gem "devise", "~> 3.0.3"
+gem "devise-russian"
 
 gem 'kaminari'
 gem 'enumerize'

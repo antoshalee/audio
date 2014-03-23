@@ -9,7 +9,7 @@ Audio::Application.routes.draw do
 
   resources :order_steps
 
-  get 'profile', to: redirect('/orders/client')
+  get 'profile', to: redirect('/orders/client'), as: :profile
 
   get 'settings', to: redirect('/settings/account')
   %w(account speaker).each { |type|

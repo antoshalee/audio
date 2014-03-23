@@ -28,6 +28,11 @@ class OrderStepsController < ApplicationController
     redirect_to wizard_path(steps.first)
   end
 
+  def finish_wizard_path
+    flash[:notice] = "Заказ успешно создан"
+    profile_path
+  end
+
   private
 
   def order_params

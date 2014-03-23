@@ -10,6 +10,9 @@
       = javascript_include_tag :html5shiv
     = csrf_meta_tag
   %body
+
+    - if flash[:notice].present?
+      = js add_gritter(flash[:notice], class_name: "gritter-light", time: 2000, title: '&nbsp;')
     = render 'shared/header'
     .content
       = yield
