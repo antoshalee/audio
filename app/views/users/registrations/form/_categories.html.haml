@@ -1,5 +1,5 @@
 .items-block-checkbox
-  %label Тип голоса
+  %label Категория
   - OrderCategory.scoped.in_groups(2, false) do |group|
     .col
       - group.each do |cat|
