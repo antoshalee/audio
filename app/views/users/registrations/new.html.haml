@@ -32,8 +32,8 @@
           = f.password_field :password_confirmation
       .items-block-nickname.checkbox-lock
         .checkbox
-          %label{for: "checkbox-nickname"}
-            %input#checkbox-nickname{checked: "checked", type: "checkbox", name: "user[random_login]", value: "1"}/
+          %label{for: "user_random_login"}
+            = check_box_tag "user[random_login]", "1", @user.login.blank?, id: "user_random_login"
             %span
               Случайное имя
         .item-input-text
