@@ -1,0 +1,70 @@
+.user-page-layout
+  .main
+    %h1 Настройки
+    = render 'menu'
+    = form_for @speaker, url: settings_speaker_path, method: :patch, html: {id: 'settings_account_form'} do |f|
+      - if @speaker.errors.any?
+        - errors_text = @speaker.errors.full_messages.join "<br>"
+        = js add_gritter(errors_text, class_name: "gritter-light", title: "Ошибка")
+
+      .current-layout
+        %article
+          %h2 Пол
+          .item-checkbox-list
+            .item.radio
+              = f.label :sex, value: 0 do
+                = f.radio_button :sex, 0, checked: f.object.sex.male?
+                %span Мужской
+              = f.label :sex, value: 1 do
+                = f.radio_button :sex, 1, checked: f.object.sex.female?
+                %span Женский
+
+        %article
+          %h2 Категория
+          .items-block-checkbox
+            - OrderCategory.scoped.in_groups(2, false) do |group|
+              .col
+                - group.each do |cat|
+                  .item-input-checkbox
+                    %label{for: "speaker_category_ids_#{cat.id}"}
+                      = check_box_tag "speaker[category_ids][]", cat.id, f.object.categories.include?(cat), id: "speaker_category_ids_#{cat.id}"
+                      %span= cat.name
+
+        %article
+          %h2 Тип голоса
+          .items-block-checkbox
+            - VoiceType.scoped.in_groups(3, false) do |group|
+              .col
+                - group.each do |type|
+                  .item-input-checkbox
+                    %label{for: "speaker_voice_type_ids_#{type.id}"}
+                      = check_box_tag "speaker[voice_type_ids][]", type.id, f.object.voice_types.include?(type), id: "speaker_voice_type_ids_#{type.id}"
+                      %span= type.name
+
+        %article
+          %h2 Тембр
+          = f.hidden_field :timbre_level
+          .item-ui-slider
+            .item.ui-slider
+              #ui-slider-voice{data: {'input-selector' => '#speaker_timbre_level'}}
+              .points.voice
+                .p1 Низкий
+                .p2 Средний
+                .p3 Высокий
+        %article
+          %h2 Стоимость начитки
+          / .item-work-time
+          / %label{:for => "work-time"} Стоимость начитки:
+          .item-work-time
+            / %label Эл. почта
+            = f.text_field :rate, class: 'numbers-only'
+            руб. за 30 секунд
+
+      .submit-holder
+        .holder
+          %a{:href => ""}
+            %i.fa.fa-unlock
+            Сохранить изменения
+          %input{:type => "submit", :value => ""}/
+
+  = render 'shared/profile_aside'

@@ -1,0 +1,7 @@
+%ul.menu
+  %li{class: (params['action'] == 'account' && :current)}
+    %a{href: settings_account_path} Аккаунт и уведомления
+  %li{class: (params['action'] == 'speaker' && :current)}
+    %a{href: settings_speaker_path} Информация об исполнителе
+  %li
+    %a{:href => ""} Присутствие на сайте

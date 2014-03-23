@@ -1,14 +1,8 @@
 .user-page-layout
   .main
     %h1 Настройки
-    %ul.menu
-      %li.current
-        %a{:href => ""} Аккаунт и уведомления
-      %li
-        %a{:href => ""} Информация об исполнителе
-      %li
-        %a{:href => ""} Присутствие на сайте
-    = form_for @user, url: settings_update_path, html: {id: 'settings_account_form'} do |f|
+    = render 'menu'
+    = form_for @user, url: settings_account_path, method: :patch, html: {id: 'settings_account_form'} do |f|
       .current-layout
         - if @user.errors.any?
           - errors_text = @user.errors.full_messages.join "<br>"

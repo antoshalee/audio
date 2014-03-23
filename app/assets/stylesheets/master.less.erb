@@ -1824,6 +1824,168 @@ footer
         }
       }
 
+      .item-work-time
+      {
+        font-size: 15px;
+        line-height: 20px;
+        color: #46565c;
+        font-weight: bold;
+        margin-top: 23px;
+        margin-bottom: 42px;
+
+        input
+        {
+          .input-text(46px, 24px);
+          margin: 0 3px 0 9px;
+          text-align: center;
+          text-indent: 0;
+        }
+      }
+
+      .item-checkbox-list
+      {
+        margin-top: 35px;
+        .group;
+        & > label
+        {
+          float: left;
+          font-size: 15px;
+          line-height: 24px;
+          color: #46565c;
+          font-weight: bold;
+          width: 142px;
+        }
+        input:checked + span
+        {
+          padding: 0;
+        }
+        span
+        {
+          width: 74px;
+          padding: 0;
+          text-align: center;
+        }
+      }
+
+      .items-block-checkbox
+      {
+        margin-top: 35px;
+        .group;
+        & > label
+        {
+          float: left;
+          font-size: 15px;
+          line-height: 24px;
+          color: #46565c;
+          font-weight: bold;
+          width: 120px;
+        }
+
+        & + .items-block-checkbox
+        {
+          margin-top: 33px;
+        }
+
+        .col
+        {
+          float: left;
+          width: 160px;
+          padding: 5px 0 0 0;
+        }
+
+        .item-input-checkbox
+        {
+          font-size: 14px;
+          input
+          {
+            margin-right: 6px;
+            & + span:before
+            {
+              left: -26px;
+              top: -1px;
+            }
+          }
+          & + .item-input-checkbox
+          {
+            margin-top: 13px;
+          }
+        }
+      }
+
+      .item-ui-slider
+      {
+        .group;
+        margin-top: 30px;
+        label:first-child
+        {
+          float: left;
+          font-size: 15px;
+          line-height: 20px;
+          color: #46565c;
+          font-weight: bold;
+          width: 120px;
+        }
+        & > .ui-slider
+        {
+          width: 320px;
+          float: left;
+          margin-top: 9px;
+        }
+        .voice
+        {
+          position: relative;
+          font-size: 10px;
+          line-height: 14px;
+          margin-top: 10px;
+          height: 18px;
+
+          div
+          {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            .user-select-none;
+            &:after
+            {
+              content: "";
+              width: 1px;
+              height: 4px;
+              background: #46565c;
+              position: absolute;
+              top: -4px;
+            }
+          }
+
+          .p1
+          {
+            text-align: left;
+            left: -1px;
+            &:after
+            {
+              left: 0;
+            }
+          }
+          .p2
+          {
+            text-align: center;
+            &:after
+            {
+              left: 50%;
+            }
+          }
+          .p3
+          {
+            text-align: right;
+            right: -2px;
+            &:after
+            {
+              right: 0;
+            }
+          }
+        }
+      }
+
       .submit-holder
       {
         padding: 39px 0 0 0;

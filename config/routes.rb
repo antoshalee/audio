@@ -11,8 +11,11 @@ Audio::Application.routes.draw do
 
   get 'profile', to: redirect('/orders/client')
 
-  get 'settings' => 'settings#account'
-  patch 'settings/update' => 'settings#update'
+  get 'settings', to: redirect('/settings/account')
+  %w(account speaker).each { |type|
+    get   "settings/#{type}" => "settings##{type}"
+    patch "settings/#{type}" => "settings##{type}"
+  }
 
   resources :orders, only: nil do
     collection do
