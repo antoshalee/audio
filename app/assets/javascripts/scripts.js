@@ -88,32 +88,6 @@ function registrationLayout()
 {
     var $container = $('#registration-layout');
 
-    if($('.checkbox-lock').length)
-    {
-        $('.checkbox-lock').each(function(){
-            var $holder = $(this),
-                $checkbox = $holder.find('input[type="checkbox"]'),
-                $items = $holder.find('.item-input-text input');
-
-            function check()
-            {
-                if($checkbox.is(':checked'))
-                {
-                    $items.addClass('disabled').attr({'disabled': 'disabled'});
-                } else
-                {
-                    $items.removeClass('disabled').removeAttr('disabled');
-                }
-            }
-
-            check();
-
-            $checkbox.change(function(){
-                check();
-            });
-        });
-    }
-
     if($('#online-radio-list').length)
     {
 

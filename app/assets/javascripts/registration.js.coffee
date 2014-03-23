@@ -21,3 +21,21 @@ Piece '.registration-layout',
     $('.speaker_subform').find(':input').each -> $(this).prop('disabled', true)
     $('#toggle_speaker_form_chbx').attr('checked', false)
     $('#toggle_speaker_form_chbx').change(speakerSubformHandler)
+
+Piece '.checkbox-lock',
+  initialize: ->
+    $(".checkbox-lock").each ->
+      check = ->
+        if $checkbox.is(":checked")
+          $items.addClass("disabled").attr disabled: "disabled"
+        else
+          $items.removeClass("disabled").removeAttr "disabled"
+        return
+      $holder = $(this)
+      $checkbox = $holder.find("input[type=\"checkbox\"]")
+      $items = $holder.find(".item-input-text input")
+      check()
+      $checkbox.change ->
+        check()
+        return
+      return
